@@ -3,10 +3,12 @@ import { Link } from "react-router-dom";
 
 const shouldHighlightLabel = (uri: string): boolean => {
     const { pathname, hash } = window.location;
+    if (hash && hash.length > 0) {
+        return hash.slice(1) === uri;
+    }
     return (
-        hash.includes(uri) ||
-        (pathname.slice(pathname.length - 1) === uri.slice(uri.length - 1) &&
-            pathname.includes(uri))
+        pathname.slice(pathname.length - 1) === uri.slice(uri.length - 1) &&
+        pathname.includes(uri)
     );
 };
 
