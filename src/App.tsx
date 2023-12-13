@@ -1,10 +1,29 @@
+import { Suspense } from "react";
+import {
+    RouterProvider,
+    createBrowserRouter,
+    createHashRouter,
+} from "react-router-dom";
+import { routerConfig } from "./config/router";
+import Loading from "./views/Loading";
+
 const App = () => {
+    const { mode, router } = routerConfig;
+    const routers = router.map((item) => {
+        const { uri, index, component } = item;
+        return { path: uri, index, Component: component };
+    });
+
     return (
-        <div className="w-full min-h-screen flex">
-            <h1 className="p-5 m-auto text-center font-bold text-2xl">
-                We're working on it!
-            </h1>
-        </div>
+        <Suspense fallback={<Loading />}>
+            <RouterProvider
+                router={
+                    mode === "hash"
+                        ? createHashRouter(routers)
+                        : createBrowserRouter(routers)
+                }
+            />
+        </Suspense>
     );
 };
 
