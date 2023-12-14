@@ -1,0 +1,32 @@
+import { useEffect } from "react";
+import { menuConfig } from "../config/menu";
+import { siteConfig } from "../config/site";
+import { setPageTitle } from "../helpers/setPageTitle";
+import { Navigation } from "../components/Navigation";
+import { Footer } from "../components/Footer";
+import { useMatch } from "react-router-dom";
+import { getRouteByTag } from "../helpers/getRouteByTag";
+import { routerConfig } from "../config/router";
+
+const Contribution = () => {
+    const { router } = routerConfig;
+    const { slogan, copyright } = siteConfig;
+    const { title, base, icon, menu } = menuConfig;
+    useEffect(() => setPageTitle("Contribution"), []);
+
+    const currentRoute = getRouteByTag(router, "contribution").uri;
+    const { query } = useMatch(currentRoute)?.params || {};
+    console.log(query);
+
+    return (
+        <>
+            <Navigation title={title} base={base} icon={icon} menu={menu} />
+            <div className="flex min-h-screen justify-center">
+                <h1 className="m-auto">Contribution</h1>
+            </div>
+            <Footer text={slogan} copyright={copyright} />
+        </>
+    );
+};
+
+export default Contribution;

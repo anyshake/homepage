@@ -23,19 +23,16 @@ interface NavigationProps {
     }[];
 }
 
-const Navigation = (props: NavigationProps) => {
+export const Navigation = (props: NavigationProps) => {
     const { title, icon, menu, base } = props;
     const [isMenuCollapsed, setIsMenuCollapsed] = useState(true);
 
     return (
         <nav className="bg-gray-100 shadow-xl">
             <div className="flex flex-wrap items-center justify-between mx-auto p-3">
-                <Link
-                    to={base}
-                    className="flex items-center flex-shrink-0 mr-6"
-                >
+                <Link to={base} className="flex items-center flex-shrink-0">
                     <img className="w-16 h-16 mx-4" src={icon} alt="" />
-                    <span className="font-semibold text-xl tracking-tight text-gray-700">
+                    <span className="font-semibold text-xl tracking-tight text-gray-700 font-mono">
                         {title}
                     </span>
                 </Link>
@@ -61,7 +58,7 @@ const Navigation = (props: NavigationProps) => {
                 >
                     <ul className="font-medium flex flex-col px-8 py-4 mt-4 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:bg-gray-100">
                         {menu.map(({ name, uri, external }, index) => (
-                            <li key={`${index}-${uri}`}>
+                            <li key={`/components/Navigation/0/${index}`}>
                                 <Link
                                     to={uri}
                                     className={`${
@@ -93,5 +90,3 @@ const Navigation = (props: NavigationProps) => {
         </nav>
     );
 };
-
-export default Navigation;

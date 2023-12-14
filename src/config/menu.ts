@@ -12,18 +12,23 @@ export const menuConfig = {
         },
         {
             external: false,
-            name: "Documentation",
-            uri: "/documentation",
-        },
-        {
-            external: false,
             name: "Features",
             uri: "/features",
         },
         {
             external: false,
+            name: "Documentation",
+            uri: "/documentation/wizard",
+        },
+        {
+            external: false,
             name: "Contribution",
-            uri: "/contribution",
+            uri: "/contribution/wizard",
+        },
+        {
+            external: false,
+            name: "Donation",
+            uri: "/donation",
         },
         {
             external: true,
