@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.50f0b04c.css",
-    "main.js": "/static/js/main.28a5b6b2.js",
-    "static/js/658.a2eaaff3.chunk.js": "/static/js/658.a2eaaff3.chunk.js",
-    "static/js/152.b3786374.chunk.js": "/static/js/152.b3786374.chunk.js",
-    "static/js/790.a3173be8.chunk.js": "/static/js/790.a3173be8.chunk.js",
-    "static/js/597.fb35d3cd.chunk.js": "/static/js/597.fb35d3cd.chunk.js",
-    "static/js/882.fc541720.chunk.js": "/static/js/882.fc541720.chunk.js",
+    "main.css": "/static/css/main.ab1e87cc.css",
+    "main.js": "/static/js/main.51cb0c92.js",
+    "static/js/658.ffda1da3.chunk.js": "/static/js/658.ffda1da3.chunk.js",
+    "static/js/152.3bbdd07e.chunk.js": "/static/js/152.3bbdd07e.chunk.js",
+    "static/js/790.7a85a229.chunk.js": "/static/js/790.7a85a229.chunk.js",
+    "static/js/597.77cccde2.chunk.js": "/static/js/597.77cccde2.chunk.js",
+    "static/js/882.642faa9b.chunk.js": "/static/js/882.642faa9b.chunk.js",
     "static/media/hero.webp": "/static/media/hero.a903743a56c95e8a6ea8.webp",
     "static/media/logo.webp": "/static/media/logo.d6d73505fed76829c8c8.webp",
     "index.html": "/index.html"
   },
   "entrypoints": [
-    "static/css/main.50f0b04c.css",
-    "static/js/main.28a5b6b2.js"
+    "static/css/main.ab1e87cc.css",
+    "static/js/main.51cb0c92.js"
   ]
 }
