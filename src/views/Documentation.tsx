@@ -7,6 +7,7 @@ import { Footer } from "../components/Footer";
 import { useMatch } from "react-router-dom";
 import { getRouteByTag } from "../helpers/getRouteByTag";
 import { routerConfig } from "../config/router";
+import { ScrollToTop } from "../components/ScrollToTop";
 
 const Documentation = () => {
     const { router } = routerConfig;
@@ -25,6 +26,7 @@ const Documentation = () => {
                 <h1 className="m-auto">Documentation</h1>
             </div>
             <Footer text={slogan} copyright={copyright} />
+            <ScrollToTop />
         </>
     );
 };

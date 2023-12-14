@@ -4,6 +4,7 @@ import { siteConfig } from "../config/site";
 import { setPageTitle } from "../helpers/setPageTitle";
 import { Navigation } from "../components/Navigation";
 import { Footer } from "../components/Footer";
+import { ScrollToTop } from "../components/ScrollToTop";
 
 const Donation = () => {
     const { slogan, copyright } = siteConfig;
@@ -17,6 +18,7 @@ const Donation = () => {
                 <h1 className="m-auto">Donation</h1>
             </div>
             <Footer text={slogan} copyright={copyright} />
+            <ScrollToTop />
         </>
     );
 };

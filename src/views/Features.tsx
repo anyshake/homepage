@@ -4,6 +4,7 @@ import { setPageTitle } from "../helpers/setPageTitle";
 import { Navigation } from "../components/Navigation";
 import { Footer } from "../components/Footer";
 import { siteConfig } from "../config/site";
+import { ScrollToTop } from "../components/ScrollToTop";
 
 const Features = () => {
     const { slogan, copyright } = siteConfig;
@@ -17,6 +18,7 @@ const Features = () => {
                 <h1 className="m-auto">Features</h1>
             </div>
             <Footer text={slogan} copyright={copyright} />
+            <ScrollToTop />
         </>
     );
 };

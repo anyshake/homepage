@@ -8,6 +8,7 @@ import { routerConfig } from "../config/router";
 import { getBaseUri } from "../helpers/getBaseUri";
 import { Navigation } from "../components/Navigation";
 import heroImage from "../assets/images/hero.webp";
+import { ScrollToTop } from "../components/ScrollToTop";
 
 const Home = () => {
     const { router } = routerConfig;
@@ -42,6 +43,7 @@ const Home = () => {
                 secondary={description}
             />
             <Footer text={slogan} copyright={copyright} />
+            <ScrollToTop />
         </>
     );
 };
