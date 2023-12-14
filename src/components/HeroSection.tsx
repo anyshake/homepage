@@ -17,7 +17,7 @@ export const HeroSection = (props: HeroSectionProps) => {
         <div className="justify-center w-full min-h-screen flex px-8 py-10 text-center md:px-12 lg:text-left">
             <div className="w-100 m-auto sm:max-w-2xl md:max-w-3xl lg:max-w-5xl xl:max-w-7xl">
                 <div className="grid items-center lg:grid-cols-2">
-                    <div className="mb-12 lg:mt-0 lg:mb-0 animate-fade-left animate-duration-[2000ms]">
+                    <div className="mb-12 lg:mt-0 lg:mb-0 animate-fade-left animate-duration-[2000ms] animate-delay-500">
                         <div className="block rounded-lg px-8 md:px-10 lg:px-12 py-14 bg-slate-200 text-gray-800 shadow-2xl">
                             <h1 className="mt-2 mb-16 text-4xl font-bold tracking-tight md:text-5xl xl:text-6xl">
                                 {primary}

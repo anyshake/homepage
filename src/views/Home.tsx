@@ -7,7 +7,7 @@ import { setPageTitle } from "../helpers/setPageTitle";
 import { routerConfig } from "../config/router";
 import { getBaseUri } from "../helpers/getBaseUri";
 import { Navigation } from "../components/Navigation";
-import previewImage from "../assets/images/hero.webp";
+import heroImage from "../assets/images/hero.webp";
 
 const Home = () => {
     const { router } = routerConfig;
@@ -38,7 +38,7 @@ const Home = () => {
                     },
                 ]}
                 primary={slogan}
-                preview={previewImage}
+                preview={heroImage}
                 secondary={description}
             />
             <Footer text={slogan} copyright={copyright} />

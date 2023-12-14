@@ -32,7 +32,7 @@ export const Navigation = (props: NavigationProps) => {
             <div className="flex flex-wrap items-center justify-between mx-auto p-3">
                 <Link to={base} className="flex items-center flex-shrink-0">
                     <img className="w-16 h-16 mx-4" src={icon} alt="" />
-                    <span className="font-semibold text-xl tracking-tight text-gray-700 font-mono">
+                    <span className="font-semibold text-xl tracking-tight text-gray-800">
                         {title}
                     </span>
                 </Link>
