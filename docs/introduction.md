@@ -26,8 +26,8 @@ Many homemade seismographs rely on the MPU6050, an accelerometer and gyroscope s
 
 Here are some demo sites for you to explore.
 
- - [AnyShake @ Beibei District, Chongqing, China](https://wolfx.rfotg.org)
- - [AnyShake @ Chongqing Institute of Engineering](https://dazu.rfotg.org)
- - [AnyShake @ Institute of Disaster Prevention](https://cidp.rfotg.org)
+ - [AnyShake @ Beibei District, Chongqing, China](https://wolfx.rfotg.com)
+ - [AnyShake @ Chongqing Institute of Engineering](https://dazu.rfotg.com)
+ - [AnyShake @ Institute of Disaster Prevention](https://cidp.rfotg.com)
 
 You can also build your own seismograph using AnyShake by following our tutorial.
