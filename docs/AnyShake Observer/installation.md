@@ -21,7 +21,7 @@ All packages are in ZIP format. Download and unzip corresponding packages to you
 
 ## Verify
 
-Each .zip file has a corresponding .dgst file, which contains MD5, SHA1, SHA2-256 and SHA2-512 digests of the corresponding .zip file.
+Each `.zip` file has a corresponding `.dgst` file, which contains its MD5, SHA1, SHA2-256 and SHA2-512 digests respectively.
 
 For example, if you downloaded the file `linux_amd64.zip`, the corresponding SHA digest file is `linux_amd64.zip.dgst`, you can verify the integrity of the downloaded file with the following command:
 
@@ -37,7 +37,7 @@ linux_amd64.zip: OK
 
 # Installation
 
-After unzip the package, you get the following files:
+After unzip the package, you'll get the following files:
 
  - `config.json`: AnyShake Observer configuration file
  - `observer.service`: systemd service file (Linux only)
