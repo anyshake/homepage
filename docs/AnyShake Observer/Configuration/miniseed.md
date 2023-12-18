@@ -9,7 +9,7 @@ sidebar_position: 8
 
 This object manages MiniSEED settings for AnyShake Observer, which are optional for its core functionality. When enabled, AnyShake Observer will generate daily MiniSEED files accessible through the web interface.
 
-**Please note that MiniSEED and archiving are independent features.**
+**Please note that MiniSEED and Archiver are independent features.**
 
 ## Fields
 

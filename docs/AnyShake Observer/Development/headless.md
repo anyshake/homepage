@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# Headless Architecture
+# Headless Mode
 
 For some reasons, you may want to run AnyShake Observer without its embedded frontend server. In this case, you can have AnyShake Observer provide only the back-end interface, hosting the front-end on Nginx, Apache or Caddy.
 
