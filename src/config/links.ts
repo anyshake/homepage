@@ -21,11 +21,6 @@ export const linksConfig: ILinkConfig = {
             label: "Documentation",
         },
         {
-            to: "/contribution",
-            label: "Contribution",
-            position: "left",
-        },
-        {
             to: "/donation",
             label: "Donation",
             position: "left",
