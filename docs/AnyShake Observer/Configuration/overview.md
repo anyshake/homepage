@@ -14,23 +14,23 @@ JSON, or [JavaScript Object Notation](https://en.wikipedia.org/wiki/JSON), in sh
 
 Here is a brief introduction of JSON data types. They will be referenced in the rest of docs.
 
- > `boolean`: true | false
+ > boolean: `true` | `false`
 
 Boolean value, has to be either true or false, without quotation mark.
 
- > `number`
+ > number
 
 Usually non-negative integers, without quotation mark.
 
- > `string`
+ > string
 
 Sequence of characters, surrounded by quotation mark.
 
- > `array`: []
+ > array: `[]`
 
 Array of elements. The type of its elements is usually the same, e.g., [string] is an array of strings.
 
- > `object`: {}
+ > object: `{}`
 
 Object. It comes with a list of key value pairs.
 

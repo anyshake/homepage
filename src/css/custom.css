@@ -9,3 +9,7 @@
     --ifm-footer-padding-vertical: 0.5rem;
     --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+.footer__copyright {
+    font-size: 0.7rem;
+}
