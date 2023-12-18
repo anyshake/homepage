@@ -8,7 +8,7 @@ You need to configure AnyShake Observer after installing it. Here is a quick con
 
 ## Configuration
 
-The configuration file is in JSON format. You can use any text editor to edit it. The demo configuration is taken from [v2.2.6p](https://github.com/anyshake/observer/releases/tag/Release_v2.2.6p-0b9335e6).
+The configuration file is in JSON format. You can use any text editor to edit it. The demo configuration is taken from [v2.2.6](https://github.com/anyshake/observer/releases/tag/Release_v2.2.6p-0b9335e6).
 
 ```json
 {

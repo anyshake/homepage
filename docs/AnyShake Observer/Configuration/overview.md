@@ -40,7 +40,7 @@ Object. It comes with a list of key value pairs.
 
 Here is a list of configuration fields, with their types and descriptions.
 
-The configuration fields are taken from [v2.2.6p](https://github.com/anyshake/observer/releases/tag/Release_v2.2.6p-0b9335e6).
+The configuration fields are taken from [v2.2.6](https://github.com/anyshake/observer/releases/tag/Release_v2.2.6p-0b9335e6).
 
 | Field                | Type     | Description                                              |
 | :------------------- | :------- | :------------------------------------------------------- |
