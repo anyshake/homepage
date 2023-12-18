@@ -28,9 +28,31 @@ If you don't have `git` installed, you can download the source code as a `.zip` 
  - [github.com/anyshake/observer/archive/refs/heads/master.zip](https://github.com/anyshake/observer/archive/refs/heads/master.zip)
  - [github.com/anyshake/observer/archive/refs/heads/master.tar.gz](https://github.com/anyshake/observer/archive/refs/heads/master.tar.gz)
 
+## Build Docs
+
+Install `swag` by running `go install` command.
+
+```bash
+$ go install github.com/swaggo/swag/cmd/swag@latest
+```
+
+Check if `swag` is installed successfully.
+
+```bash
+$ swag --version
+swag version v1.16.2
+```
+
+Enter the `docs` directory, use `swag init` to generate Swagger docs.
+
+```bash
+$ cd docs
+$ swag init -g ../cmd/main.go -d ../app,../server,../publisher -o ./
+```
+
 ## Build Frontend
 
-Remove the `frontend/dist` to avoid conflicts.
+Go back to the repository root directory, remove the `frontend/dist` to avoid conflicts.
 
 ``` bash
 $ rm -rf frontend/dist

@@ -4,26 +4,28 @@ sidebar_position: 3
 
 # Headless Mode
 
-For some reasons, you may want to run AnyShake Observer without its embedded frontend server. In this case, you can have AnyShake Observer provide only the back-end interface, hosting the front-end on Nginx, Apache or Caddy.
+For some reasons, you may want to run AnyShake Observer without its web UI. In this case, you can have AnyShake Observer provide only the back-end APIs, hosting your own front-end dist on Nginx, Apache or Caddy.
 
-## Nginx Configuration
-
-Here is an example of Nginx configuration, assuming that the AnyShake Observer is running on `http://localhost:8073`, your dist frontend root directory is `/var/www/html/anyshake`, the Nginx is listening on port `80` and the domain name is `localhost`.
+To use AnyShake Observer in headless mode, you can set up a reverse proxy to forward requests to AnyShake Observer's back-end APIs. Assuming that your URL of AnyShake Observer is `https://127.0.0.1:8073`, and you want to host your front-end dist on `https://example.org`, an Nginx example is given as follows:
 
 ```
-TODO
-```
+server {
+    listen 80;
+    server_name example.org;
 
-The final URL will be `http://localhost/anyshake`.
+    location / {
+        index index.html;
+        root /path/to/your/dist;
+    }
 
-## Apache Configuration
-
-```
-TODO
-```
-
-## Caddy Configuration
-
-```
-TODO
+    location /api {
+        proxy_pass https://127.0.0.1:8073/api;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header Connection "upgrade";
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    }
+}
 ```
