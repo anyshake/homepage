@@ -16,4 +16,20 @@ We don't provide a link to purchase this kit, but you'll able to obtain the [BOM
 
 **Please refer to [Quick Start Guide](https://github.com/anyshake/explorer/blob/master/hardware/README.md) in our GitHub repository for more details.**
 
-## 4.5 Hz Geophone Sensors
+## Geophone Sensors
+
+Sensor Requirements:
+
+ - Quantity: 3
+ - Recommended Natural Frequency: 4.5 Hz
+ - Orientation: 1 vertical + 2 horizontal (please ensure this configuration)
+
+Sensor Parameter Acquisition:
+
+Once you have obtained the sensors, consult their respective datasheets to collect the following crucial parameters:
+
+ - Sensitivity (V/cm/s): This value indicates the output voltage produced by the sensor per unit ground velocity.
+ - Natural Frequency (Hz): This parameter defines the sensor's resonant frequency, where it exhibits maximum sensitivity. Aiming for a 4.5 Hz natural frequency will optimize responsiveness to earthquake-related seismic waves.
+ - Damping Ratio (%): This value represents the amount of energy dissipation within the sensor, influencing its ability to follow rapid ground motion changes.
+
+Please note that these parameters are essential for configuring the AnyShake system properly and ensuring optimal performance in capturing seismic data.
