@@ -8,7 +8,7 @@ You need to configure AnyShake Observer after installing it. Here is a quick con
 
 ## Configuration
 
-The configuration file is in JSON format. You can use any text editor to edit it. The demo configuration is taken from [v2.2.6](https://github.com/anyshake/observer/releases/tag/Release_v2.2.6p-0b9335e6).
+The configuration file is in JSON format. You can use any text editor to edit it. The demo configuration is taken from [v2.3.0](https://github.com/anyshake/observer/releases/tag/v2.3.0).
 
 ```json
 {
@@ -17,7 +17,7 @@ The configuration file is in JSON format. You can use any text editor to edit it
         "name": "Test Station", // Name of the station, will be displayed on the web page
         "latitude": 39.9, // Latitude of the station
         "longitude": 116.3, // Longitude of the station
-        "altitude": 0 // Altitude of the station
+        "elevation": 0 // Elevation of the station
     },
     "geophone_settings": {
         "ehz": {

@@ -31,10 +31,10 @@ This object manages global station settings for AnyShake Observer.
  - Type: `float`
  - Description: Station longitude
 
-### altitude
+### elevation
 
  - Type: `float`
- - Description: Station altitude
+ - Description: Station elevation
 
 ## Example
 
@@ -45,7 +45,7 @@ This object manages global station settings for AnyShake Observer.
         "name": "Test Station",
         "latitude": 39.9,
         "longitude": 116.3,
-        "altitude": 0
+        "elevation": 0
     }
 }
 ```
