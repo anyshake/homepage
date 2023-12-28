@@ -23,16 +23,6 @@ This object manages MiniSEED settings for AnyShake Observer, which are optional 
  - Type: `string`
  - Description: Path to store MiniSEED files
 
-### station
-
- - Type: `string`
- - Description: Station code
-
-### network
-
- - Type: `string`
- - Description: Network code
-
 ### lifecycle
 
  - Type: `int`
@@ -45,8 +35,6 @@ This object manages MiniSEED settings for AnyShake Observer, which are optional 
     "miniseed_settings": {
         "enable": false,
         "path": "/data/miniseed",
-        "station": "TEST",
-        "network": "XX",
         "lifecycle": 10
     }
 }

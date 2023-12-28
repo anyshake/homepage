@@ -8,13 +8,16 @@ You need to configure AnyShake Observer after installing it. Here is a quick con
 
 ## Configuration
 
-The configuration file is in JSON format. You can use any text editor to edit it. The demo configuration is taken from [v2.3.0](https://github.com/anyshake/observer/releases/tag/v2.3.0).
+The configuration file is in JSON format. You can use any text editor to edit it. The demo configuration is taken from [v2.4.0](https://github.com/anyshake/observer/releases/tag/v2.4.0).
 
 ```json
 {
     "station_settings": {
         "uuid": "a373e39c-8e15-44ae-a1ad-6fb622bc49e6", // UUID of the station, you can generate it with `uuidgen` command, or pick one from uuidgenerator.net
         "name": "Test Station", // Name of the station, will be displayed on the web page
+        "station": "SHAKE", // Station code, less than 5 characters
+        "network": "AS", // Network code, should be 2 characters
+        "location": "00", // Location code, should be 2 characters
         "latitude": 39.9, // Latitude of the station
         "longitude": 116.3, // Longitude of the station
         "elevation": 0 // Elevation of the station
@@ -53,12 +56,12 @@ The configuration file is in JSON format. You can use any text editor to edit it
     },
     "archiver_settings": {
         "enable": true, // Enable archiver
-        "engine": "postgresql", // Archiver engine, support PostgreSQL, MySQL, SQLite, MSSQL
-        "host": "127.0.0.1", // Archiver host, leave it empty if you're using SQLite
-        "port": 5432, // Archiver port, leave it empty if you're using SQLite
-        "username": "postgres", // Archiver username, leave it empty if you're using SQLite
-        "password": "passw0rd", // Archiver password, leave it empty if you're using SQLite
-        "database": "observer" // Archiver database, set it to the path of SQLite database file if you're using SQLite
+        "engine": "postgresql", // Archiver engine, support PostgreSQL, MySQL, MSSQL
+        "host": "127.0.0.1", // Archiver host
+        "port": 5432, // Archiver port
+        "username": "postgres", // Archiver username
+        "password": "passw0rd", // Archiver password
+        "database": "observer" // Archiver database
     },
     "server_settings": {
         "host": "0.0.0.0", // Web server host
@@ -69,16 +72,12 @@ The configuration file is in JSON format. You can use any text editor to edit it
     "miniseed_settings": {
         "enable": false, // Enable MiniSEED archiver
         "path": "/data/miniseed", // MiniSEED archive path
-        "station": "TEST", // MiniSEED station code
-        "network": "XX", // MiniSEED network code
         "lifecycle": 10 // MiniSEED lifecycle, in days
     },
     "seedlink_settings": {
         "enable": false,
         "host": "0.0.0.0",
         "port": 18000,
-        "station": "TEST",
-        "network": "XX",
         "buffer": "/data/seedlink",
         "size": 1000
     } // Ignore this section due to it is not supported yet

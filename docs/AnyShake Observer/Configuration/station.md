@@ -21,6 +21,21 @@ This object manages global station settings for AnyShake Observer.
  - Type: `string`
  - Description: Station name
 
+### station
+
+ - Type: `string`
+ - Description: Station code
+
+### network
+
+ - Type: `string`
+ - Description: Network code
+
+### location
+
+ - Type: `string`
+ - Description: Location code
+
 ### latitude
 
  - Type: `float`
@@ -43,6 +58,9 @@ This object manages global station settings for AnyShake Observer.
     "station_settings": {
         "uuid": "a373e39c-8e15-44ae-a1ad-6fb622bc49e6",
         "name": "Test Station",
+        "station": "SHAKE",
+        "network": "AS",
+        "location": "00",
         "latitude": 39.9,
         "longitude": 116.3,
         "elevation": 0

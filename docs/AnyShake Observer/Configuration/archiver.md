@@ -19,32 +19,32 @@ This object configures settings for the optional archiver component. The archive
 ### engine
 
  - Type: `string`
- - Description: Database engine, available values are `postgresql`, `mysql`, `sqlite`, `mssql`
+ - Description: Database engine, available values are `postgresql`, `mysql`, `mssql`
 
 ### host
 
  - Type: `string`
- - Description: Database host, leave it empty if you're using SQLite
+ - Description: Database host
 
 ### port
 
  - Type: `int`
- - Description: Database port, leave it empty if you're using SQLite
+ - Description: Database port
 
 ### username
 
  - Type: `string`
- - Description: Database username, leave it empty if you're using SQLite
+ - Description: Database username
 
 ### password
 
  - Type: `string`
- - Description: Database password, leave it empty if you're using SQLite
+ - Description: Database password
 
 ### database
 
  - Type: `string`
- - Description: Database name, set it to the path of SQLite database file if you're using SQLite
+ - Description: Database name
 
 ## Example
 
