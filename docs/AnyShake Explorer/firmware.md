@@ -14,4 +14,4 @@ Please follow the [Quick Start Guide](https://github.com/anyshake/explorer/tree/
 
 ## Customize Firmware
 
-You can customize the firmware to fit your needs. The firmware is designed to work in approximately 100 Sps (Samples per second) by default, which means it will collect 100 samples per second from each sensor. By modifying the serial baud rate and packet length, you can change the sampling rate.
+You can customize the firmware to fit your needs. The firmware is designed to work in approximately 100 Sps (Samples per second) by default, which means it will collect 100 samples per second from each sensor. By modifying the serial baud rate and channel packet length, you can change the sampling rate.

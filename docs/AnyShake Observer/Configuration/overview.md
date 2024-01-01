@@ -40,7 +40,7 @@ Object. It comes with a list of key value pairs.
 
 Here is a list of configuration fields, with their types and descriptions.
 
-The configuration fields are taken from [v2.4.0](https://github.com/anyshake/observer/releases/tag/v2.4.0).
+The configuration fields are taken from [v2.5.1](https://github.com/anyshake/observer/releases/tag/v2.5.1).
 
 | Field                | Type     | Description                                              |
 | :------------------- | :------- | :------------------------------------------------------- |
@@ -52,4 +52,4 @@ The configuration fields are taken from [v2.4.0](https://github.com/anyshake/obs
 | `archiver_settings`  | `object` | Set up database archiving feature                        |
 | `server_settings`    | `object` | Define the embed server listening address and port       |
 | `miniseed_settings`  | `object` | Set up MiniSEED data archiving feature                   |
-| `seedlink_settings`  | `object` | Not implemented yet, ignore this field                   |
+| `seedlink_settings`  | `object` | Set up SeedLink streamer                                 |
