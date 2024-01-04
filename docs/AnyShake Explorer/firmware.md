@@ -10,7 +10,9 @@ The firmware is written in C++ and based on [Arduino](https://www.arduino.cc/) F
 
 ## Quick Start Guide
 
-Please follow the [Quick Start Guide](https://github.com/anyshake/explorer/tree/master/firmware) to get started.
+**Please follow the [Quick Start Guide](https://github.com/anyshake/explorer/tree/master/firmware) to get started.**
+
+Please note that we use PlatformIO for firmware development instead of the Arduino IDE or Keil uVision. PlatformIO is an open-source ecosystem for IoT development, and it supports a wide range of development platforms, frameworks, and libraries. We recommend you to use PlatformIO for firmware development.
 
 ## Customize Firmware
 
