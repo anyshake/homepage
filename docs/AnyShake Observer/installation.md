@@ -48,7 +48,7 @@ After unzip the package, you'll get the following files:
 
 These steps work on most Linux distributions, but for some embedded Linux systems, you may need to make some changes.
 
-To use AnyShake Observer without root privileges, you need add current user to `dialout` group:
+To use AnyShake Observer without root privileges, you need to add current user to `dialout` group:
 
 ```bash
 $ sudo usermod -a -G dialout $USER
@@ -77,4 +77,4 @@ $ sudo systemctl enable observer
 
 ## Install on Windows
 
-Copy `config.json` and `observer.exe` to the same directory.
+Just copy `config.json` and `observer.exe` to a same directory.

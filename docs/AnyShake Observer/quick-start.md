@@ -85,4 +85,4 @@ The configuration file is in JSON format. You can use any text editor to edit it
 ## Runnning
 
  - On Windows, configuration file is located in the same directory as AnyShake Observer binary. You may run `observer.exe` without additional parameters.
- - On Linux, configuration file is usually located at /usr/local/etc/observer/config.json. Run `observer --config=/usr/local/etc/observer/config.json` in foreground or use other tools such as systemd to run AnyShake Observer as background process.
+ - On Linux, configuration file is usually located at `/usr/local/etc/observer/config.json`. Run `observer --config=/usr/local/etc/observer/config.json` in foreground or use other tools such as systemd to run AnyShake Observer as background process.
