@@ -9,7 +9,7 @@ sidebar_position: 1
 AnyShake Observer is available on the following platforms:
 
  - Windows 7 and later (x86 / amd64)
- - Linux 2.6.23 and later (x86 / amd64 / arm / arm64 / ppc64le / riscv64 / mips / mips64le / mips64 / mipsle / loong64 / s390x)
+ - Linux 2.6.23 and later (x86 / amd64 / arm / arm64 / ppc64le / riscv64 / mips / mips64le / mipsle / loong64 / s390x)
 
 ## Download
 
