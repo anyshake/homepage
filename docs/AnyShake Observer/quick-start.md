@@ -8,7 +8,7 @@ You need to configure AnyShake Observer after installing it. Here is a quick con
 
 ## Configuration
 
-The configuration file is in JSON format. You can use any text editor to edit it. The demo configuration is taken from [v2.5.0](https://github.com/anyshake/observer/releases/tag/v2.5.1).
+The configuration file is in JSON format. You can use any text editor to edit it. The demo configuration is taken from [v2.8.0](https://github.com/anyshake/observer/releases/tag/v2.8.0).
 
 ```json
 {
@@ -67,7 +67,8 @@ The configuration file is in JSON format. You can use any text editor to edit it
         "host": "0.0.0.0", // Web server host
         "port": 8073, // Web server port
         "cors": true, // Enable CORS
-        "debug": false // Enable debug mode, /api/v1/devel endpoint will be available
+        "debug": false, // Enable debug mode, /api/v1/devel endpoint will be available
+        "rate": 30 // Rate limit in requests per second for API endpoints
     },
     "miniseed_settings": {
         "enable": false, // Enable MiniSEED archiver
@@ -77,7 +78,9 @@ The configuration file is in JSON format. You can use any text editor to edit it
     "seedlink_settings": {
         "enable": false, // Enable SeedLink streamer
         "host": "0.0.0.0", // SeedLink streamer host
-        "port": 18000 // SeedLink streamer port
+        "port": 18000, // SeedLink streamer port
+        "size": 43200, // SeedLink buffer size
+        "buffer": "/data/sl_buffer.dat" // Path to SeedLink buffer file
     }
 }
 ```

@@ -41,6 +41,7 @@ This object manages server settings for AnyShake Observer.
         "host": "0.0.0.0",
         "port": 8073,
         "cors": true,
-        "debug": false
+        "debug": false,
+        "rate": 30
     }
 }
