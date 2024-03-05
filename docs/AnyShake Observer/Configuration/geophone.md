@@ -11,71 +11,22 @@ This object configures characteristic for the geophones, so that the velocity of
 
 ## Fields
 
-### ehz
 
- - Type: `object`
- - Description: Geophone settings for EHZ channel
- - Fields:
-   - sensitivity
-     - Type: `float`
-     - Description: Sensitivity of the geophone, in V/cm/s, can be found in the datasheet of the geophone
-   - damping
-     - Type: `float`
-     - Description: Damping rate of the geophone, can be found in the datasheet of the geophone
-   - frequency
-     - Type: `float`
-     - Description: Natural frequency of the geophone, can be found in the datasheet of the geophone
+### sensitivity
 
-### ehe
+ - Type: `float`
+ - Description: Sensitivity of the geophone, in V/cm/s, can be found in the datasheet of the geophone
 
- - Type: `object`
- - Description: Geophone settings for EHE channel
- - Fields:
- - sensitivity
-     - Type: `float`
-     - Description: Sensitivity of the geophone, in V/cm/s, can be found in the datasheet of the geophone
- - damping
-     - Type: `float`
-     - Description: Damping rate of the geophone, can be found in the datasheet of the geophone
- - frequency
-     - Type: `float`
-     - Description: Natural frequency of the geophone, can be found in the datasheet of the geophone
+### frequency
 
-### ehn
-
- - Type: `object`
- - Description: Geophone settings for EHN channel
- - Fields:
- - sensitivity
-     - Type: `float`
-     - Description: Sensitivity of the geophone, in V/cm/s, can be found in the datasheet of the geophone
- - damping
-     - Type: `float`
-     - Description: Damping rate of the geophone, can be found in the datasheet of the geophone
- - frequency
-     - Type: `float`
-     - Description: Natural frequency of the geophone, can be found in the datasheet of the geophone
+ - Type: `float`
+ - Description: Natural frequency of the geophone, can be found in the datasheet of the geophone
 
 ## Example
 
 ```json
 {
-    "geophone_settings": {
-        "ehz": {
-            "sensitivity": 0.288,
-            "damping": 0.56,
-            "frequency": 4.5
-        },
-        "ehe": {
-            "sensitivity": 0.288,
-            "damping": 0.56,
-            "frequency": 4.5
-        },
-        "ehn": {
-            "sensitivity": 0.288,
-            "damping": 0.56,
-            "frequency": 4.5
-        }
-    }
+    "sensitivity": 0.288,
+    "frequency": 4.5
 }
 ```

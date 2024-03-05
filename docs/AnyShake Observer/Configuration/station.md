@@ -51,6 +51,26 @@ This object manages global station settings for AnyShake Observer.
  - Type: `float`
  - Description: Station elevation
 
+### region
+
+ - Type: `string`
+ - Description: Region of the station located
+
+### country
+
+ - Type: `string`
+ - Description: Country of the station located
+
+### city
+
+ - Type: `string`
+ - Description: City of the station located
+
+### owner
+
+ - Type: `string`
+ - Description: Owner of the station
+
 ## Example
 
 ```json
@@ -63,7 +83,11 @@ This object manages global station settings for AnyShake Observer.
         "location": "00",
         "latitude": 39.9,
         "longitude": 116.3,
-        "elevation": 0
+        "elevation": 0,
+        "region": "Asia",
+        "country": "China",
+        "city": "Beijing",
+        "owner": "Lee"
     }
 }
 ```

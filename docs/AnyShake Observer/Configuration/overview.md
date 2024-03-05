@@ -40,12 +40,12 @@ Object. It comes with a list of key value pairs.
 
 Here is a list of configuration fields, with their types and descriptions.
 
-The configuration fields are taken from [v2.5.1](https://github.com/anyshake/observer/releases/tag/v2.5.1).
+The configuration fields are taken from [v2.10.2](https://github.com/anyshake/observer/releases/tag/v2.10.2).
 
 | Field                | Type     | Description                                              |
 | :------------------- | :------- | :------------------------------------------------------- |
 | `station_settings`   | `object` | Define basic information of the station                  |
-| `geophone_settings`  | `object` | Define geophone characteristics (EHZ, EHE, EHN)          |
+| `geophone_settings`  | `object` | Define geophone characteristics                          |
 | `adc_settings`       | `object` | Define the ADC characteristics of AnyShake Explorer      |
 | `serial_settings`    | `object` | Set serial port name, baud rate, channel packet length   |
 | `ntpclient_settings` | `object` | Define a available NTP server, required for time syncing |

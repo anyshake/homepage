@@ -8,7 +8,7 @@ You need to configure AnyShake Observer after installing it. Here is a quick con
 
 ## Configuration
 
-The configuration file is in JSON format. You can use any text editor to edit it. The demo configuration is taken from [v2.8.0](https://github.com/anyshake/observer/releases/tag/v2.8.0).
+The configuration file is in JSON format. You can use any text editor to edit it. The demo configuration is taken from [v2.10.2](https://github.com/anyshake/observer/releases/tag/v2.10.2).
 
 ```json
 {
@@ -20,24 +20,15 @@ The configuration file is in JSON format. You can use any text editor to edit it
         "location": "00", // Location code, should be 2 characters
         "latitude": 39.9, // Latitude of the station
         "longitude": 116.3, // Longitude of the station
-        "elevation": 0 // Elevation of the station
+        "elevation": 0, // Elevation of the station
+        "region": "Asia", // Region of the station located
+        "country": "China", // Country of the station located
+        "city": "Beijing", // City of the station located
+        "owner": "Lee" // Owner of the station
     },
     "geophone_settings": {
-        "ehz": {
-            "sensitivity": 0.288, // Sensitivity of the geophone, in V/cm/s, can be found in the datasheet of the geophone
-            "damping": 0.56, // Damping rate of the geophone, can be found in the datasheet of the geophone
-            "frequency": 4.5 // Natural frequency of the geophone, can be found in the datasheet of the geophone
-        }, // Geophone settings for EHZ channel
-        "ehe": {
-            "sensitivity": 0.288,
-            "damping": 0.56,
-            "frequency": 4.5
-        }, // Geophone settings for EHE channel
-        "ehn": {
-            "sensitivity": 0.288,
-            "damping": 0.56,
-            "frequency": 4.5
-        } // Geophone settings for EHN channel
+        "sensitivity": 0.288, // Sensitivity of the geophone, in V/cm/s, can be found in the datasheet of the geophone
+        "frequency": 4.5 // Natural frequency of the geophone, can be found in the datasheet of the geophone
     },
     "adc_settings": {
         "resolution": 27, // ADC resolution, in bits
