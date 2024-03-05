@@ -26,8 +26,8 @@ Meanwhile, AnyShake aims to simplify the deployment process, making it easier fo
 
 Here are some demo sites for you to explore.
 
- - [AnyShake @ Beibei District, Chongqing, China](https://wolfx.rfotg.com)
- - [AnyShake @ Chongqing Institute of Engineering](https://dazu.rfotg.com)
+ - [AnyShake @ Beibei District, Chongqing, China](https://seis.bousai.cn)
+ - [AnyShake @ Chongqing Institute of Engineering](https://cqie.rfotg.com)
  - [AnyShake @ Institute of Disaster Prevention](https://cidp.rfotg.com)
 
 You can also build your own seismograph using AnyShake by following our tutorial.
