@@ -27,7 +27,7 @@ The configuration file is in JSON format. You can use any text editor to edit it
         "owner": "Lee" // Owner of the station
     },
     "geophone_settings": {
-        "sensitivity": 0.288, // Sensitivity of the geophone, in V/cm/s, can be found in the datasheet of the geophone
+        "sensitivity": 28.8, // Sensitivity of the geophone, in V/m/s, can be found in the datasheet of the geophone
         "frequency": 4.5 // Natural frequency of the geophone, can be found in the datasheet of the geophone
     },
     "adc_settings": {

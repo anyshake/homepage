@@ -15,7 +15,7 @@ This object configures characteristic for the geophones, so that the velocity of
 ### sensitivity
 
  - Type: `float`
- - Description: Sensitivity of the geophone, in V/cm/s, can be found in the datasheet of the geophone
+ - Description: Sensitivity of the geophone, in V/m/s, can be found in the datasheet of the geophone
 
 ### frequency
 
@@ -26,7 +26,7 @@ This object configures characteristic for the geophones, so that the velocity of
 
 ```json
 {
-    "sensitivity": 0.288,
+    "sensitivity": 28.8,
     "frequency": 4.5
 }
 ```
