@@ -26,15 +26,10 @@ This object manages SeedLink settings for AnyShake Observer, which are optional 
  - Type: `int`
  - Description: SeedLink server port
 
-### size
+### duration
 
  - Type: `int`
- - Description: SeedLink buffer size
-
-### buffer
-
- - Type: `string`
- - Description: Path to SeedLink buffer file
+ - Description: SeedLink buffer duration, in seconds
 
 ## Example
 
@@ -44,8 +39,7 @@ This object manages SeedLink settings for AnyShake Observer, which are optional 
         "enable": false,
         "host": "0.0.0.0",
         "port": 18000,
-        "size": 43200,
-        "buffer": "/data/sl_buffer.dat"
+        "duration": 86400
     }
 }
 ```

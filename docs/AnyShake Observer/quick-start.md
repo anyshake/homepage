@@ -8,7 +8,7 @@ You need to configure AnyShake Observer after installing it. Here is a quick con
 
 ## Configuration
 
-The configuration file is in JSON format. You can use any text editor to edit it. The demo configuration is taken from [v2.10.2](https://github.com/anyshake/observer/releases/tag/v2.10.2).
+The configuration file is in JSON format. You can use any text editor to edit it. The demo configuration is taken from [v2.11.0](https://github.com/anyshake/observer/releases/tag/v2.11.0).
 
 ```json
 {
@@ -70,8 +70,7 @@ The configuration file is in JSON format. You can use any text editor to edit it
         "enable": false, // Enable SeedLink streamer
         "host": "0.0.0.0", // SeedLink streamer host
         "port": 18000, // SeedLink streamer port
-        "size": 43200, // SeedLink buffer size
-        "buffer": "/data/sl_buffer.dat" // Path to SeedLink buffer file
+        "duration": 86400 // SeedLink buffer duration, in seconds
     }
 }
 ```
