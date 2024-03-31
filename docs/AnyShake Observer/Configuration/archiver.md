@@ -46,6 +46,11 @@ This object configures settings for the optional archiver component. The archive
  - Type: `string`
  - Description: Database name
 
+### lifecycle
+
+ - Type: `int`
+ - Description: Lifecycle of records, in days. Set to 0 to disable
+
 ## Example
 
 ```json
@@ -57,7 +62,8 @@ This object configures settings for the optional archiver component. The archive
         "port": 5432,
         "username": "postgres",
         "password": "passw0rd",
-        "database": "observer"
+        "database": "observer",
+        "lifecycle": 10
     }
 }
 ```

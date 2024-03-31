@@ -26,7 +26,7 @@ This object manages MiniSEED settings for AnyShake Observer, which are optional 
 ### lifecycle
 
  - Type: `int`
- - Description: MiniSEED file lifecycle, in days
+ - Description: MiniSEED file lifecycle, in days. Set to 0 to disable
 
 ## Example
 

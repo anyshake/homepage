@@ -8,7 +8,7 @@ You need to configure AnyShake Observer after installing it. Here is a quick con
 
 ## Configuration
 
-The configuration file is in JSON format. You can use any text editor to edit it. The demo configuration is taken from [v2.11.0](https://github.com/anyshake/observer/releases/tag/v2.11.0).
+The configuration file is in JSON format. You can use any text editor to edit it. The demo configuration is taken from [v2.12.0](https://github.com/anyshake/observer/releases/tag/v2.12.0).
 
 ```json
 {
@@ -52,7 +52,8 @@ The configuration file is in JSON format. You can use any text editor to edit it
         "port": 5432, // Archiver port
         "username": "postgres", // Archiver username
         "password": "passw0rd", // Archiver password
-        "database": "observer" // Archiver database
+        "database": "observer", // Archiver database
+        "lifecycle": 10 // Lifecycle of records, in days
     },
     "server_settings": {
         "host": "0.0.0.0", // Web server host
