@@ -21,13 +21,3 @@ Geophone sensors measure seismic waves. The AnyShake Explorer employs three geop
 Many homemade seismographs rely on the MPU6050, an accelerometer and gyroscope sensor not designed for seismic wave detection. Hence, it lacks the sensitivity required for accurate seismic measurements. AnyShake, however, uses velocity geophone sensors specifically designed for this purpose, offering greater sensitivity than the MPU6050.
 
 Meanwhile, AnyShake aims to simplify the deployment process, making it easier for users to build their own seismographs. AnyShake Observer is written in Go, a compiled language that can be easily cross-compiled to run on a variety of platforms, which means that AnyShake can run on a wide range of devices, including Raspberry Pi, BeagleBone, and even your router.
-
-## AnyShake at a Glance
-
-Here are some demo sites for you to explore.
-
- - [AnyShake @ Beibei District, Chongqing, China](https://seis.bousai.cn)
- - [AnyShake @ Chongqing Institute of Engineering](https://cqie.rfotg.com)
- - [AnyShake @ Institute of Disaster Prevention](https://cidp.rfotg.com)
-
-You can also build your own seismograph using AnyShake by following our tutorial.
