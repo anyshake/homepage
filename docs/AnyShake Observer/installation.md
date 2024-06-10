@@ -57,8 +57,8 @@ $ sudo usermod -a -G dialout $USER
 Create a directory in `/usr/local/etc` to store AnyShake Observer configuration file, copy `config.json` to it:
 
 ```bash
-$ sudo mkdir -p /usr/local/etc/anyshake
-$ sudo cp config.json /usr/local/etc/anyshake
+$ sudo mkdir -p /usr/local/etc/observer
+$ sudo cp config.json /usr/local/etc/observer
 ```
 
 Then copy `observer` to `/usr/local/bin`:
