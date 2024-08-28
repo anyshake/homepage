@@ -21,3 +21,11 @@ For documentation, please visit [pkg.go.dev/github.com/bclswl0827/mseedio](https
 `sacio` is a Go library for reading and writing SAC data. It is used by AnyShake Observer to read and write SAC data, this library is maintained by [@bclswl0827](https://github.com/bclswl0827).
 
 For documentation, please visit [pkg.go.dev/github.com/bclswl0827/sacio](https://pkg.go.dev/github.com/bclswl0827/sacio).
+
+## slgo
+
+ > [github.com/bclswl0827/slgo](https://github.com/bclswl0827/slgo)
+
+`slgo` is a Go library for building a SeedLink server. It is used by AnyShake Observer to serve SeedLink data, this library is maintained by [@bclswl0827](https://github.com/bclswl0827).
+
+For documentation, please visit [pkg.go.dev/github.com/bclswl0827/slgo](https://pkg.go.dev/github.com/bclswl0827/slgo).

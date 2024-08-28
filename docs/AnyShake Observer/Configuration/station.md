@@ -5,51 +5,21 @@ sidebar_position: 1
 # Station Settings
 
  - Key: `station_settings`
- - Description: Station settings for AnyShake Observer
+ - Description: Define the basic information of the site, which will be displayed on the Web UI.
 
-This object manages global station settings for AnyShake Observer.
+This is required to display the basic information of the site on the Web UI, these fields do not have strict format requirements and have no impact on data collection.
 
 ## Fields
-
-### uuid
-
- - Type: `string`
- - Description: Station UUID, you can generate it with `uuidgen` command, or pick one from [uuidgenerator.net](https://uuidgenerator.net/)
 
 ### name
 
  - Type: `string`
- - Description: Station name
+ - Description: Custom name of the station
 
-### station
-
- - Type: `string`
- - Description: Station code
-
-### network
+### owner
 
  - Type: `string`
- - Description: Network code
-
-### location
-
- - Type: `string`
- - Description: Location code
-
-### latitude
-
- - Type: `float`
- - Description: Station latitude
-
-### longitude
-
- - Type: `float`
- - Description: Station longitude
-
-### elevation
-
- - Type: `float`
- - Description: Station elevation
+ - Description: Owner of the station
 
 ### region
 
@@ -66,28 +36,16 @@ This object manages global station settings for AnyShake Observer.
  - Type: `string`
  - Description: City of the station located
 
-### owner
-
- - Type: `string`
- - Description: Owner of the station
-
 ## Example
 
 ```json
 {
     "station_settings": {
-        "uuid": "a373e39c-8e15-44ae-a1ad-6fb622bc49e6",
-        "name": "Test Station",
-        "station": "SHAKE",
-        "network": "AS",
-        "location": "00",
-        "latitude": 39.9,
-        "longitude": 116.3,
-        "elevation": 0,
+        "name": "AnyShake Station",
+        "owner": "Lee",
         "region": "Asia",
         "country": "China",
-        "city": "Beijing",
-        "owner": "Lee"
+        "city": "Beijing"
     }
 }
 ```

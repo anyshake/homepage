@@ -38,18 +38,19 @@ Object. It comes with a list of key value pairs.
 
 ## Configuration Fields
 
-Here is a list of configuration fields, with their types and descriptions.
+Here is a list of configuration fields with their types.
 
-The configuration fields are taken from [v2.10.2](https://github.com/anyshake/observer/releases/tag/v2.10.2).
+The configuration fields are taken from [v3.1.1](https://github.com/anyshake/observer/releases/tag/v3.1.1).
 
-| Field                | Type     | Description                                              |
-| :------------------- | :------- | :------------------------------------------------------- |
-| `station_settings`   | `object` | Define basic information of the station                  |
-| `geophone_settings`  | `object` | Define geophone characteristics                          |
-| `adc_settings`       | `object` | Define the ADC characteristics of AnyShake Explorer      |
-| `serial_settings`    | `object` | Set serial port name, baud rate, channel packet length   |
-| `ntpclient_settings` | `object` | Define a available NTP server, required for time syncing |
-| `archiver_settings`  | `object` | Set up database archiving feature                        |
-| `server_settings`    | `object` | Define the embed server listening address and port       |
-| `miniseed_settings`  | `object` | Set up MiniSEED data archiving feature                   |
-| `seedlink_settings`  | `object` | Set up SeedLink streamer                                 |
+| Field                | Type     |
+| :------------------- | :------- |
+| `station_settings`   | `object` |
+| `location_settings`  | `object` |
+| `explorer_settings`  | `object` |
+| `sensor_settings`    | `object` |
+| `stream_settings`    | `object` |
+| `ntpclient_settings` | `object` |
+| `database_settings`  | `object` |
+| `server_settings`    | `object` |
+| `logger_settings`    | `object` |
+| `services_settings`  | `object` |

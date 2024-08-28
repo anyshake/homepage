@@ -1,11 +1,11 @@
 ---
-sidebar_position: 7
+sidebar_position: 8
 ---
 
 # Server Settings
 
  - Key: `server_settings`
- - Description: Server settings for AnyShake Observer
+ - Description: Define the embed web server listening address and port
 
 This object manages server settings for AnyShake Observer.
 
@@ -14,17 +14,17 @@ This object manages server settings for AnyShake Observer.
 ### host
 
  - Type: `string`
- - Description: Server host
+ - Description: Server host to bind.
 
 ### port
 
  - Type: `int`
- - Description: Server port
+ - Description: Server port to listen.
 
 ### cors
 
  - Type: `bool`
- - Description: Enable CORS
+ - Description: Enable CORS (Cross-Origin Resource Sharing) headers.
 
 ### debug
 

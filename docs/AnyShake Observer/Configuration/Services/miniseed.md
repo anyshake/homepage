@@ -1,5 +1,5 @@
 ---
-sidebar_position: 8
+sidebar_position: 1
 ---
 
 # MiniSEED Settings
@@ -9,8 +9,6 @@ sidebar_position: 8
 
 This object manages MiniSEED settings for AnyShake Observer, which are optional for its core functionality. When enabled, AnyShake Observer will generate daily MiniSEED files accessible through the web interface.
 
-**Please note that MiniSEED and Archiver are independent features.**
-
 ## Fields
 
 ### enable
@@ -18,24 +16,26 @@ This object manages MiniSEED settings for AnyShake Observer, which are optional 
  - Type: `bool`
  - Description: Enable MiniSEED output
 
-### path
-
- - Type: `string`
- - Description: Path to store MiniSEED files
-
 ### lifecycle
 
  - Type: `int`
  - Description: MiniSEED file lifecycle, in days. Set to 0 to disable
 
+### path
+
+ - Type: `string`
+ - Description: Path to store MiniSEED files
+
 ## Example
 
 ```json
 {
-    "miniseed_settings": {
-        "enable": false,
-        "path": "/data/miniseed",
-        "lifecycle": 10
+    "services_settings": {
+        "miniseed_settings": {
+            "enable": false,
+            "lifecycle": 10,
+            "path": "/data/miniseed"
+        }
     }
 }
 ```

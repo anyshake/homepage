@@ -6,10 +6,19 @@ sidebar_position: 1
 
 ## Platform
 
-AnyShake Observer is available on the following platforms:
+AnyShake Observer is currently available on the following platforms:
 
- - Windows 7 and later (x86 / amd64)
- - Linux 2.6.23 and later (x86 / amd64 / arm / arm64 / ppc64le / riscv64 / mips / mips64le / mipsle / loong64 / s390x)
+ - Windows 7 and later (x86 / amd64 / arm64)
+ - Linux 2.6.23 and later (x86 / amd64 / arm / arm64 / ppc64le / riscv64 / mips / mips64 / mips64le / mipsle / loong64 / s390x)
+
+However, SQLite support is not available on the following architectures due to limitations in the upstream repository:
+
+ - windows/386
+ - windows/arm64
+ - linux/mips
+ - linux/mips64
+ - linux/mips64le
+ - linux/mipsle
 
 ## Download
 
@@ -35,7 +44,7 @@ $ echo "dd3a79d4baf00bcf09ad3b325d5d516b linux_amd64.zip" | md5sum -c
 linux_amd64.zip: OK
 ```
 
-# Installation
+## Install
 
 After unzip the package, you'll get the following files:
 
@@ -44,7 +53,7 @@ After unzip the package, you'll get the following files:
  - `observer`: AnyShake Observer executable file (Linux only)
  - `observer.exe`: AnyShake Observer executable file (Windows only)
 
-## Install on Linux
+### On Linux
 
 These steps work on most Linux distributions, but for some embedded Linux systems, you may need to make some changes.
 
@@ -75,6 +84,6 @@ $ sudo systemctl daemon-reload
 $ sudo systemctl enable observer
 ```
 
-## Install on Windows
+### On Windows
 
 Just copy `config.json` and `observer.exe` to a same directory.

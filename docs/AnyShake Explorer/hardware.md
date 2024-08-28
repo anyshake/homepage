@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Hardware
 
-**Please note the AnyShake Explorer hardware is still in WIP.**
+**Please note: AnyShake Explorer implemented by ESP8266 will be deprecated soon, to get started with AnyShake Observer, set explorer_settings.legacy option to true. The new hardware solution is currently in the "next" branch and will be merged into the master branch.**
 
 ## Overview
 
