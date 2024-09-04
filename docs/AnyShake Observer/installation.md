@@ -4,12 +4,15 @@ sidebar_position: 1
 
 # Installation
 
-## Platform
+## Platforms
 
-AnyShake Observer is currently available on the following platforms:
+AnyShake Observer is currently available on the following platforms, and some of these architectures provide Docker images (bolded):
 
- - Windows 7 and later (x86 / amd64 / arm64)
- - Linux 2.6.23 and later (x86 / amd64 / arm / arm64 / ppc64le / riscv64 / mips / mips64 / mips64le / mipsle / loong64 / s390x)
+ - Android (arm64)
+ - MacOS (amd64 / arm64)
+ - FreeBSD (x86 / amd64 / arm / arm64)
+ - Windows 7 and later (x86 / amd64 / arm / arm64)
+ - Linux (**x86** / **amd64** / **arm** / **arm64** / **ppc64le** / **riscv64** /  **s390x** / mips / mips64 / mips64le / mipsle / loong64)
 
 However, SQLite support is not available on the following architectures due to limitations in the upstream repository:
 
@@ -20,7 +23,32 @@ However, SQLite support is not available on the following architectures due to l
  - linux/mips64le
  - linux/mipsle
 
-## Download
+### Using Docker (Recommended)
+
+You can use the following command to pull the Docker image:
+
+```bash
+$ docker pull ghcr.io/anyshake/observer:latest
+```
+
+To get started with the Docker image, you need mount the configuration file to the container. **You may also need to mount the corresponding serial port if you use a hardware serial port to connect to AnyShake Explorer**, otherwise you do not need to do this.
+
+```
+$ docker run -d \
+    --name observer \
+    --network host \
+    --restart always \
+    --device /dev/ttyUSB0:/dev/ttyUSB0 \
+    -v /path/to/config.json:/config.json \
+    ghcr.io/anyshake/observer:latest \
+    --config /config.json
+```
+
+Replace `/path/to/config.json` with the path to your configuration file.
+
+### Manually Installation
+
+#### Download
 
 Pre-built packages can be found here:
 
@@ -28,7 +56,7 @@ Pre-built packages can be found here:
 
 All packages are in ZIP format. Download and unzip corresponding packages to your system.
 
-## Verify
+#### Verify
 
 Each `.zip` file has a corresponding `.dgst` file, which contains its MD5, SHA1, SHA2-256 and SHA2-512 digests respectively.
 
@@ -36,24 +64,25 @@ For example, if you downloaded the file `linux_amd64.zip`, the corresponding SHA
 
 ```bash
 $ cat linux_amd64.zip.dgst
-MD5= dd3a79d4baf00bcf09ad3b325d5d516b
-SHA1= 2ca729cb62c1b8c86d1a45873da6ebced729ba17
-SHA2-256= 57e031589fa2b5f8c079cc6e66fa2d570b583856da4d2684b9620d1f5dc02807
-SHA2-512= 2eec353ba16a183bc7c557cf8e57f5b55cb754438e5d8b08c860b32c703004acb7a42d84c99d578a43d9b590b85caeb5b7656da626a6aa1d1abdf486df9a640d
+MD5 = dd3a79d4baf00bcf09ad3b325d5d516b
+SHA1 = 2ca729cb62c1b8c86d1a45873da6ebced729ba17
+SHA2-256 = 57e031589fa2b5f8c079cc6e66fa2d570b583856da4d2684b9620d1f5dc02807
+SHA2-512 = 2eec353ba16a183bc7c557cf8e57f5b55cb754438e5d8b08c860b32c703004acb7a42d84c99d578a43d9b590b85caeb5b7656da626a6aa1d1abdf486df9a640d
 $ echo "dd3a79d4baf00bcf09ad3b325d5d516b linux_amd64.zip" | md5sum -c
 linux_amd64.zip: OK
 ```
 
-## Install
+#### Install
 
 After unzip the package, you'll get the following files:
 
+ - `LICENSE`: License file
  - `config.json`: AnyShake Observer configuration file
  - `observer.service`: systemd service file (Linux only)
  - `observer`: AnyShake Observer executable file (Linux only)
  - `observer.exe`: AnyShake Observer executable file (Windows only)
 
-### On Linux
+##### On Linux
 
 These steps work on most Linux distributions, but for some embedded Linux systems, you may need to make some changes.
 
@@ -84,6 +113,6 @@ $ sudo systemctl daemon-reload
 $ sudo systemctl enable observer
 ```
 
-### On Windows
+##### On Windows
 
 Just copy `config.json` and `observer.exe` to a same directory.

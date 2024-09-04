@@ -11,19 +11,20 @@ This area configures the method for AnyShake Observer to establish a connection 
 
 ## Fields
 
-### dsn
-
- - Type: `string`
- - Description: Data source name, including the serial port name, baud rate.
-    - Example for Windows: `transport://COM1?baudrate=115200`
-    - Example for *nix: `transport:///dev/ttyUSB0?baudrate=115200`
-
 ### engine
 
  - Type: `string`
  - Description: Data source engine, available options are:
    - `serial`: Via serial port
    - `tcp`: Via TCP connection
+
+### dsn
+
+ - Type: `string`
+ - Description: Data source name, including the serial port name, baud rate or TCP connection address.
+    - Example for Windows serial: `transport://COM1?baudrate=115200`
+    - Example for *nix serial: `transport:///dev/ttyUSB0?baudrate=115200`
+    - Example for TCP: `transport://10.0.0.101:30000`
 
 ### legacy
 
