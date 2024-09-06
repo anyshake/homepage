@@ -43,19 +43,18 @@ $ swag --version
 swag version v1.16.2
 ```
 
-Enter the `docs` directory, use `swag init` to generate Swagger docs.
+In root directory, use `swag init` to generate Swagger docs.
 
 ```bash
-$ cd docs
-$ swag init -g ../cmd/main.go -d ../app,../server,../publisher -o ./
+$ swag init -d ./ -o ./docs -g ./cmd/main.go
 ```
 
 ## Build Frontend
 
-Go back to the repository root directory, remove the `frontend/dist` to avoid conflicts.
+Go to the frontend directory.
 
 ``` bash
-$ rm -rf frontend/dist
+$ cd frontend
 ```
 
 Install dependencies and build the frontend.
@@ -64,12 +63,6 @@ Install dependencies and build the frontend.
 $ cd frontend/src
 $ npm install
 $ npm run build
-```
-
-Move the output `build` directory to parent, rename it to `dist`.
-
-``` bash
-$ mv build ../dist
 ```
 
 ## Build Backend
