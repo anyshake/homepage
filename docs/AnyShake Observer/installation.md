@@ -14,15 +14,6 @@ AnyShake Observer is currently available on the following platforms, and some of
  - Windows 7 and later (x86 / amd64 / arm / arm64)
  - Linux (**x86** / **amd64** / **arm** / **arm64** / **ppc64le** / **riscv64** /  **s390x** / mips / mips64 / mips64le / mipsle / loong64)
 
-However, SQLite support is not available on the following architectures due to limitations in the upstream repository:
-
- - windows/386
- - windows/arm64
- - linux/mips
- - linux/mips64
- - linux/mips64le
- - linux/mipsle
-
 ### Using Docker (Recommended)
 
 You can use the following command to pull the Docker image:
@@ -39,12 +30,12 @@ $ docker run -d \
     --network host \
     --restart always \
     --device /dev/ttyUSB0:/dev/ttyUSB0 \
-    -v /path/to/config.json:/config.json \
+    --volume /path/to/config.json:/config.json \
     ghcr.io/anyshake/observer:latest \
     --config /config.json
 ```
 
-Replace `/path/to/config.json` with the path to your configuration file.
+Replace `/path/to/config.json` with the path to your configuration file and `/dev/ttyUSB0` to the corresponding serial port.
 
 ### Manually Installation
 
