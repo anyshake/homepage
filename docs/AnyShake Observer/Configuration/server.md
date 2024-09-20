@@ -31,6 +31,11 @@ This object manages server settings for AnyShake Observer.
  - Type: `bool`
  - Description: Enable debug mode, `/api/v1/devel` endpoint will be available
 
+### restrict
+
+ - Type: `bool`
+ - Description: Enable user management, if set to `true`, a default user with admin role will be created. The station will be restricted to only allow authenticated users to access.
+
 **It's strongly recommended to *disable* debug mode in production environment!**
 
 ## Example
@@ -42,6 +47,7 @@ This object manages server settings for AnyShake Observer.
         "port": 8073,
         "cors": true,
         "debug": false,
-        "rate": 30
+        "rate": 30,
+        "enable": false
     }
 }
