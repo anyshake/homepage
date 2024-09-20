@@ -10,7 +10,6 @@ on:
 
 jobs:
     build:
-        name: Build
         runs-on: ubuntu-latest
 
         steps:
@@ -20,7 +19,7 @@ jobs:
             - name: Installing Node.js
               uses: actions/setup-node@v4
               with:
-                  node-version: 18
+                  node-version: "18.14.0"
 
             - name: Installing NPM packages
               run: npm ci
@@ -29,19 +28,18 @@ jobs:
               run: npm run build
 
             - name: Uploading dist
-              uses: actions/upload-artifact@v2
+              uses: actions/upload-artifact@v4
               with:
                   name: production-files
                   path: ./build
 
     deploy:
-        name: Deploy
-        needs: build
         runs-on: ubuntu-latest
+        needs: build
 
         steps:
-            - name: Downloading artifact
-              uses: actions/download-artifact@v2
+            - name: Download artifact
+              uses: actions/download-artifact@v4
               with:
                   name: production-files
                   path: ./build
