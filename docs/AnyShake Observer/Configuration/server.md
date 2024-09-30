@@ -48,6 +48,6 @@ This object manages server settings for AnyShake Observer.
         "cors": true,
         "debug": false,
         "rate": 30,
-        "enable": false
+        "restrict": false
     }
 }

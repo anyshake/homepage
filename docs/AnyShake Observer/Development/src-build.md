@@ -8,7 +8,7 @@ In this document manual procedures are explained (without `make` and continuous 
 
 ## Prerequisites
 
- - [Go 1.19 or later](https://golang.org/doc/install)
+ - [Go 1.20 or later](https://golang.org/doc/install)
  - [NPM 9.3 or later](https://www.npmjs.com/get-npm)
  - [Node.js 18.14 or later](https://nodejs.org/en/download/)
  - [Git 2.20 or later](https://git-scm.com/downloads) (Optional)

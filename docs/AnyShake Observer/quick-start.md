@@ -10,9 +10,9 @@ The AnyShake Observer needs to be used with AnyShake Explorer, and you need to c
 
 Before you start, make sure you have the following:
 
- - AnyShake Observer is installed on your computer, version is `v3.0.0` or later.
+ - AnyShake Observer is installed on your computer, version is `v3.3.0` or later.
  - You have installed any of the following databases: PostgreSQL, MySQL, or SQL Server, assuming the database engine is PostgreSQL, database name is `observer`, username is `postgres`, and password is `passw0rd`.
- - AnyShake Explorer is running in 24 bit mode, and hardware is connected to your PC, assuming the corresponding serial port is `/dev/ttyUSB0` (if you are using Windows, the serial port is something like `COM1`), baud rate is `115200`.
+ - AnyShake Explorer is connected to your PC, assuming the corresponding serial port is `/dev/ttyUSB0` (if you are using Windows, the serial port is something like `COM1`), baud rate is `115200`.
 
 ## Quick Configuration
 
@@ -43,7 +43,7 @@ Note that AnyShake has two hardware implementations, based on ESP8266 and STM32F
         "velocity": true,
         "vref": 5.0,
         "fullscale": 10.0,
-        "resolution": 24
+        "resolution": 32
     },
     "stream_settings": {
         "network": "AS",
@@ -68,7 +68,8 @@ Note that AnyShake has two hardware implementations, based on ESP8266 and STM32F
         "port": 8073,
         "cors": true,
         "debug": true,
-        "rate": 30
+        "rate": 30,
+        "restrict": false
     },
     "logger_settings": {
         "level": "info",
