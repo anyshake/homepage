@@ -97,6 +97,11 @@ Note that AnyShake has two hardware implementations, based on ESP8266 and STM32F
             "enable": true,
             "host": "0.0.0.0",
             "port": 18000
+        },
+        "helicorder": {
+            "enable": true,
+            "lifecycle": 10,
+            "path": "/home/user/helicorder"
         }
     }
 }

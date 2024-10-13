@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # SeedLink Settings
 
- - Key: `seedlink_settings`
+ - Key: `seedlink`
  - Description: SeedLink settings for AnyShake Observer
 
 This object manages SeedLink settings for AnyShake Observer, which are optional for its core functionality. When enabled, AnyShake Observer will start a SeedLink streamer so that users can access the live seismic data through SeedLink protocol.
@@ -38,7 +38,7 @@ This object manages SeedLink settings for AnyShake Observer, which are optional 
 ```json
 {
     "services_settings": {
-        "seedlink_settings": {
+        "seedlink": {
             "enable": false,
             "host": "0.0.0.0",
             "port": 18000,

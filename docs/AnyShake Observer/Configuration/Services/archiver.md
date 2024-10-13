@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Archiver Settings
 
- - Key: `archiver_settings`
+ - Key: `archiver`
  - Description: Archiver settings for AnyShake Observer
 
 This object configures settings for the optional archiver service. The archiver stores ADC readout to database by timestamp.
@@ -26,7 +26,7 @@ This object configures settings for the optional archiver service. The archiver 
 ```json
 {
     "services_settings": {
-        "archiver_settings": {
+        "archiver": {
             "enable": true,
             "lifecycle": 10
         }

@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Forwarder Settings
 
- - Key: `forwarder_settings`
+ - Key: `forwarder`
  - Description: Forwarder settings for AnyShake Observer
 
 The AnyShake Observer provides a forwarder service that binds to a specific host and port to forward data to other services.
@@ -31,7 +31,7 @@ The AnyShake Observer provides a forwarder service that binds to a specific host
 ```json
 {
     "services_settings": {
-        "forwarder_settings": {
+        "forwarder": {
             "enable": true,
             "host": "0.0.0.0",
             "port": 30000
