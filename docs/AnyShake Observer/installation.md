@@ -14,6 +14,8 @@ AnyShake Observer is currently available on the following platforms, and some of
  - Windows 7 and later (x86 / amd64 / arm / arm64)
  - Linux (**x86** / **amd64** / **arm** / **arm64** / **ppc64le** / **riscv64** /  **s390x** / mips / mips64 / mips64le / mipsle / loong64)
 
+In addition, the AnyShake Observer can work on at least Raspberry Pi 1 Model B+ (overclocked to 950 MHz, with 100 MB of Swap) with all services enabled!
+
 ### Using Docker (Recommended)
 
 You can use the following command to pull the Docker image:

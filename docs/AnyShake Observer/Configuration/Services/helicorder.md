@@ -9,6 +9,8 @@ sidebar_position: 5
 
 This object manages helicorder settings for AnyShake Observer, which are optional for its core functionality. When enabled, AnyShake Observer will generate daily helicorder images accessible through the web interface.
 
+**Please note that this service will likely be CPU intensive and consume large amounts of memory, which may cause system performance issue during plotting.**
+
 ## Fields
 
 ### enable
