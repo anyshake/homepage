@@ -26,8 +26,9 @@ const config: Config = {
         footer: { style: 'light', copyright: siteConfig.copyright },
         prism: { theme: prismThemes.github, darkTheme: prismThemes.dracula },
         colorMode: {
+            defaultMode: 'light',
             disableSwitch: true,
-            respectPrefersColorScheme: true
+            respectPrefersColorScheme: false
         }
     } satisfies Preset.ThemeConfig,
     presets: [
