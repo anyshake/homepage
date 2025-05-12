@@ -82,14 +82,18 @@ const Hero = () => {
                     <img
                         src={hero}
                         alt="AnyShake Explorer"
-                        className="animate-wiggle animate-infinite animate-duration-[5000ms] w-[200px] transition-all duration-1000 hover:scale-105 md:w-[300px]"
+                        className="w-[200px] transition-all duration-1000 hover:scale-105 md:w-[300px]"
                     />
                 </motion.div>
             </motion.div>
 
-            <div className="-mt-10 mb-8 hidden animate-bounce items-center justify-center md:flex">
-                <Icon path={mdiChevronDoubleDown} size={1.5} />
-            </div>
+            <motion.div
+                className="md:-mt-10 mb-8 hidden items-center justify-center md:!flex"
+                animate={{ y: [0, -5, 0] }}
+                transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+            >
+                <Icon className="text-gray-500" path={mdiChevronDoubleDown} size={1.5} />
+            </motion.div>
         </div>
     );
 };
@@ -252,7 +256,7 @@ const Home = () => {
     const { heading, description } = siteConfig;
     return (
         <Layout title={heading} description={description}>
-            <div className="container space-y-8 overflow-hidden px-4 md:px-0">
+            <div className="container space-y-8 overflow-hidden px-4 xl:px-8">
                 <Hero />
                 <Features />
                 <Vision />
