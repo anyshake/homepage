@@ -1,3 +1,3 @@
-# AnyShake.org
+# homepage
 
-Please visit [AnyShake.org](https://AnyShake.org) for more information.
+Please visit [anyshake.org](https://anyshake.org) for more information.

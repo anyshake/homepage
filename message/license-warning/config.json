@@ -1,0 +1,14 @@
+{
+    "base_path": "cta-messages/license-warning",
+    "includes": [
+        "de-DE",
+        "en-US",
+        "fr-FR",
+        "id-ID",
+        "ja-JP",
+        "pt-PT",
+        "ru-RU",
+        "tr-TR",
+        "zh-TW"
+    ]
+}

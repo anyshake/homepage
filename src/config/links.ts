@@ -1,34 +1,62 @@
-import { NavbarItem } from "@docusaurus/theme-common";
-import { IAction } from "../components/Header/index";
+import { NavbarItem } from '@docusaurus/theme-common';
 
 interface ILinkConfig {
-    actions: IAction[];
+    actions: { label: string; to: string }[];
     navigators: NavbarItem[];
 }
+
+export const links = {
+    repository: 'https://github.com/anyshake',
+    getStarted: '/docs/get-started',
+    liveDemo: '/docs/live-demo',
+    configurationTool: 'https://anyshake.github.io/prisma/',
+    crowdFunding: 'https://www.crowdsupply.com/senseplex/anyshake-explorer',
+    discord: 'https://discord.gg/PuK4Sb4Nr6'
+};
 
 export const linksConfig: ILinkConfig = {
     actions: [
         {
-            label: "Get Started",
-            to: "/docs/introduction",
-        },
+            label: 'Get Started',
+            to: links.getStarted
+        }
     ],
     navigators: [
         {
-            type: "docSidebar",
-            sidebarId: "tutorialSidebar",
-            position: "left",
-            label: "Documentation",
+            type: 'docSidebar',
+            sidebarId: 'tutorialSidebar',
+            position: 'left',
+            label: 'Docs'
         },
         {
-            to: "/donation",
-            label: "Donation",
-            position: "left",
+            to: '/blog',
+            label: 'Blog',
+            position: 'left'
+        },
+        // {
+        //     label: 'Live Demo',
+        //     position: 'right',
+        //     href: links.liveDemo
+        // },
+        {
+            label: 'Configuration Tool',
+            position: 'right',
+            href: links.configurationTool
         },
         {
-            label: "GitHub",
-            position: "right",
-            href: "https://github.com/anyshake",
+            label: 'CrowdFunding',
+            position: 'right',
+            href: links.crowdFunding
         },
-    ],
+        {
+            label: 'Discord',
+            position: 'right',
+            href: links.discord
+        },
+        {
+            label: 'GitHub',
+            position: 'right',
+            href: links.repository
+        }
+    ]
 };

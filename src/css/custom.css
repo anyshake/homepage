@@ -1,15 +1,32 @@
+@import 'tailwindcss';
+@import 'tailwindcss-animated';
+
 :root {
     --ifm-color-primary: #7c3aed;
     --ifm-footer-padding-vertical: 0.5rem;
     --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
-[data-theme="dark"] {
-    --ifm-color-black: #fff;
-    --ifm-footer-padding-vertical: 0.5rem;
-    --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+.hidden {
+    display: none !important;
+}
+
+.navbar__link > svg {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 8px;
+    width: 18px;
+    height: 18px;
+}
+
+.theme-edit-this-page > svg {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 8px;
+    width: 18px;
+    height: 18px;
 }
 
 .footer__copyright {
-    font-size: 0.7rem;
+    font-size: 0.9rem;
 }
