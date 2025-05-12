@@ -6,7 +6,6 @@ import hero from '../assets/hero.webp';
 import Link from '@docusaurus/Link';
 import { links } from '../config/links';
 import { motion } from 'framer-motion';
-import { useMemo } from 'react';
 
 import featureImg1 from '../assets/features/1.webp';
 import featureImg2 from '../assets/features/2.webp';
@@ -50,7 +49,7 @@ const Hero = () => {
                         </Link>
                         <Link
                             to={links.getStarted}
-                            className="link flex items-center rounded-lg border border-purple-500 px-4 py-1.5 font-bold !text-purple-500 !no-underline !transition-all hover:bg-purple-500 hover:!text-white"
+                            className="link flex items-center rounded-lg border border-purple-500 px-4 py-1.5 font-bold text-purple-500 !no-underline !transition-all hover:bg-purple-500 hover:!text-white"
                         >
                             <span>Read the docs</span>
                             <Icon path={mdiChevronDoubleRight} size={1} />
