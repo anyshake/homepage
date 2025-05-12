@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="rss.xsl"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>AnyShake Project Blog</title>
+        <link>https://anyshake.org/blog</link>
+        <description>AnyShake Project Blog</description>
+        <lastBuildDate>Mon, 12 May 2025 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>en</language>
+        <item>
+            <title><![CDATA[The Initiation.]]></title>
+            <link>https://anyshake.org/blog/the-initiation</link>
+            <guid>https://anyshake.org/blog/the-initiation</guid>
+            <pubDate>Mon, 12 May 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[The AnyShake Project began in the summer of 2022, sparked by an undergraduate student's desire to create a personal earthquake monitoring system. In the three years since, it has evolved from a breadboard prototype into a fully realized product — thanks to extensive research, continuous learning, and unwavering dedication.]]></description>
+            <content:encoded><![CDATA[<p>The <strong>AnyShake Project</strong> began in the summer of 2022, sparked by an undergraduate student's desire to create a personal earthquake monitoring system. In the three years since, it has evolved from a breadboard prototype into a fully realized product — thanks to extensive research, continuous learning, and unwavering dedication.</p>
+<p>Today, the AnyShake Project is maintained by <strong>SensePlex Limited</strong>, a UK-based company founded by a group of passionate young engineers. Committed to innovation, they focus on developing unique, open-source hardware solutions while actively contributing to the community.</p>]]></content:encoded>
+        </item>
+    </channel>
+</rss>
