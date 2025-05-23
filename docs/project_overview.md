@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
-title: Getting Started with AnyShake
-slug: get-started
+title: Overview of AnyShake Project
+slug: project-overview
 ---
 
 ## What is AnyShake?
@@ -17,6 +17,14 @@ Unlike traditional seismographs, which are often proprietary and expensive, AnyS
 **AnyShake Explorer** captures seismic data using three high-sensitivity **velocity geophones** and **3-axis accelerometers**. These geophone sensors measure seismic waves in three directions (EHZ, EHE, EHN) and convert the motion of seismic waves into electrical signals, which are then transmitted to the companion software, **AnyShake Observer**, for real-time monitoring and analysis.
 
 **AnyShake Observer** is a cross-platform, web-based application that processes the seismic data and provides users with a real-time waveform display, historical data query capabilities, and a powerful earthquake detection engine.
+
+## Why Choose AnyShake?
+
+- **Affordability**: While proprietary systems often cost thousands of dollars, **AnyShake** delivers high-resolution, professional-grade seismic data at a fraction of the cost.
+- **Transparency and Customization**: With full access to hardware schematics, firmware, and software, **AnyShake** is entirely open-source, enabling modifications and extensions based on user needs.
+- **Real-Time Data and Analysis**: Unlike competitors, **AnyShake** provides real-time waveform display, data streaming, and earthquake detection services.
+- **Low-Frequency Compensation**: **AnyShake** successfully implements low-frequency compensation, extending the frequency limit to a 2-second period (0.5 Hz), offering unique monitoring capabilities not found in other open-source systems.
+- **Community-Driven**: As an open-source project, **AnyShake** benefits from a growing community that actively contributes to its improvement, ensuring new features and bug fixes are regularly integrated.
 
 ### Key Features of AnyShake Explorer:
 
@@ -39,23 +47,6 @@ Unlike traditional seismographs, which are often proprietary and expensive, AnyS
 - **Flexible Storage and Integration**: Supports multiple database backends (PostgreSQL, MySQL, SQLite) and integrates seamlessly with seismic tools like **SeisComP**.
 - **Seamless Integration with Professional Seismic Networks**: Easily connect to professional seismic networks for a broader scope of data.
 
-## Setting Up AnyShake
-
-### 1. Hardware Setup:
-
-- **AnyShake Explorer** includes everything needed for seismic monitoring: three high-sensitivity geophones, a 3-axis accelerometer, and an OLED display for system status.
-- **Powering the Device**: The Explorer operates on a low-power 9–12V DC power source (\~50mA), making it perfect for solar-powered or battery-operated systems.
-
-### 2. Software Setup:
-
-- **AnyShake Observer** is available as a single binary for easy cross-platform deployment. It doesn’t require client installation and works directly through any modern browser.
-- **Installation**: Simply follow the quick-start guide on the official documentation page. The software works on **Linux**, **macOS**, **Windows**, and even **embedded Linux** devices.
-
-### 3. Connecting Hardware and Software:
-
-- Once the **AnyShake Explorer** is powered on, it will start transmitting data through its serial ports to **AnyShake Observer**.
-- Use the **AnyShake Observer** web interface to configure, monitor, and analyze real-time data. You can also access historical data and export it in standard seismic formats.
-
 ## Comparison with Competitors
 
 | Feature              | **AnyShake Explorer** | Raspberry Shake 1D | Raspberry Shake 4D | Raspberry Shake 3D |
@@ -68,11 +59,3 @@ Unlike traditional seismographs, which are often proprietary and expensive, AnyS
 | Sampling Rate        | 50–250 SPS            | 100 SPS            | 100 SPS            | 100 SPS            |
 | Power Usage          | ~0.6W                 | ~2.2W              | ~2.2W              | ~2.2W              |
 | Customizability      | ✅                    | ❌                 | ❌                 | ❌                 |
-
-## Why Choose AnyShake?
-
-- **Affordability**: While proprietary systems often cost thousands of dollars, **AnyShake** delivers high-resolution, professional-grade seismic data at a fraction of the cost.
-- **Transparency and Customization**: With full access to hardware schematics, firmware, and software, **AnyShake** is entirely open-source, enabling modifications and extensions based on user needs.
-- **Real-Time Data and Analysis**: Unlike competitors, **AnyShake** provides real-time waveform display, data streaming, and earthquake detection services.
-- **Low-Frequency Compensation**: **AnyShake** successfully implements low-frequency compensation, extending the frequency limit to a 2-second period (0.5 Hz), offering unique monitoring capabilities not found in other open-source systems.
-- **Community-Driven**: As an open-source project, **AnyShake** benefits from a growing community that actively contributes to its improvement, ensuring new features and bug fixes are regularly integrated.

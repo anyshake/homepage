@@ -7,7 +7,7 @@ interface ILinkConfig {
 
 export const links = {
     repository: 'https://github.com/anyshake',
-    getStarted: '/docs/get-started',
+    getStarted: '/docs/project-overview',
     liveDemo: '/docs/live-demo',
     configurationTool: 'https://anyshake.github.io/prisma/',
     crowdFunding: 'https://www.crowdsupply.com/senseplex/anyshake-explorer',
