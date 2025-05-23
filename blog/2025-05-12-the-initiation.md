@@ -3,7 +3,7 @@ title: The Initiation.
 slug: the-initiation
 ---
 
-The **AnyShake Project** began in the summer of 2022, sparked by an undergraduate student's desire to create a personal earthquake monitoring system. In the three years since, it has evolved from a breadboard prototype into a fully realized product — thanks to extensive research, continuous learning, and unwavering dedication.
+The **AnyShake Project** began in the summer of 2023, sparked by an undergraduate student's desire to create a personal earthquake monitoring system. In the two years since, it has evolved from a breadboard prototype into a fully realized product — thanks to extensive research, continuous learning, and unwavering dedication.
 
 <!-- truncate -->
 

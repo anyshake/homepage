@@ -23,6 +23,7 @@ const config: Config = {
             items: linksConfig.navigators,
             logo: { src: siteConfig.logo }
         },
+        imageZoom: { selector: '.markdown img' },
         footer: { style: 'light', copyright: siteConfig.copyright },
         prism: { theme: prismThemes.github, darkTheme: prismThemes.dracula },
         colorMode: {
@@ -53,7 +54,7 @@ const config: Config = {
             } satisfies Preset.Options
         ]
     ],
-    plugins: [tailwindCssPlugin, renderMessages],
+    plugins: [tailwindCssPlugin, renderMessages, 'plugin-image-zoom'],
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'warn'
 };

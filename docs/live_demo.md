@@ -4,4 +4,4 @@ title: Checkout Our Live Demo
 slug: live-demo
 ---
 
-work in progress...
+AnyShake live demo is still under preparation, please check back later :)
