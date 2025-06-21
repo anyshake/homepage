@@ -16,6 +16,9 @@ const config: Config = {
         defaultLocale: 'en',
         locales: ['en']
     },
+    markdown: {
+        mermaid: true
+    },
     themeConfig: {
         image: siteConfig.social,
         navbar: {
@@ -54,6 +57,7 @@ const config: Config = {
             } satisfies Preset.Options
         ]
     ],
+    themes: ['@docusaurus/theme-mermaid'],
     plugins: [tailwindCssPlugin, renderMessages, 'plugin-image-zoom'],
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'warn'

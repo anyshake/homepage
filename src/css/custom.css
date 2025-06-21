@@ -19,6 +19,9 @@
             @apply px-4;
         }
     }
+    .docusaurus-mermaid-container {
+        @apply max-w-xl;
+    }
 }
 
 .breadcrumbs {
