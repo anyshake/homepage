@@ -11,6 +11,10 @@
     display: none !important;
 }
 
+.medium-zoom-overlay {
+    z-index: -1 !important;
+}
+
 .markdown {
     @apply prose-sm md:prose min-w-full;
     table {
