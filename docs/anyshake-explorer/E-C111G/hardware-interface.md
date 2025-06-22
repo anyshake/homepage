@@ -72,7 +72,7 @@ The **E-C111G** supports multiple serial communication protocols to accommodate 
 
 ### RS-232 Interface
 
-The RS-232 interface uses **industry-standard DB9 connectors**, with both **male** and **female** ports available on the device. The Explorer Kit includes a **DB9 male-to-female cable** for easy connection to host devices.
+The RS-232 interface uses **industry-standard DB9 connectors**, with both **male** and **female** ports available on the device.
 
 - **Connector Type**: DB9 (1× male, 1× female)
 - **Voltage Level**: ±12V (compliant with RS-232 standard)
@@ -99,7 +99,7 @@ The RS-485 port is provided via a **2-pin screw terminal** for direct connection
 - **Duplex Mode**: Half-duplex
 - **Termination & Biasing**: External (user-supplied if required)
 - **Recommended Cable Length**: Up to 50 m (at lower baud rates, using shielded twisted-pair)
-- **Use Case**: Designed for **industrial and long-distance applications**, such as connecting remote sensors, outdoor enclosures, or distributed seismic arrays in field environments
+- **Use Case**: Designed for **industrial and long-distance applications**, such as connecting remote sensors, outdoor enclosures
 
 The following figure illustrates the RS-485 signal lines on E-C111G:
 
