@@ -191,3 +191,142 @@ The E-C111G provides **4 boot modes** selectable via a dual **BOOT0/BOOT1 jumper
 :::info Default Behavior
 By default, the device boots from main flash (`BOOT0=0`, `BOOT1=0`) into seismic data acquisition mode.
 :::
+
+## Mode Configuration and Display
+
+The **E-C111G** supports multiple operating modes that can be configured using onboard DIP switches. A built-in **0.96-inch OLED display** provides system status, configuration, and connectivity, making the setup process intuitive and efficient.
+
+### Sampling Rate Configuration
+
+The **sampling rate** determines how frequently data is read from the sensors each second. It is configured via the **SW3** DIP switch.
+
+| SW3 Bits | Sample Rate | Notes                     |
+| -------- | ----------- | ------------------------- |
+| `00`     | 250 SPS     | Default setting           |
+| `01`     | 200 SPS     |                           |
+| `10`     | 100 SPS     |                           |
+| `11`     | 50 SPS      | For bandwidth-limited use |
+
+:::info
+The sampling rate directly affects the data resolution and system bandwidth. Higher rates provide finer temporal detail but require more storage and bandwidth.
+:::
+
+### Baud Rate Configuration
+
+The **baud rate** defines the transmission speed of serial data. It is configured using the **SW5** DIP switch.
+
+| SW5 Bits | Baud Rate | Notes                          |
+| -------- | --------- | ------------------------------ |
+| `00`     | 57600     | Default; best stability        |
+| `01`     | 115200    | Common for USB–Serial adapters |
+| `10`     | 230400    | Faster transfer                |
+| `11`     | 409600    | Maximum supported rate         |
+
+:::info
+Lower baud rates offer more robust communication, especially over long cables or electrically noisy environments. Adjust this according to your host system’s capability.
+:::
+
+### Extended Mode Options
+
+Additional features can be enabled via **individual bits of the SW4 DIP switch**. These allow for specialized data acquisition modes.
+
+#### Accelerometer-Only Mode
+
+- **Control**: `SW4 bit 1`
+- **Function**: Acquires data **only from the onboard accelerometer**, ignoring geophone input.
+
+:::info
+This bit is **ignored** when **6-channel mode** is enabled.
+:::
+
+#### GNSS Synchronization
+
+- **Control**: `SW4 bit 2`
+- **Function**: Enables GNSS synchronization at startup.
+- **Startup Condition**:
+
+    - Satellite count > 0
+    - HDOP (Horizontal Dilution of Precision) ≤ 1.0
+
+- **Behavior**:
+
+    - Device waits for valid GNSS fix before beginning acquisition.
+    - Automatically re-synchronizes when the **UTC date changes**, causing a brief (\~5 s) pause.
+
+:::info GNSS Note
+Ensure a compatible GNSS antenna is connected before enabling this mode.
+:::
+
+#### 6-Channel Acquisition Mode
+
+- **Control**: `SW4 bit 3`
+- **Function**: Enables acquisition of **both 3-axis geophone and 3-axis accelerometer data** (total 6 channels).
+
+### OLED Display
+
+The E-C111G is equipped with a **0.96-inch monochrome OLED screen** (model: **SSD1306**) connected via the **I²C interface**. This display provides:
+
+- Acquisition status
+- Connectivity status
+- Sample rate and baud rate
+- Firmware version and build number
+- Leveling/tilt feedback (in inclinometer mode)
+
+![OLED Display](img/oled-display.webp)
+
+:::info
+Even though the display improves usability, it is **not essential** for core functionality. The system continues to operate normally if the display is disconnected or damaged.
+:::
+
+:::danger Caution
+Ensure the correct pinout is `GND – VCC – SCL – SDA` when replacing the display module. The OLED display is **not electrically isolated**. Ensure safe handling and wiring to prevent damage to the display or main board.
+:::
+
+## GNSS Antenna
+
+The **E-C111G** provides a dedicated **SMA connector** for connecting an **active GNSS antenna**. This interface supplies a **3.3V DC bias voltage** to power the active circuitry within the antenna.
+
+- **Connector Type**: SMA (female)
+- **Bias Voltage**: 3.3 V (powered via RF center pin)
+- **Antenna Type**: Active GNSS antenna (required)
+- **Supported Bands**: L1 / L5 recommended (e.g., GPS, Galileo, QZSS)
+
+:::info Do not use passive antennas
+Passive GNSS antennas are **not supported**. The device expects an active antenna and may not function correctly or lock satellites without one.
+:::
+
+For optimal satellite visibility and time synchronization performance:
+
+- Install the antenna in an **open-sky location**, free from buildings, trees, and obstructions.
+- Avoid placing the antenna near **metal surfaces**, which may cause reflections and multipath errors.
+- Use a **low-loss RF coaxial cable** (e.g., RG-174 or better) with minimal length where possible.
+- Ensure the antenna is **firmly connected** to the SMA port before powering the device.
+
+:::info
+In GNSS-enabled mode, the device will not begin acquisition until it achieves a valid GNSS fix (minimum 1 satellite, HDOP ≤ 1.0).
+:::
+
+## Geophone Inputs
+
+The E-C111G features **three analog input channels** designed specifically for **open-loop, velocity-type geophones**. These inputs are optimized for a **±2.5 V full-scale range**, matching the expected dynamic output of a properly matched geophone.
+
+- **Input Type**: Differential, analog voltage
+- **Input Range**: ±2.5 V (with input protection)
+- **Sensor Type Required**: 4.5 Hz **open-loop, velocity-sensitive magnetic geophones**
+
+The following figure shows a **typical open-loop velocity geophone** that is fully compatible with the E-C111G.
+
+![Open-Loop 4.5 Hz Geophone](img/geophone-4.5-hz.webp)
+
+:::danger Sensor Compatibility Warning
+Only **4.5 Hz open-loop geophones** should be connected to the E-C111G. Do **not** connect:
+
+- Geophones with natural frequencies other than 4.5 Hz
+- Broadband seismometers or accelerometers
+- Force-balance or feedback-based sensors
+
+
+Even though the inputs are protected against **overvoltage and current surges**, connecting incompatible high-sensitivity instruments can result in **signal distortion**, **loss of accuracy**, or **permanent damage** to the input circuitry.
+:::
+
+For accurate measurements and safety, always ensure the sensor is impedance-matched and within the specified dynamic range.
