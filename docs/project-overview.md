@@ -8,7 +8,7 @@ slug: project-overview
 
 AnyShake is an open-source, professional-grade seismic monitoring system designed for **researchers**, **engineers**, **educators**, and **enthusiasts**. By providing high-sensitivity, 3-axis geophones coupled with advanced electronics and software, **AnyShake Explorer** delivers affordable, high-precision seismic monitoring that rivals proprietary systems. Paired with **AnyShake Observer**, it offers real-time data visualization, analysis, and export capabilities.
 
-![Explorer in reality](img/explorer-in-reality.webp)
+![Explorer in reality](img/project-overview/explorer-in-reality.webp)
 
 Unlike traditional seismographs, which are often proprietary and expensive, AnyShake offers a solution that is fully open-source, providing anyone with access to high-fidelity seismic data. Whether for earthquake research, structural health monitoring, or general seismic data collection, AnyShake serves a wide range of applications.
 

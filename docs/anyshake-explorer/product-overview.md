@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: Product Overview
+title: Explorer Product Series Overview
 slug: product-overview
 ---
 
@@ -8,19 +8,19 @@ slug: product-overview
 
 The **AnyShake Explorer** was first conceived in 2023, when a Chinese undergraduate student, unable to afford the expensive RS3D, decided to build a solution from scratch. The original prototype was a modest, amateur effort based on the ADS1256.
 
-![Initial Prototype](img/explorer-initial-prototype.webp)
+![Initial Prototype](img/product-overview/explorer-initial-prototype.webp)
 
 Later, the ADS1256 was upgraded to an ADS1262, which was then integrated with an MCU onto a PCB board.
 
-![Intermediate Prototype](img/explorer-intermediate-prototype.webp)
+![Intermediate Prototype](img/product-overview/explorer-intermediate-prototype.webp)
 
 After several iterations, the design evolved from a basic ADC-only version to one that integrated a 3-axis accelerometer and a front-end amplifier. It drew inspiration from the amplifier design of [olewolf/geophone](https://github.com/olewolf/geophone/blob/master/Amplifier%20Schematic.pdf), but due to the simplicity of that approach, the system still suffered from excessive noise.
 
-![Improved Prototype](img/explorer-improved-prototype.webp)
+![Improved Prototype](img/product-overview/explorer-improved-prototype.webp)
 
 **Through extensive research of academic papers, countless experiments, and persistent debugging, the final version of the product emerged — now known as the AnyShake Explorer.**
 
-![Final Prototype](img/explorer-final-prototype.webp)
+![Final Prototype](img/product-overview/explorer-final-prototype.webp)
 
 At the beginning, the AnyShake Project encouraged users to DIY hardware, but as the project grew, the project maintainer received numerous requests from users hoping to directly purchase a finished product. In response, the original developer established **SensePlex Limited** at the end of 2024, aiming to commercialize the AnyShake product while preserving its open-source nature and achieving sustainable development.
 

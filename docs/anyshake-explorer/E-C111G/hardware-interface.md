@@ -6,7 +6,7 @@ slug: hardware-interface
 
 This section provides a comprehensive explanation of the hardware interfaces available on E-C111G. The following diagram illustrates the hardware interface:
 
-![Hardware Interaface](img/hardware-interface.webp)
+![Hardware Interaface](img/hardware-interface/hardware-interface.webp)
 
 ## Power Interface
 
@@ -83,7 +83,7 @@ The RS-232 interface uses **industry-standard DB9 connectors**, with both **male
 
 The following figures illustrate the RS-232 connectors on E-C111G:
 
-![RS-232](img/port-rs-232.webp)
+![RS-232](img/hardware-interface/port-rs-232.webp)
 
 :::info
 We recommend using the RS-232 interface in most scenarios due to its stability, simplicity, and broad compatibility across platforms.
@@ -103,7 +103,7 @@ The RS-485 port is provided via a **2-pin screw terminal** for direct connection
 
 The following figure illustrates the RS-485 signal lines on E-C111G:
 
-![RS-485](img/port-rs-485.webp)
+![RS-485](img/hardware-interface/port-rs-485.webp)
 
 :::info
 RS-485 wiring is not standardized. Ensure consistent signal lines (A/B) alignment across all devices on the bus.
@@ -121,7 +121,7 @@ A **2.54mm 3-pin TTL-level UART header** is provided for embedded system integra
     - Integration with **SBC GPIOs**
     - Direct serial communication with microcontrollers (STM32, RP2040, etc.)
 
-![TTL Serial](img/port-ttl-serial.webp)
+![TTL Serial](img/hardware-interface/port-ttl-serial.webp)
 
 :::danger Caution
 Connecting this port to 5V logic (e.g., older Arduino boards) **may permanently damage the device**. Always verify voltage compatibility before use.
@@ -147,7 +147,7 @@ The device provides a **Serial Wire Debug (SWD)** interface via a **3-pin 2.54�
 - `SWDIO` — Data I/O
 - `SWCLK` — Clock
 
-![SWD Interface](img/debugger-swd.webp)
+![SWD Interface](img/hardware-interface/debugger-swd.webp)
 
 This interface allows for:
 
@@ -167,7 +167,7 @@ For example, when using the official **ST-Link V2** for SWD debugging, connect t
 | Pin 7 (SWDIO)  | DIO         |
 | Pin 9 (SWCLK)  | CLK         |
 
-![ST-Link V2 wiring](img/stlink-wiring.webp)
+![ST-Link V2 wiring](img/hardware-interface/stlink-wiring.webp)
 
 :::info
 If you are using J-Link or other SWD-compatible tools, please refer to the vendor’s pinout documentation to ensure proper connection.
@@ -186,7 +186,7 @@ The E-C111G provides **4 boot modes** selectable via a dual **BOOT0/BOOT1 jumper
 
 > ℹ️ **Note**: Boot mode is read on startup. After changing jumper positions, a **manual reset** is required to apply the new boot mode.
 
-![Boot Mode Select](img/boot-mode-select.webp)
+![Boot Mode Select](img/hardware-interface/boot-mode-select.webp)
 
 :::info Default Behavior
 By default, the device boots from main flash (`BOOT0=0`, `BOOT1=0`) into seismic data acquisition mode.
@@ -272,7 +272,7 @@ The E-C111G is equipped with a **0.96-inch monochrome OLED screen** (model: **SS
 - Firmware version and build number
 - Leveling/tilt feedback (in inclinometer mode)
 
-![OLED Display](img/oled-display.webp)
+![OLED Display](img/hardware-interface/oled-display.webp)
 
 :::info
 Even though the display improves usability, it is **not essential** for core functionality. The system continues to operate normally if the display is disconnected or damaged.
@@ -316,7 +316,7 @@ The E-C111G features **three analog input channels** designed specifically for *
 
 The following figure shows a **typical open-loop velocity geophone** that is fully compatible with the E-C111G.
 
-![Open-Loop 4.5 Hz Geophone](img/geophone-4.5-hz.webp)
+![Open-Loop 4.5 Hz Geophone](img/hardware-interface/geophone-4.5-hz.webp)
 
 :::danger Sensor Compatibility Warning
 Only **4.5 Hz open-loop geophones** should be connected to the E-C111G. Do **not** connect:

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 8
+sidebar_position: 10
 title: Technical Support Policy
 slug: support-policy
 ---
@@ -31,16 +31,16 @@ To initiate support, please contact us at: **[anyshake@senseplex.net](mailto:any
 
 - **Device ID** – A unique identifier for your device, it can be found:
     - On the packaging box.
-      ![Device ID on Packaging](img/get-device-id-from-package.webp)
+      ![Device ID on Packaging](img/support-policy/get-device-id-from-package.webp)
     - Displayed in the **AnyShake Observer** web UI.
-      ![Device ID in AnyShake Observer](img/get-device-id-from-observer.webp)
+      ![Device ID in AnyShake Observer](img/support-policy/get-device-id-from-observer.webp)
 - **Hardware Revision** – Date that indicates current hardware revision, it can be found:
     - On the packaging box.
     - On front side of PCB.
-      ![Hardware Revision on PCB](img/get-hardware-revision-on-pcb.webp)
+      ![Hardware Revision on PCB](img/support-policy/get-hardware-revision-on-pcb.webp)
 - **Firmware Revision** - Git commit hash that indicates current firmware revision, it can be found:
     - On OLED display.
-      ![Firmware Revision on OLED](img/get-firmware-revision-on-oled.webp)
+      ![Firmware Revision on OLED](img/support-policy/get-firmware-revision-on-oled.webp)
 
 > ⚠️ The Device ID acts as a support pin and uniquely identifies your unit. **Please keep it confidential.**  
 > We may not respond to support emails lacking valid device identification.

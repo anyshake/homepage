@@ -1,7 +1,7 @@
 ---
-sidebar_position: 9
+sidebar_position: 11
 title: About SensePlex
-slug: about_senseplex
+slug: about-senseplex
 ---
 
 **SensePlex Ltd.** is the company responsible for the development and maintenance of the **AnyShake** open-source seismograph platform. We are committed to delivering high-quality, community-driven solutions for seismic data acquisition, visualization, and research.

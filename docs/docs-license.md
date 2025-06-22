@@ -1,7 +1,7 @@
 ---
-sidebar_position: 10
+sidebar_position: 12
 title: License
-slug: docs_license
+slug: docs-license
 ---
 
 ## **IMPORTANT NOTICE AND DISCLAIMER**
