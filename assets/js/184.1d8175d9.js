@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkanyshake_org=self.webpackChunkanyshake_org||[]).push([[184],{184:(e,a,s)=>{s.d(a,{createInfoServices:()=>k.v});var k=s(2501);s(1028)}}]);
