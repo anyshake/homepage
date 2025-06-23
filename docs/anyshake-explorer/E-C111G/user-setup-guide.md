@@ -158,9 +158,8 @@ Power on the device using the **self-locking power switch**. After a few seconds
 
 AnyShake Explorer is equipped with **three leveling screws** located on the bottom of the device. These allow for precise mechanical leveling to ensure accurate orientation of the geophones. Follow these steps to level the device:
 
-1. Press the **self-locking power button** to power on the device.
-2. Observe the **inclination values** (X and Y axes) displayed on the OLED screen.
-3. Carefully **adjust the three leveling screws** to bring both axes as close to zero as possible.
+1. Observe the **inclination values** (X and Y axes) displayed on the OLED screen.
+2. Carefully **adjust the three leveling screws** to bring both axes as close to zero as possible.
     - A recommended tolerance is within **±0.1°**.
     - Adjust screws gradually and evenly to avoid stress on the acrylic frame.
 

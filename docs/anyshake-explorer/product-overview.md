@@ -6,7 +6,7 @@ slug: product-overview
 
 ## The Story
 
-The **AnyShake Explorer** was first conceived in 2023, when a Chinese undergraduate student, unable to afford the expensive RS3D, decided to build a solution from scratch. The original prototype was a modest, amateur effort based on the ADS1256.
+The **AnyShake Explorer** was first conceived in 2023, when a undergraduate student, unable to afford the expensive RS3D, decided to build a solution from scratch. The original prototype was a modest, amateur effort based on the ADS1256.
 
 ![Initial Prototype](img/product-overview/explorer-initial-prototype.webp)
 
