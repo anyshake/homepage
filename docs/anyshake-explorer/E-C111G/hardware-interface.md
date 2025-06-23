@@ -85,7 +85,7 @@ The following figures illustrate the RS-232 connectors on E-C111G:
 
 ![RS-232](img/hardware-interface/port-rs-232.webp)
 
-:::info
+:::tip
 We recommend using the RS-232 interface in most scenarios due to its stability, simplicity, and broad compatibility across platforms.
 :::
 
@@ -169,7 +169,7 @@ For example, when using the official **ST-Link V2** for SWD debugging, connect t
 
 ![ST-Link V2 wiring](img/hardware-interface/stlink-wiring.webp)
 
-:::info
+:::tipc
 If you are using J-Link or other SWD-compatible tools, please refer to the vendor’s pinout documentation to ensure proper connection.
 :::
 
@@ -222,7 +222,7 @@ The **baud rate** defines the transmission speed of serial data. It is configure
 |   1   |   0   | 230400    | Faster transfer                |
 |   1   |   1   | 409600    | Maximum supported rate         |
 
-:::info
+:::tip
 Lower baud rates offer more robust communication, especially over long cables or electrically noisy environments. Adjust this according to your host system’s capability.
 :::
 

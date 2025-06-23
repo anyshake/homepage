@@ -6,7 +6,7 @@ slug: user-setup-guide
 
 Thank you again for choosing our products. This guide will help you set up the AnyShake Explorer in a few simple steps—typically in less than one hour.
 
-:::info
+:::tip
 If you have any questions during the setup, feel free to reach out for technical support. Read our [technical support policy](/docs/support-policy) for more details.
 :::
 
