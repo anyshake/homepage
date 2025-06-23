@@ -194,18 +194,18 @@ By default, the device boots from main flash (`BOOT0=0`, `BOOT1=0`) into seismic
 
 ## Mode Configuration and Display
 
-The **E-C111G** supports multiple operating modes that can be configured using onboard DIP switches. A built-in **0.96-inch OLED display** provides system status, configuration, and connectivity, making the setup process intuitive and efficient.
+The **E-C111G** supports multiple operating modes that can be configured using onboard DIP switches. A built-in **0.96-inch OLED display** provides system status, connection information, making the setup process intuitive and efficient.
 
 ### Sampling Rate Configuration
 
 The **sampling rate** determines how frequently data is read from the sensors each second. It is configured via the **SW3** DIP switch.
 
-| SW3 Bits | Sample Rate | Notes                     |
-| -------- | ----------- | ------------------------- |
-| `00`     | 250 SPS     | Default setting           |
-| `01`     | 200 SPS     |                           |
-| `10`     | 100 SPS     |                           |
-| `11`     | 50 SPS      | For bandwidth-limited use |
+| Bit 1 | Bit 2 | Sample Rate | Notes                     |
+| :---: | :---: | ----------- | ------------------------- |
+|   0   |   0   | 250 SPS     | Default setting           |
+|   0   |   1   | 200 SPS     |                           |
+|   1   |   0   | 100 SPS     |                           |
+|   1   |   1   | 50 SPS      | For bandwidth-limited use |
 
 :::info
 The sampling rate directly affects the data resolution and system bandwidth. Higher rates provide finer temporal detail but require more storage and bandwidth.
@@ -215,12 +215,12 @@ The sampling rate directly affects the data resolution and system bandwidth. Hig
 
 The **baud rate** defines the transmission speed of serial data. It is configured using the **SW5** DIP switch.
 
-| SW5 Bits | Baud Rate | Notes                          |
-| -------- | --------- | ------------------------------ |
-| `00`     | 57600     | Default; best stability        |
-| `01`     | 115200    | Common for USB–Serial adapters |
-| `10`     | 230400    | Faster transfer                |
-| `11`     | 409600    | Maximum supported rate         |
+| Bit 1 | Bit 2 | Baud Rate | Notes                          |
+| :---: | :---: | --------- | ------------------------------ |
+|   0   |   0   | 57600     | Default; best stability        |
+|   0   |   1   | 115200    | Common for USB–Serial adapters |
+|   1   |   0   | 230400    | Faster transfer                |
+|   1   |   1   | 409600    | Maximum supported rate         |
 
 :::info
 Lower baud rates offer more robust communication, especially over long cables or electrically noisy environments. Adjust this according to your host system’s capability.
@@ -232,7 +232,7 @@ Additional features can be enabled via **individual bits of the SW4 DIP switch**
 
 #### Accelerometer-Only Mode
 
-- **Control**: `SW4 bit 1`
+- **Control**: Bit 1
 - **Function**: Acquires data **only from the onboard accelerometer**, ignoring geophone input.
 
 :::info
@@ -241,7 +241,7 @@ This bit is **ignored** when **6-channel mode** is enabled.
 
 #### GNSS Synchronization
 
-- **Control**: `SW4 bit 2`
+- **Control**: Bit 2
 - **Function**: Enables GNSS synchronization at startup.
 - **Startup Condition**:
 
@@ -259,7 +259,7 @@ Ensure a compatible GNSS antenna is connected before enabling this mode.
 
 #### 6-Channel Acquisition Mode
 
-- **Control**: `SW4 bit 3`
+- **Control**: Bit 3
 - **Function**: Enables acquisition of **both 3-axis geophone and 3-axis accelerometer data** (total 6 channels).
 
 ### OLED Display
@@ -324,7 +324,6 @@ Only **4.5 Hz open-loop geophones** should be connected to the E-C111G. Do **n
 - Geophones with natural frequencies other than 4.5 Hz
 - Broadband seismometers or accelerometers
 - Force-balance or feedback-based sensors
-
 
 Even though the inputs are protected against **overvoltage and current surges**, connecting incompatible high-sensitivity instruments can result in **signal distortion**, **loss of accuracy**, or **permanent damage** to the input circuitry.
 :::

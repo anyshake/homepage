@@ -4,7 +4,7 @@ title: Explorer Product Series Overview
 slug: product-overview
 ---
 
-## The Story of AnyShake Explorer
+## The Story
 
 The **AnyShake Explorer** was first conceived in 2023, when a Chinese undergraduate student, unable to afford the expensive RS3D, decided to build a solution from scratch. The original prototype was a modest, amateur effort based on the ADS1256.
 
@@ -24,7 +24,7 @@ After several iterations, the design evolved from a basic ADC-only version to on
 
 At the beginning, the AnyShake Project encouraged users to DIY hardware, but as the project grew, the project maintainer received numerous requests from users hoping to directly purchase a finished product. In response, the original developer established **SensePlex Limited** at the end of 2024, aiming to commercialize the AnyShake product while preserving its open-source nature and achieving sustainable development.
 
-## Architecture and Toolchains
+## Architecture
 
 **AnyShake Explorer** is designed using **KiCAD**, with an **STM32** microcontroller at its core. Development tools include **STM32CubeMX** and **PlatformIO**, and the system runs **FreeRTOS**. The device features a 32-bit ADC, a built-in low-noise 3-axis accelerometer (16-bit), and supports connecting up to **three 4.5 Hz geophones** (for a total of six axes) to monitor seismic activity simultaneously. It also includes onboard **temperature sensor**, allowing users to monitor ambient conditions alongside seismic data. To match the performance of proprietary competitors, a pole-zero compensation circuit was implemented for geophone signal conditioning, effectively extending the instrument period to **2 seconds (0.5 Hz)** and enabling improved detection of distant seismic events.
 

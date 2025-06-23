@@ -25,7 +25,9 @@ We provide **one-on-one technical support via email** to users who have purchase
 - Problems encountered during software deployment—such as installation failures, runtime issues, or software not functioning as expected in your environment.
 - Customization requests, including minor feature modifications or inquiries about the suitability of the solution for specific applications.
 
-> In cases involving software deployment or configuration, we may also offer **remote technical support** when necessary to help resolve the issue more efficiently.
+:::info
+In cases involving software deployment or configuration, we may also offer **remote technical support** when necessary to help resolve the issue more efficiently.
+:::
 
 To initiate support, please contact us at: **[anyshake@senseplex.net](mailto:anyshake@senseplex.net)**. When requesting support, please provide the following information:
 
@@ -42,8 +44,10 @@ To initiate support, please contact us at: **[anyshake@senseplex.net](mailto:any
     - On OLED display.
       ![Firmware Revision on OLED](img/support-policy/get-firmware-revision-on-oled.webp)
 
-> ⚠️ The Device ID acts as a support pin and uniquely identifies your unit. **Please keep it confidential.**  
-> We may not respond to support emails lacking valid device identification.
+:::danger Caution
+The Device ID acts as a support pin and uniquely identifies your unit. **Please keep it confidential.**  
+We may not respond to support emails lacking valid device identification.
+:::
 
 ## For Software Users
 

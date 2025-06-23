@@ -32,7 +32,7 @@ This work (product documents, tutorials and associated images) are licensed unde
 
 ## Software Library
 
-All demo software, code examples embedded in the document and any software libraray provided with the product document are licensed under [MIT License](https://files.seeedstudio.com/wiki/common/MIT_LICENSE 'MIT LICENSE') unless otherwise specified.
+All demo software, code examples embedded in the document and any software libraray provided with the product document are licensed under [MIT License](/MIT_LICENSE.txt) unless otherwise specified.
 
 ## Thirdparty Content
 
