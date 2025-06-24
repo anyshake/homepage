@@ -16,7 +16,7 @@
 }
 
 .markdown {
-    @apply prose-sm md:prose min-w-full;
+    @apply prose min-w-full;
     table {
         td,
         th {
@@ -29,9 +29,9 @@
 }
 
 .breadcrumbs {
-    @apply flex flex-row items-center;
+    @apply flex flex-wrap items-center;
     .breadcrumbs__item {
-        @apply flex flex-row items-center;
+        @apply flex items-center;
     }
 }
 
