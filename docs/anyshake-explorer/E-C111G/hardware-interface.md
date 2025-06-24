@@ -267,7 +267,6 @@ Ensure a compatible GNSS antenna is connected before enabling this mode.
 The E-C111G is equipped with a **0.96-inch monochrome OLED screen** (model: **SSD1306**) connected via the **I²C interface**. This display provides:
 
 - Acquisition status
-- Connectivity status
 - Sample rate and baud rate
 - Firmware version and build number
 - Leveling/tilt feedback (in inclinometer mode)
