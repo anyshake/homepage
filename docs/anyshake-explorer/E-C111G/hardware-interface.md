@@ -184,9 +184,11 @@ The E-C111G provides **4 boot modes** selectable via a dual **BOOT0/BOOT1 jumper
 | 1     | 0     | System Memory            | Enters STM32 built-in bootloader (for firmware upgrade via UART).               |
 | 1     | 1     | Embedded SRAM            | Used for development and debugging temporary firmware loads.                    |
 
-> ℹ️ **Note**: Boot mode is read on startup. After changing jumper positions, a **manual reset** is required to apply the new boot mode.
-
 ![Boot Mode Select](img/hardware-interface/boot-mode-select.webp)
+
+:::info
+Boot mode is read on startup. After changing jumper positions, a **manual reset** is required to apply the new boot mode.
+:::
 
 :::info Default Behavior
 By default, the device boots from main flash (`BOOT0=0`, `BOOT1=0`) into seismic data acquisition mode.
