@@ -4,7 +4,7 @@ title: Frequently Asked Questions (FAQ)
 slug: frequently-asked-questions
 ---
 
-## Is AnyShake Explorer suitable for scientific research?
+## Is AnyShake Project suitable for scientific research?
 
 Yes. The system has been successfully used in academic settings, seismic education, and structural monitoring. It is especially valuable for projects that require:
 
@@ -18,7 +18,7 @@ We welcome community contributions and academic collaborations.
 
 ## Is AnyShake a clone of Raspberry Shake or similar products?
 
-No. **AnyShake Explorer is not a clone** of Raspberry Shake or any other commercial seismograph. While both products share similar goals—making seismic monitoring more accessible—**AnyShake is an original, fully open-source project** developed from scratch, both in hardware and software.
+No. **AnyShake Project is absolutely not a clone** of Raspberry Shake or any other commercial seismograph. While both products share similar goals—making seismic monitoring more accessible—**AnyShake is an original, fully open-source project** developed from scratch, both in hardware and software.
 
 Key differences include:
 
@@ -26,13 +26,13 @@ Key differences include:
 - **Independent firmware and DSP pipeline**: Our signal acquisition, filtering, and compensation algorithms are custom designed and not derived from proprietary implementations.
 - **Custom software platform**: AnyShake Observer is a native, cross-platform application designed specifically for this hardware—not based on CAPS, OSOP Wave Server, heli_ewII or other legacy tools.
 
-While we acknowledge the success of Raspberry Shake in popularizing personal seismographs, **AnyShake Explorer is an independent effort**, aimed at pushing the limits of openness, accuracy, and customization for developers, researchers, and educators.
+While we acknowledge the success of Raspberry Shake in popularizing personal seismographs, **AnyShake Project is an independent effort**, aimed at pushing the limits of openness, accuracy, and customization for developers, researchers, and educators.
 
 ---
 
-## Is AnyShake Explorer suitable for commercial use?
+## Is AnyShake Project suitable for commercial use?
 
-Yes, but please contact us before using the device in a commercial setting. AnyShake Explorer is open-source and designed with flexibility in mind, but **commercial applications** (e.g., in industrial monitoring, engineering consultancy, or product integration) may require:
+Yes, but please contact us before using the device in a commercial setting. AnyShake Project is designed with flexibility in mind, but **commercial applications** (e.g., in industrial monitoring, engineering consultancy, or product integration) may require:
 
 - Licensing clarification
 - Customization or hardware adaptation
@@ -43,7 +43,7 @@ Please email us at **anyshake@senseplex.net** to discuss your commercial use cas
 
 ---
 
-## Can I detect distant earthquakes (teleseismic events) with AnyShake Explorer?
+## Can I detect distant earthquakes (teleseismic events) with AnyShake?
 
 Yes. With proper installation in a **low-noise environment** and solid mechanical coupling, AnyShake Explorer can detect **teleseismic events**, especially those above **magnitude 6.0**. It uses analog geophones with excellent signal-to-noise ratios, and applies **low-frequency compensation** to extend the frequency response, improving sensitivity to long-period seismic waves.
 
@@ -51,7 +51,7 @@ Yes. With proper installation in a **low-noise environment** and solid mechanica
 
 ## Is my data shared to the internet?
 
-**AnyShake Explorer does not upload waveform data by default.** Your seismic recordings, including raw waveforms and processed signals, are stored and processed **locally**, and are **not transmitted to the internet** unless you explicitly choose to share them.
+**AnyShake Observer does not upload waveform data by default.** Your seismic recordings, including raw waveforms and processed signals, are stored and processed **locally**, and are **not transmitted to the internet** unless you explicitly choose to share them.
 
 However, for diagnostic and maintenance purposes, **telemetry data** are periodically sent to our servers, such as:
 
@@ -86,18 +86,17 @@ We believe in empowering users to choose whether and how they contribute to the 
 
 ## Can I build my own from scratch?
 
-Yes! AnyShake Explorer is **fully open-source and reproducible**. You can build your own version using:
+Yes! AnyShake Project is **fully open-source and reproducible**. You can build your own version using:
 
-- PCB design files
+- Hardware PCB design files
 - Firmware source code
-- 3D models and documentation
+- Software source code
 - Example projects and instructions
 
 Many community users have successfully replicated the project.
 
 :::info
-Unfortunately, we are unable to offer technical support for DIY users independently at this time.  
-Please refer to our [technical support policy](/docs/support-policy#for-diy-users) for more information.
+Unfortunately, we are unable to offer technical support for DIY users independently at this time. Please refer to our [technical support policy](/docs/support-policy#for-diy-users) for more information.
 :::
 
 ---
