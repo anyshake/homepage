@@ -181,7 +181,7 @@ The E-C111G provides **4 boot modes** selectable via a dual **BOOT0/BOOT1 jumper
 | ----- | ----- | ------------------------ | ------------------------------------------------------------------------------- |
 | 0     | 0     | Main Flash (Acquisition) | Default mode; runs the primary firmware for seismic data acquisition.           |
 | 0     | 1     | Main Flash (Leveling)    | Starts the firmware in inclinometer mode to assist with installation alignment. |
-| 1     | 0     | System Memory            | Enters STM32 built-in bootloader (for firmware upgrade via UART).               |
+| 1     | 0     | System Memory            | Enters STM32 built-in bootloader.                                               |
 | 1     | 1     | Embedded SRAM            | Used for development and debugging temporary firmware loads.                    |
 
 ![Boot Mode Select](img/hardware-interface/boot-mode-select.webp)
@@ -266,7 +266,7 @@ Ensure a compatible GNSS antenna is connected before enabling this mode.
 
 ### OLED Display
 
-The E-C111G is equipped with a **0.96-inch monochrome OLED screen** (model: **SSD1306**) connected via the **I²C interface**. This display provides:
+The E-C111G is equipped with a **0.96-inch OLED screen** (model: **SSD1306**) connected via the **I²C interface**. This display provides:
 
 - Acquisition status
 - Sample rate and baud rate
