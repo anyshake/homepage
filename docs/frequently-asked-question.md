@@ -101,6 +101,29 @@ Unfortunately, we are unable to offer technical support for DIY users independen
 
 ---
 
+## I still feel AnyShake Explorer is expensive. Is there a cheaper way to try it out?
+
+Yes. If you're on a tight budget but still want to experience AnyShake, you can consider **DIYing our earlier-generation model: E-D001**.
+
+E-D001 is a simpler and more affordable version of AnyShake Explorer. It can reach a **instrument period of 1.25 seconds (0.8 Hz)** and retains around **40% of the signal quality** and functionality of the Explorer model, while being:
+
+- **Much easier to build**: perfect for beginners
+- **Fewer components**, simpler circuitry
+- **Large solder pads** and **minimal soldering points**
+- **Compact PCB size** and single-layer design
+- **More tolerant to hand-assembly mistakes**
+- Requires only basic tools (no hot air or reflow oven)
+
+We provide open-source documentation, schematics, and firmware for E-D001 as well. Many users have successfully built this model as an entry point into the world of seismic sensing.
+
+Check out [E-D001](https://github.com/anyshake/explorer/tree/v1) for more details.
+
+:::info
+E-D001 is ideal for learning, prototyping, or classroom demonstrations, but may not meet the sensitivity, timing, or frequency response requirements of more advanced applications.
+:::
+
+---
+
 ## How do I report bugs?
 
 For general issues, please file them in the appropriate GitHub repository according to the module involved. For example:
