@@ -58,8 +58,8 @@ Open `cmd` and type:
 > echo %PROCESSOR_ARCHITECTURE%
 ```
 
-- If you see `x86`, you’re on 32-bit Windows → use a package with `_386` suffix.
-- If you see `AMD64`, you’re on 64-bit Windows → use a package with `_amd64` suffix.
+- If you see `x86`, you’re on 32-bit Windows, use a package with `_386` suffix.
+- If you see `AMD64`, you’re on 64-bit Windows, use a package with `_amd64` suffix.
 - For Windows 7 users, use the package with `windows7_` prefix.
 
 **For Linux users:**
@@ -102,7 +102,7 @@ After extracting the ZIP package, you’ll find the following files:
 1. Place `observer.exe` and `config.json` in the same directory.
 2. Run `observer.exe` from Command Prompt or PowerShell to start the application.
 
-**For Linux/macOS users:**
+**For Linux users:**
 
 1. Add your user to the `dialout` group (for serial port access):
 
@@ -169,4 +169,4 @@ $ docker run -d \
 - Replace `/path/to/config.json` with the actual path on your host
 - Replace `/dev/ttyUSB0` with your actual serial port if applicable
 
-If you don’t use a hardware serial connection, the ``--device` flag is not needed.
+If you don’t use a hardware serial connection, the `--device` flag is not needed.
