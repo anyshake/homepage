@@ -45,7 +45,17 @@ Please email us at **anyshake@senseplex.net** to discuss your commercial use cas
 
 ## Can I detect distant earthquakes (teleseismic events) with AnyShake?
 
-Yes. With proper installation in a **low-noise environment** and solid mechanical coupling, AnyShake Explorer can detect **teleseismic events**, especially those above **magnitude 6.0**. It uses analog geophones with excellent signal-to-noise ratios, and applies **low-frequency compensation** to extend the frequency response, improving sensitivity to long-period seismic waves.
+Yes. With proper installation in a **low-noise environment** and solid mechanical coupling, **AnyShake Explorer is capable of detecting teleseismic events**, particularly those with a **magnitude of 6.0 or higher**. The device features high-quality analog geophones with excellent signal-to-noise ratio and employs **low-frequency compensation algorithms** to extend the usable frequency range, significantly improving sensitivity to long-period seismic waves.
+
+The following example shows a **magnitude 6.0 earthquake** that occurred **[off the coast of Kushiro, Hokkaido, Japan](https://earthquake.usgs.gov/earthquakes/eventpage/us6000qh1r/executive)** on **May 31, 2025**, recorded by an **AnyShake Explorer E-C111G unit** located approximately **2,500 km away**.
+
+![M6.1 teleseismic event](img/frequently-asked-questions/m6.0-teleseismic-event.webp)
+
+Our earlier-generation model, the **E-D001**, also performs remarkably well in detecting teleseismic events, despite being a simpler design. It uses a firmware-level low-frequency compensation algorithm to enhance low-frequency sensitivity.
+
+The figure below shows a **magnitude 6.2 earthquake** that struck the **[Philippines](https://earthquake.usgs.gov/earthquakes/eventpage/us7000q8bd/executive)** on **June 24, 2025**, recorded by an **AnyShake Explorer E-D001 unit** from a distance of approximately **2,500 km**.
+
+![M6.3 teleseismic event](img/frequently-asked-questions/m6.2-teleseismic-event.webp)
 
 ---
 
@@ -64,6 +74,8 @@ These data helps us monitor system stability, detect bugs, and plan future updat
 
 :::tip
 You can permanently turn off telemetry at any time by disabling "Metrics Service" in AnyShake Observer web interface.
+
+![Disable telemetry](img/frequently-asked-questions/disable-telemetry.webp)
 :::
 
 ---
@@ -101,25 +113,28 @@ Unfortunately, we are unable to offer technical support for DIY users independen
 
 ---
 
-## I still feel AnyShake Explorer is expensive. Is there a cheaper way to try it out?
+## I'm on a tight budget — is there a way to quickly evaluate this project?
 
-Yes. If you're on a tight budget but still want to experience AnyShake, you can consider **DIYing our earlier-generation model: E-D001**.
+Yes. If you're working with a limited budget but would like to explore what AnyShake offers, we recommend trying out **our earlier-generation model: E-D001**.
 
-E-D001 is a simpler and more affordable version of AnyShake Explorer. It can reach a **instrument period of 1.25 seconds (0.8 Hz)** and retains around **40% of the signal quality** and functionality of the Explorer model, while being:
+![E-D001](img/frequently-asked-questions/model-ed001.webp)
 
-- **Much easier to build**: perfect for beginners
+E-D001 is a simpler and more affordable version of AnyShake Explorer. It can reach a **instrument period of ~1.25 seconds (~0.8 Hz)** and retains around **40% of the signal quality** and functionality of the Explorer model, while being:
+
+- **Extremely low cost**: less than $40 for the core board (PCB manufacturing costs included)
+- **Much easier to build**: perfect for geeks and hobbyists
 - **Fewer components**, simpler circuitry
 - **Large solder pads** and **minimal soldering points**
 - **Compact PCB size** and single-layer design
 - **More tolerant to hand-assembly mistakes**
 - Requires only basic tools (no hot air or reflow oven)
 
-We provide open-source documentation, schematics, and firmware for E-D001 as well. Many users have successfully built this model as an entry point into the world of seismic sensing.
+We provide open-source documentation, schematics, PCB layouts and firmware for E-D001 as well. Many users have successfully built this model as an entry point into the world of seismic sensing.
 
 Check out [E-D001](https://github.com/anyshake/explorer/tree/v1) for more details.
 
 :::info
-E-D001 is ideal for learning, prototyping, or classroom demonstrations, but may not meet the sensitivity, timing, or frequency response requirements of more advanced applications.
+E-D001 is ideal for learning, prototyping, or classroom demonstrations, **but may not meet the sensitivity, timing, or frequency response requirements of more advanced applications**.
 :::
 
 ---

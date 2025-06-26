@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: Explorer Product Series Overview
+title: Product Series Overview
 slug: product-overview
 ---
 
