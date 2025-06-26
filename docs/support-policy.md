@@ -45,8 +45,7 @@ To initiate support, please contact us at: **[anyshake@senseplex.net](mailto:any
       ![Firmware Revision on OLED](img/support-policy/get-firmware-revision-on-oled.webp)
 
 :::danger Caution
-The Device ID acts as a support pin and uniquely identifies your unit. **Please keep it confidential.**  
-We may not respond to support emails lacking valid device identification.
+The Device ID acts as a support pin and uniquely identifies your unit. **Please keep it confidential**. We may not respond to support emails lacking valid device identification.
 :::
 
 ## For Software Users
