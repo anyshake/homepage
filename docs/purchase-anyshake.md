@@ -4,11 +4,11 @@ title: Purchase AnyShake Products
 slug: purchase-anyshake
 ---
 
-## 🚀 **Join the Open Science Movement!** 🚀
+AnyShake Explorer is now **live on Crowd Supply**! This open-source, next-generation seismic monitoring system is officially available for crowdfunding.
 
-AnyShake Explorer is currently in the **pre-launch** phase on Crowd Supply. We're working to reach at least **200 subscribers** to officially kick off the campaign. Your support is essential in bringing this next-generation, open-source seismic monitoring system to life.
+👉 **[Order now on Crowd Supply](https://www.crowdsupply.com/senseplex/anyshake-explorer)** and be among the first to experience real-time seismic data visualization, analysis, and export with professional-grade performance.
 
-👉 **[Subscribe now on Crowd Supply](https://www.crowdsupply.com/senseplex/anyshake-explorer)** to be among the first to experience real-time seismic data visualization, analysis, and export.
-
-🔗 **Help us spread the word by sharing this page:**
+:::tip
+📣 **Help us spread the word and grow the open science community:**
 👉 **[www.crowdsupply.com/senseplex/anyshake-explorer](https://www.crowdsupply.com/senseplex/anyshake-explorer)**
+:::
