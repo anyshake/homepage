@@ -4,7 +4,7 @@ title: Overview of AnyShake Project
 slug: project-overview
 ---
 
-<iframe width="856" height="482" src="https://www.youtube.com/embed/8Me8uvYUu3s" title="AnyShake Explorer - a Fully Open-Source, High-Precision Seismic Monitoring System" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/8Me8uvYUu3s" title="AnyShake Explorer - a Fully Open-Source, High-Precision Seismic Monitoring System" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## What is AnyShake?
 
