@@ -2,11 +2,40 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://anyshake.org/blog</id>
     <title>AnyShake Project Blog</title>
-    <updated>2025-05-12T00:00:00.000Z</updated>
+    <updated>2025-07-01T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://anyshake.org/blog"/>
     <subtitle>AnyShake Project Blog</subtitle>
     <icon>https://anyshake.org/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Crowdfunding Has Begun!]]></title>
+        <id>https://anyshake.org/blog/crowdfunding-has-begun</id>
+        <link href="https://anyshake.org/blog/crowdfunding-has-begun"/>
+        <updated>2025-07-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[AnyShake Explorer is an open-source, professional-grade seismic monitoring system designed for researchers, engineers, educators, and enthusiasts. In a market dominated by expensive, closed-source “black boxes,” AnyShake Explorer offers transparency, affordability, and top-tier performance.]]></summary>
+        <content type="html"><![CDATA[<p><strong>AnyShake Explorer</strong> is an open-source, professional-grade seismic monitoring system designed for researchers, engineers, educators, and enthusiasts. In a market dominated by expensive, closed-source “black boxes,” AnyShake Explorer offers transparency, affordability, and top-tier performance.</p>
+<p><img decoding="async" loading="lazy" alt="AnyShake Explorer on Grass" src="https://anyshake.org/assets/images/anyshake-explorer-on-grass-06b9b5d530ef7b99210bc1871b61d4f4.webp" width="1599" height="899" class="img_ev3q"></p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="what-makes-anyshake-explorer-special">What Makes AnyShake Explorer Special?<a href="https://anyshake.org/blog/crowdfunding-has-begun#what-makes-anyshake-explorer-special" class="hash-link" aria-label="Direct link to What Makes AnyShake Explorer Special?" title="Direct link to What Makes AnyShake Explorer Special?">​</a></h3>
+<ul>
+<li><strong>Fully Open Source</strong> – Hardware schematics, firmware, and software are all available for inspection, customization, and community contribution</li>
+<li><strong>High Performance</strong> – 32-bit geophone, 16-bit accelerometer data, real-time output, and support for MiniSEED, SAC, WAV, and SeedLink protocols</li>
+<li><strong>Low-frequency Mastery (2s period)</strong> – Thanks to low-frequency compensation, Explorer can detect long-period seismic waves often missed by other open-source devices</li>
+<li><strong>Ultra Low Power</strong> – Consumes just ~0.6 W, making it perfect for solar or battery-powered deployments</li>
+<li><strong>Built for Everyone</strong> – Whether you're setting up a seismic station, monitoring building vibrations, or just curious about earth movements, it’s easy to use and powerful enough for professional research</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="why-it-matters">Why It Matters<a href="https://anyshake.org/blog/crowdfunding-has-begun#why-it-matters" class="hash-link" aria-label="Direct link to Why It Matters" title="Direct link to Why It Matters">​</a></h3>
+<p>We believe in <strong>open science</strong>. By making high-precision seismic monitoring accessible and affordable, we're empowering more people to explore, learn, and contribute to earth science.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="get-involved">Get Involved<a href="https://anyshake.org/blog/crowdfunding-has-begun#get-involved" class="hash-link" aria-label="Direct link to Get Involved" title="Direct link to Get Involved">​</a></h3>
+<ul>
+<li><strong>Campaign</strong>: <a href="https://www.crowdsupply.com/senseplex/anyshake-explorer" target="_blank" rel="noopener noreferrer">crowdsupply.com/senseplex/anyshake-explorer</a></li>
+<li><strong>Website</strong>: <a href="https://anyshake.org/" target="_blank" rel="noopener noreferrer">anyshake.org</a></li>
+<li><strong>GitHub</strong>: <a href="https://github.com/anyshake" target="_blank" rel="noopener noreferrer">github.com/anyshake</a></li>
+<li><strong>Discord</strong>: <a href="https://discord.gg/PuK4Sb4Nr6" target="_blank" rel="noopener noreferrer">Join the community</a></li>
+<li><strong>X (Twitter)</strong>: <a href="https://x.com/anyshake_org" target="_blank" rel="noopener noreferrer">@anyshake_org</a></li>
+</ul>
+<p><em><strong><a href="https://www.crowdsupply.com/senseplex/anyshake-explorer" target="_blank" rel="noopener noreferrer">Back our campaign today</a> and help usher in the future of accessible, precise, and truly open seismic monitoring</strong></em></p>
+<p>— The AnyShake Team</p>]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[The Initiation.]]></title>
         <id>https://anyshake.org/blog/the-initiation</id>

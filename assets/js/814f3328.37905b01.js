@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkanyshake_org=self.webpackChunkanyshake_org||[]).push([[7472],{5513:e=>{e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"The Initiation.","permalink":"/blog/the-initiation","unlisted":false,"date":"2025-05-12T00:00:00.000Z"}]}')}}]);
