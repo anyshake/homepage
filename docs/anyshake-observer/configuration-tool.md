@@ -12,7 +12,7 @@ This guide will walk you through the process of using AnyShake Prisma to quickly
 
 ## Accessing the Configuration Tool
 
-Open the AnyShake Prisma website at anyshake.github.io/prisma. Upon loading, you will be presented with the following interface:
+Open the AnyShake Prisma website at [anyshake.github.io/prisma](https://anyshake.github.io/prisma). Upon loading, you will be presented with the following interface:
 
 ![UI of AnyShake Prisma](img/configuration-tool/anyshake-prisma-ui.webp)
 
