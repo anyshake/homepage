@@ -45,6 +45,28 @@ $ sudo chown -R user:user /path/to/your/observer.db
 
 Replace `user` with the username of the user who owns the database file.
 
-On Windows systems, open the Properties dialog of the database file and remove the **Read-only** attribute.
+On Windows systems, open the **Properties** dialog of the database file and remove the **Read-only** attribute.
 
 ![Keep Read-only Unchecked](img/troubleshooting//uncheck-readonly.webp)
+
+## I can open the web interface, but cannot log in, and the captcha fails to load
+
+![Cannot Login](img/troubleshooting/cannot-login.webp)
+
+When accessing from localhost (127.0.0.1), or through an HTTPS reverse proxy, AnyShake Observer will use a **Service Worker** to cache the web interface locally upon your first visit. This is an optimization designed to improve load speed on subsequent visits.
+
+However, if the backend service (`observer` executable) is not running, the web interface may still appear to load correctly from the cache, potentially causing confusion — such as failed login attempts or missing captcha — since the frontend cannot actually communicate with the backend.
+
+So, please make sure that the AnyShake Observer service is running before accessing the web interface. To check if the service is running on Linux, open a terminal and run the command:
+
+```bash
+$ ps aux | grep observer
+```
+
+If the backend service is running, you should see the `observer` process and its PID.
+
+![Backend Running on Linux](img/troubleshooting/process-check-linux.webp)
+
+On Windows systems, you can find the process by searching for `observer.exe` in the **Task Manager**.
+
+![Backend Running on Windows](img/troubleshooting/process-check-windows.webp)
