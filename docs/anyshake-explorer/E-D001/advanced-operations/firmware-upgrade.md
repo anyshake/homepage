@@ -24,7 +24,7 @@ This tutorial is intended for **Windows** users only.
   ![Install Driver](img\firmware-upgrade\install-driver.webp)
 - #### When prompted that the installation is complete, restart Windows.
 ### Verify
-- #### Connect to the Windows using an RS-232 to USB cable.
+- #### Connect to the PC using an RS-232 to USB cable.
 - #### Right click "Start Menu", open "Device Manager".
   ![Open Device Manager](img\firmware-upgrade\device-manager-f1.webp)
 - #### In "Device Manager", locate "Ports (COM & LPT)" and expand the list. If you see "USB-SERIAL CH340 (COM*), the driver has been successfully installed.
@@ -44,7 +44,7 @@ This tutorial is intended for **Windows** users only.
 - #### Open "firmware" folder in VSCode.
 
 ### Flash Firmware
-- #### Connect the AnyShake Explorer to your Windows using an RS-232 to USB cable.
+- #### Connect the AnyShake Explorer to your PC using an RS-232 to USB cable.
 - #### After switching the jumper cap to Flash Mode, connect power to the AnyShake Explorer to enter Flash Mode.
   ![Jumper Caps Modes](img\firmware-upgrade\jumper-caps-modes.webp)
 - #### Open `platformio.ini` in VSCode Explorer.
