@@ -132,7 +132,7 @@ These settings are used to identify your station, generate station metadata, fil
 
 ![Edit Station Configuration](img/run-observer/edit-station-settings.webp)
 
-After editing the station settings, please **restart the application** to apply the changes.
+After editing, the settings will be fully applied after the next startup.
 
 ## Stop the Application
 
