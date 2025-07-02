@@ -18,13 +18,13 @@ We welcome community contributions and academic collaborations.
 
 ## Is AnyShake a clone of Raspberry Shake or similar products?
 
-No. **AnyShake Project is absolutely not a clone** of Raspberry Shake or any other commercial seismograph. While both products share similar goals—making seismic monitoring more accessible—**AnyShake is an original, fully open-source project** developed from scratch, both in hardware and software.
+No. **AnyShake Project is absolutely not a clone** of Raspberry Shake or any other commercial seismograph. While both products share similar goals — making seismic monitoring more accessible — **AnyShake is an original, fully open-source project** developed from scratch, both in hardware and software.
 
 Key differences include:
 
 - **Open-source hardware**: All schematics and PCB layouts are available for anyone to review, modify, or reproduce.
 - **Independent firmware and DSP pipeline**: Our signal acquisition, filtering, and compensation algorithms are custom designed and not derived from proprietary implementations.
-- **Custom software platform**: AnyShake Observer is a native, cross-platform application designed specifically for this hardware—not based on CAPS, OSOP Wave Server, heli_ewII or other legacy tools.
+- **Custom software platform**: AnyShake Observer is a native, cross-platform application designed specifically for this hardware — not based on CAPS, OSOP Wave Server, heli_ewII or other legacy tools.
 
 While we acknowledge the success of Raspberry Shake in popularizing personal seismographs, **AnyShake Project is an independent effort**, aimed at pushing the limits of openness, accuracy, and customization for developers, researchers, and educators.
 
@@ -88,10 +88,10 @@ At present, **AnyShake does not maintain its own centralized seismic network**. 
 - Custom data servers
 - Educational monitoring systems
 
-In the future, we plan to introduce an **open, decentralized seismic network**—opt-in only—where users can contribute data under their own terms using peer-to-peer protocols or trusted hubs.
+In the future, we plan to introduce an **open, decentralized seismic network** — opt-in only — where users can contribute data under their own terms using peer-to-peer protocols or trusted hubs.
 
 :::info
-We believe in empowering users to choose whether and how they contribute to the global understanding of seismic activity—without compromising privacy or autonomy.
+We believe in empowering users to choose whether and how they contribute to the global understanding of seismic activity — without compromising privacy or autonomy.
 :::
 
 ---

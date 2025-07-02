@@ -6,7 +6,7 @@ slug: /configuration-tool
 
 **AnyShake Observer** requires a minimal configuration to initiate its core services. This configuration is defined in a JSON file, which includes essential parameters such as site coordinates, connection details for AnyShake Explorer, web server settings, database configuration, logging preferences, and more.
 
-For general users, we highly recommend using **AnyShake Prisma**—a visual configuration tool developed by the AnyShake Team—to automatically generate the necessary configuration file. Simply complete the form provided by the tool, and it will generate a valid configuration file for you. No prior technical knowledge is required.
+For general users, we highly recommend using **AnyShake Prisma** — a visual configuration tool developed by the AnyShake Team — to automatically generate the necessary configuration file. Simply complete the form provided by the tool, and it will generate a valid configuration file for you. No prior technical knowledge is required.
 
 This guide will walk you through the process of using AnyShake Prisma to quickly configure AnyShake Observer and establish a connection with your deployed AnyShake Explorer device.
 
@@ -26,7 +26,7 @@ The AnyShake Prisma website uses a technology called Service Worker to cache res
 
 ### Location
 
-This field specifies the fallback coordinates of your station, including **latitude**, **longitude**, and **elevation**. These values will be used only if GNSS data is unavailable—once GNSS becomes available, this field will be automatically overridden.
+This field specifies the fallback coordinates of your station, including **latitude**, **longitude**, and **elevation**. These values will be used only if GNSS data is unavailable — once GNSS becomes available, this field will be automatically overridden.
 
 In AnyShake Observer, precise location data is shown only to users with administrator privileges. For regular users, coordinates are intentionally obfuscated to protect privacy. Therefore, you can confidently enter accurate site information.
 

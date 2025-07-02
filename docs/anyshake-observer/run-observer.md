@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-title: Run AnyShake Observer
+title: Run Observer
 slug: /run-observer
 ---
 
@@ -113,6 +113,26 @@ It's recommended to change the default username as well. This can be done in the
 :::tip
 When editing the default administrator, the administrator itself cannot be downgraded.
 :::
+
+### Edit Station Settings
+
+The station settings are global configuration that includes the following fields:
+
+- Station Name
+- Station Description
+- Station Country
+- Station Place
+- Station Affiliation
+- Station Code
+- Network Code
+- Location Code
+- Channel Codes
+
+These settings are used to identify your station, generate station metadata, filenames of MiniSEED archives, helicorder images. It can be edited at any time to meet your needs.
+
+![Edit Station Configuration](img/run-observer/edit-station-settings.webp)
+
+After editing the station settings, please **restart the application** to apply the changes.
 
 ## Stop the Application
 

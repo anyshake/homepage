@@ -22,7 +22,7 @@ We provide **one-on-one technical support via email** to users who have purchase
 
 - Issues encountered during installation or operation of the hardware (e.g., missing calibration data, device not functioning as expected, unexpected noise or signal interference).
 - Inquiries related to firmware behavior, hardware configuration, and embedded systems integration.
-- Problems encountered during software deployment—such as installation failures, runtime issues, or software not functioning as expected in your environment.
+- Problems encountered during software deployment — such as installation failures, runtime issues, or software not functioning as expected in your environment.
 - Customization requests, including minor feature modifications or inquiries about the suitability of the solution for specific applications.
 
 :::info
