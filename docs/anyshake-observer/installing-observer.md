@@ -4,7 +4,7 @@ title: Installing Observer
 slug: /installing-observer
 ---
 
-This section will guide you through the installation process for AnyShake Observer.
+This section will guide you through the installation process for **AnyShake Observer**.
 
 ## Supported Platforms
 

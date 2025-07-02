@@ -68,6 +68,8 @@ On the first launch, the application may take some time to initialize the databa
 
 ![Default Account](img/run-observer/default-account.webp)
 
+By default, the default administrator username is `anyshake_admin`, and the default password is `Anyshake@12#$`.
+
 :::danger
 Be sure to change the default administrator password after logging in for the first time!
 :::
@@ -82,6 +84,34 @@ Open the web interface in your browser and log in using the default administrato
 
 :::info
 AnyShake Observer uses modern web technologies. Some older browsers may not be fully compatible, it may cause unexpected behavior (e.g. style issues).
+:::
+
+### Change the Default Administrator Password
+
+After logging in for the first time, it's important to **change the default administrator password** to ensure system security.
+
+#### Steps:
+
+1. Click the gear icon (⚙️ **System Settings**) in the left sidebar
+2. Navigate to **User Management**
+3. Click the **Edit** button next to the default administrator account
+
+![Change Password](img/run-observer/change-password.webp)
+
+#### Password Requirements:
+
+- Must be **8–32 characters** in length
+- Include **at least one uppercase letter**
+- Include **at least one special character**
+
+![New Password Set](img/run-observer/new-password-set.webp)
+
+:::tip
+It's recommended to change the default username as well. This can be done in the same way as changing the password.
+:::
+
+:::tip
+The current administrator itself cannot be downgraded.
 :::
 
 ## Stop the Application
