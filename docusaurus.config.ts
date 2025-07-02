@@ -5,6 +5,8 @@ import type * as Preset from '@docusaurus/preset-classic';
 import { themes as prismThemes } from 'prism-react-renderer';
 import tailwindCssPlugin from './plugins/tailwindcss-config';
 import renderMessages from './plugins/render-messages';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 
 const config: Config = {
     url: siteConfig.url,
@@ -37,10 +39,12 @@ const config: Config = {
     } satisfies Preset.ThemeConfig,
     presets: [
         [
-            'classic',
+            '@docusaurus/preset-classic',
             {
                 docs: {
                     sidebarPath: './sidebars.ts',
+                    remarkPlugins: [remarkMath],
+                    rehypePlugins: [rehypeKatex],
                     editUrl: 'https://github.com/anyshake/homepage/blob/master/'
                 },
                 blog: {

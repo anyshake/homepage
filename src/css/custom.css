@@ -26,6 +26,9 @@
     .docusaurus-mermaid-container {
         @apply max-w-xl;
     }
+    .katex-html {
+        @apply hidden;
+    }
 }
 
 .breadcrumbs {

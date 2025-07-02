@@ -1,7 +1,7 @@
 ---
 sidebar_position: 3
 title: Configuration Tool
-slug: /configuration-tool
+slug: configuration-tool
 ---
 
 **AnyShake Observer** requires a minimal configuration to initiate its core services. This configuration is defined in a JSON file, which includes essential parameters such as site coordinates, connection details for AnyShake Explorer, web server settings, database configuration, logging preferences, and more.

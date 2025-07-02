@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 title: Observer Software Overview
-slug: /software-overview
+slug: software-overview
 ---
 
 **AnyShake Observer** is the companion software for **AnyShake Explorer**, the world’s first fully open-source, high-precision seismic monitoring system. It is a cross-platform, web-based application designed to visualize, archive, and export seismic data in real time.

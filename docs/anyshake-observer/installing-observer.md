@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
 title: Installing Observer
-slug: /installing-observer
+slug: installing-observer
 ---
 
 This section will guide you through the installation process for **AnyShake Observer**.

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 4
 title: Run Observer
-slug: /run-observer
+slug: run-observer
 ---
 
 AnyShake Observer is a single-binary deployment, which means you can run it directly from the command line without additional dependencies.
