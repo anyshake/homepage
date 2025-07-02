@@ -62,6 +62,12 @@ Before launching the application, make sure your AnyShake Explorer device is con
 $ /usr/local/bin/observer -config /usr/local/etc/observer/config.json
 ```
 
+If you are using Windows, you may need to adjust the path to the configuration file.
+
+```powershell
+C:\Program Files\AnyShake Observer>"C:\Program Files\AnyShake Observer\observer.exe" -config "C:\Program Files\AnyShake Observer\config.json"
+```
+
 ![Run Observer](img/run-observer/start-observer.webp)
 
 On the first launch, the application may take some time to initialize the database — please be patient. Once the database is ready, the default administrator account will be created, and the initial login credentials will be printed to the console.
@@ -90,15 +96,13 @@ AnyShake Observer uses modern web technologies. Some older browsers may not be f
 
 After logging in for the first time, it's important to **change the default administrator password** to ensure system security.
 
-#### Steps:
-
 1. Click the gear icon (⚙️ **System Settings**) in the left sidebar
 2. Navigate to **User Management**
 3. Click the **Edit** button next to the default administrator account
 
 ![Change Password](img/run-observer/change-password.webp)
 
-#### Password Requirements:
+It's recommended to change the default username as well. This can be done in the same way as changing the password. The new password must meet the following requirements:
 
 - Must be **8–32 characters** in length
 - Include **at least one uppercase letter**
@@ -107,11 +111,7 @@ After logging in for the first time, it's important to **change the default admi
 ![New Password Set](img/run-observer/new-password-set.webp)
 
 :::tip
-It's recommended to change the default username as well. This can be done in the same way as changing the password.
-:::
-
-:::tip
-The current administrator itself cannot be downgraded.
+When editing the default administrator, the administrator itself cannot be downgraded.
 :::
 
 ## Stop the Application
