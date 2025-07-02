@@ -44,7 +44,7 @@ This tutorial is intended for **Windows** users only.
 - #### Open "firmware" folder in VSCode.
 
 ### Flash Firmware
-- #### Connect the AnyShake Explorer to your Windows system using an RS-232 to USB cable.
+- #### Connect the AnyShake Explorer to your Windows using an RS-232 to USB cable.
 - #### After switching the jumper cap to Flash Mode, connect power to the AnyShake Explorer to enter Flash Mode.
   ![Jumper Caps Modes](img\firmware-upgrade\jumper-caps-modes.webp)
 - #### Open `platformio.ini` in VSCode Explorer.
