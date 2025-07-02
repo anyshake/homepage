@@ -97,10 +97,16 @@ After extracting the ZIP package, you’ll find the following files:
 - `config.json` – Default configuration file
 - `observer.service` – Linux systemd service file (optional)
 
+:::tip
+The default `config.json` may not be suitable for your system, so you need to edit it or generate a new one to override the default values before copying. We recommend using the **AnyShake Prisma** to generate a new configuration, see [Configuration Tool](configuration-tool) to learn more.
+:::
+
 **For Windows users:**
 
-1. Place `observer.exe` and `config.json` in the same directory.
-2. Run `observer.exe` from Command Prompt or PowerShell to start the application.
+1. Create a directory, for example, `C:\Program Files\AnyShake Observer`.
+   ![Installation Directory](img/installing-observer/windows-directory.webp)
+2. Place `observer.exe` and `config.json` in the newly created directory.
+   ![Installation Files](img/installing-observer/windows-observer-files.webp)
 
 **For Linux users:**
 
@@ -123,18 +129,11 @@ $ sudo cp config.json /usr/local/etc/observer/
 $ sudo cp observer /usr/local/bin/
 ```
 
-4. Set up the systemd service (optional):
+4. To verify the installation:
 
 ```bash
-$ sudo cp observer.service /lib/systemd/system/
-$ sudo systemctl daemon-reload
-$ sudo systemctl enable observer
-```
-
-This will enable the service to start on boot. You can start it manually with:
-
-```bash
-$ sudo systemctl start observer
+$ which observer
+/usr/local/bin/observer
 ```
 
 ### Docker Image

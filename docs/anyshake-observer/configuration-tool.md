@@ -52,7 +52,7 @@ Since its inception, the AnyShake Project has undergone three iterations of its 
 
 Select or manually specify your device model, such as E-C111G or E-D001.
 
-AnyShake Observer uses this information to associate built-in metadata, which will be displayed on the home page dashboard.
+AnyShake Observer uses this information to associate built-in metadata, which will be displayed on the settings page.
 
 :::info
 For models other than E-C111G and E-C121G (e.g., custom instruments), metadata will not be available.
