@@ -15,7 +15,7 @@ To quickly open a command prompt in the desired folder on Windows, hold down Shi
 ![Open Command Window](img/run-observer/windows-open-terminal.webp)
 
 :::tip
-Please note: on Windows, the executable is named `observer.exe`, while on Linux and macOS it is simply `observer`. The examples below use Linux/macOS syntax—Windows users should adjust accordingly.
+On Windows, the executable is named `observer.exe`, while on Linux and macOS it is simply `observer`. The examples below use Linux/macOS syntax — Windows users should adjust accordingly.
 :::
 
 ## Arguments
@@ -86,7 +86,7 @@ AnyShake Observer uses modern web technologies. Some older browsers may not be f
 
 ## Stop the Application
 
-To safely stop the application, press Ctrl+C in the terminal. This will gracefully shut down the process, release hardware resources, and properly close the database. The shutdown procedure may take a few seconds—please wait until it completes.
+To safely stop the application, press Ctrl+C in the terminal. This will gracefully shut down the process, release hardware resources, and properly close the database. The shutdown procedure may take a few seconds — please wait until it completes.
 
 ![Stop Observer](img/run-observer/stop-observer.webp)
 
