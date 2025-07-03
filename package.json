@@ -15,15 +15,14 @@
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@docusaurus/core": "^3.8.1",
-    "@docusaurus/preset-classic": "^3.8.1",
-    "@docusaurus/theme-mermaid": "^3.8.1",
+    "@docusaurus/core": "3.7.0",
+    "@docusaurus/preset-classic": "3.7.0",
+    "@docusaurus/theme-mermaid": "^3.7.0",
     "@mdi/js": "^7.4.47",
     "@mdi/react": "^1.6.1",
     "@mdx-js/react": "^3.0.0",
     "clsx": "^2.0.0",
     "framer-motion": "^12.10.5",
-    "medium-zoom": "^1.1.0",
     "plugin-image-zoom": "github:flexanalytics/plugin-image-zoom",
     "prism-react-renderer": "^2.3.0",
     "react": "^19.0.0",
@@ -32,9 +31,9 @@
     "remark-math": "^6.0.0"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "^3.8.1",
-    "@docusaurus/tsconfig": "^3.8.1",
-    "@docusaurus/types": "^3.8.1",
+    "@docusaurus/module-type-aliases": "3.7.0",
+    "@docusaurus/tsconfig": "3.7.0",
+    "@docusaurus/types": "3.7.0",
     "@eslint/js": "^9.26.0",
     "@tailwindcss/postcss": "^4.1.5",
     "@tailwindcss/typography": "^0.5.16",
