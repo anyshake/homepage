@@ -4,11 +4,11 @@ title: Firmware Upgrade
 slug: firmware-upgrade
 ---
 
-This tutorial will guide you through the process of upgrading the firmware on the AnyShake Explorer E-C111G.
-
-:::tip
+:::info
 This tutorial applies to AnyShake Explorer **E-C121G** as well.
 :::
+
+This tutorial will guide you through the process of upgrading the firmware on the AnyShake Explorer **E-C111G**.
 
 ## Before Upgrading
 
