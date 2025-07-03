@@ -169,7 +169,7 @@ For example, when using the official **ST-Link V2** for SWD debugging, connect t
 
 ![ST-Link V2 wiring](img/hardware-interface/stlink-wiring.webp)
 
-:::tipc
+:::tip
 If you are using J-Link or other SWD-compatible tools, please refer to the vendor’s pinout documentation to ensure proper connection.
 :::
 
