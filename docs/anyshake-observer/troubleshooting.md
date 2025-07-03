@@ -18,7 +18,10 @@ The problem is typically caused by **incompatible or unstable CH340 drivers** in
 
 - Visit the Microsoft Update Catalog: [www.catalog.update.microsoft.com/Search.aspx?q=CH340](https://www.catalog.update.microsoft.com/Search.aspx?q=CH340)
 - Download and install a driver dated **before 2014** (for example, **version 3.3.2011.11 from 2011** has proven to be stable in most cases).
-- After installation, **please restart your computer**.
+- Extract the `*.cab` file to a folder, you can use [7-Zip](https://www.7-zip.org/).
+- In the folder, right click the `CH341SER.INF` file, click **Install**.
+  ![Install Driver](img/troubleshooting//install-driver.webp)
+- After installation completes, **please restart your computer**.
 
 ### Step 2: Block Windows from updating the driver again
 

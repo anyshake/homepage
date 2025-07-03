@@ -4,4 +4,3 @@ title: Hardware Interface
 slug: hardware-interface
 ---
 
-To be added
