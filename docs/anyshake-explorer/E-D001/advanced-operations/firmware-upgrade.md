@@ -40,13 +40,13 @@ To verify the connection:
     /dev/tty19  /dev/tty31  /dev/tty44  /dev/tty57  /dev/ttyS11  /dev/ttyS24  /dev/ttyS9
     /dev/tty2   /dev/tty32  /dev/tty45  /dev/tty58  /dev/ttyS12  /dev/ttyS25  /dev/ttyUSB0
     ```
-    Where `/dev/ttyUSB0` is the device you want to use.
+    Where `/dev/ttyUSB0` is the device you connected.
 - **On Windows**, open **Device Manager** and check under **Ports (COM & LPT)**.
   ![Windows Serial Port](img/firmware-upgrade/device-manager.webp)
 
 ## Setup PlatformIO
 
-[PlatformIO](https://platformio.org/) is an open-source embedded development environment used to build and upload firmware. To install PlatformIO, you need insall [Python](https://www.python.org/) and [Visual Studio Code](https://code.visualstudio.com/) first.
+[PlatformIO](https://platformio.org/) is an open-source embedded development environment used to build and upload firmware. To install PlatformIO, you need install [Python](https://www.python.org/) and [Visual Studio Code](https://code.visualstudio.com/) first.
 
 After installing, you can open Visual Studio Code and click **Extensions**, search to install "PlatformIO" extension.
 
