@@ -52,7 +52,7 @@ After installing the driver, open **Device Manager** and check under **Universal
 On Linux (e.g. Debian) systems, if you have `stlink-tools` package installed, you can use the `st-info` command to check if MCU is recognized by the programmer. For example:
 
 ```bash
-$ st-info
+$ st-info --probe
 ```
 
 Typical output:
