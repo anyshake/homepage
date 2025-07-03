@@ -119,4 +119,4 @@ Set the **BOOT1** jumper cap to the **left side** to apply the changes and exit 
 
 ![Calibration Done](img/adc-calibration/calibration-done.webp)
 
-You can now power-cycle the device or flash the main firmware to resume normal operation.
+You can now power-cycle the device or re-flash the original AnyShake Explorer firmware to resume normal operation.
