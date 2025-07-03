@@ -68,15 +68,15 @@ $ git clone --depth 1 -b v1 https://github.com/anyshake/explorer
 
 Or get the latest project files using the following direct link, after downloading, extract the archive and locate the `firmware` directory.
 
-- [github.com/anyshake/explorer/archive/refs/heads/master.zip](https://github.com/anyshake/explorer/archive/refs/heads/master.zip)
-- [github.com/anyshake/explorer/archive/refs/heads/master.tar.gz](https://github.com/anyshake/explorer/archive/refs/heads/master.tar.gz)
+- [github.com/anyshake/explorer/archive/refs/heads/v1.zip](https://github.com/anyshake/explorer/archive/refs/heads/v1.zip)
+- [github.com/anyshake/explorer/archive/refs/heads/v1.tar.gz](https://github.com/anyshake/explorer/archive/refs/heads/v1.tar.gz)
 
 ## Open Firmware Project
 
 1. Press `Ctrl + K, O` (or `Cmd + K, O` on macOS)
 2. Select the `firmware` folder inside the repository
 
-![Open firmware Folder](img/firmware-upgrade//open-project.webp)
+![Open firmware Folder](img/firmware-upgrade/open-project.webp)
 
 You should see the `platformio.ini` file in the root of the project. PlatformIO will automatically initialize the environment.
 
