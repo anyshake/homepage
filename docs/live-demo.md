@@ -8,7 +8,7 @@ Explore our demo sites worldwide! Each station runs on our official AnyShake Exp
 
 ## Tainan, Taiwan
 
-This station is sponsored and maintained by [ExpTech Studio](https://github.com/exptechtw) and [YuYu1015](https://github.com/YuYu1015).
+This station is sponsored and maintained by [ExpTech Studio](https://github.com/exptechtw) and [YuYu1015](https://github.com/whes1015).
 
 - Model: **AnyShake Explorer E-C111G**
 - Address: [tainan.anyshake.org](https://tainan.anyshake.org/)
