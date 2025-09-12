@@ -54,21 +54,18 @@ The field is divided into 3 bytes, corresponding to the checksum of `CHANNEL_Z`,
 C example given below:
 
 ```cpp
-void get_checksum(int32_t *z_samples, int32_t *e_samples, int32_t *n_samples, uint8_t *calc_checksum) {
-    uint8_t* bytes = (uint8_t*)&z_samples;
-    for (uint8_t i = 0; i < 5; i++) {
-        calc_checksum[0] ^= bytes[i];
+uint8_t get_checksum(int32_t* array, uint32_t size) {
+    uint8_t checksum = 0;
+    uint8_t* bytes;
+
+    for (uint8_t i = 0; i < size; i++) {
+        bytes = (uint8_t*)&array[i];
+        for (uint8_t j = 0; j < sizeof(int32_t); j++) {
+            checksum ^= bytes[j];
+        }
     }
 
-    bytes = (uint8_t*)&e_samples;
-    for (uint8_t i = 0; i < 5; i++) {
-        calc_checksum[1] ^= bytes[i];
-    }
-
-    bytes = (uint8_t*)&n_samples;
-    for (uint8_t i = 0; i < 5; i++) {
-        calc_checksum[2] ^= bytes[i];
-    }
+    return checksum;
 }
 
 int main() {
@@ -77,7 +74,9 @@ int main() {
     int32_t channel_n_samples[] = { 110, 120, 130, 140, 150 };
 
     uint8_t calc_checksum[3];
-    get_checksum(channel_z_samples, channel_e_samples, channel_n_samples, calc_checksum);
+    calc_checksum[0] = get_checksum(channel_z_samples, sizeof(channel_z_samples) / sizeof(int32_t));
+    calc_checksum[1] = get_checksum(channel_e_samples, sizeof(channel_e_samples) / sizeof(int32_t));
+    calc_checksum[2] = get_checksum(channel_n_samples, sizeof(channel_n_samples) / sizeof(int32_t));
 
     // ... other parts ...
 }
