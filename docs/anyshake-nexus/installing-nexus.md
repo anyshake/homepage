@@ -4,7 +4,7 @@ title: Installing Nexus
 slug: installing-nexus
 ---
 
-Before installing the AnyShake Nexus plugin, make sure SeisComP is correctly installed. This example uses **Debian GNU/Linux 11 (bullseye)** and **SeisComP 6.7.3**.
+Before installing the AnyShake Nexus plugin, make sure SeisComP is correctly installed. This tutorial uses **Debian GNU/Linux 11 (bullseye)** and **SeisComP 6.7.3**.
 
 To verify the installation, run the following command:
 
@@ -94,7 +94,7 @@ Once restarted, the AnyShake Nexus plugin will be available within the SeisComP 
 
 ## Check the Installation
 
-To confirm the installation, open the system configuration tool:
+To confirm the installation, open the system configuration tool with the following command:
 
 ```bash
 $ scconfig
