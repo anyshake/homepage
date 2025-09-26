@@ -199,32 +199,87 @@ Regardless of whether GNSS mode is enabled on the AnyShake Explorer, AnyShake Ob
 
 #### NTP Server Hostname
 
-This field specifies the hostname of the NTP server, such as the public server `pool.ntp.org`.
+This field specifies the hostnames of the NTP server, such as the public server `ntp.nict.jp`.
 
 To minimize jitter caused by network instability, it is recommended to choose NTP servers with the lowest possible latency. You can assess latency using the ping command:
 
 ```bash
-$ ping pool.ntp.org
-PING pool.ntp.org (119.28.206.193) 56(84) bytes of data.
-64 bytes from 119.28.206.193: icmp_seq=1 ttl=50 time=32.8 ms
-64 bytes from 119.28.206.193: icmp_seq=2 ttl=50 time=59.5 ms
-64 bytes from 119.28.206.193: icmp_seq=3 ttl=50 time=26.0 ms
-64 bytes from 119.28.206.193: icmp_seq=4 ttl=50 time=61.2 ms
+$ ping ntp.nict.jp
+PING ntp.nict.jp (61.205.120.130) 56(84) bytes of data.
+64 bytes from ntp-k1.nict.jp (61.205.120.130): icmp_seq=1 ttl=51 time=73.0 ms
+64 bytes from ntp-k1.nict.jp (61.205.120.130): icmp_seq=2 ttl=51 time=63.7 ms
+64 bytes from ntp-k1.nict.jp (61.205.120.130): icmp_seq=3 ttl=51 time=67.4 ms
+64 bytes from ntp-k1.nict.jp (61.205.120.130): icmp_seq=4 ttl=51 time=80.3 ms
+64 bytes from ntp-k1.nict.jp (61.205.120.130): icmp_seq=5 ttl=51 time=70.0 ms
+64 bytes from ntp-k1.nict.jp (61.205.120.130): icmp_seq=6 ttl=51 time=64.9 ms
 ^C
---- pool.ntp.org ping statistics ---
-4 packets transmitted, 4 received, 0% packet loss, time 3020ms
-rtt min/avg/max/mdev = 25.963/44.873/61.236/15.708 ms
+--- ntp.nict.jp ping statistics ---
+6 packets transmitted, 6 received, 0% packet loss, time 5386ms
+rtt min/avg/max/mdev = 63.666/69.867/80.306/5.606 ms
 ```
 
-Recommended NTP servers include:
+Here are some tips for selecting the best NTP servers to ensure precise time synchronization:
 
-- `pool.ntp.org`
-- `time.google.com`
-- `time.cloudflare.com`
-- `time.apple.com`
-- `time.nist.gov`
-- `ntp.nict.jp`
-- `ntp.jst.mfeed.ad.jp`
+- Always choose NTP servers provided by **universities, government agencies, major network providers, or research institutions**.
+- Make sure your configuration includes **at least five** NTP servers for better reliability and redundancy.
+- **Prioritize servers with a stratum level of 2 or lower**, as they offer more accurate time.
+- **Avoid using servers from `pool.ntp.org`**, as most of them are maintained by volunteers and may not be consistently reliable.
+
+The following lists summarizes the recommended NTP servers:
+
+**University / Research Institutions Providers**
+
+- ntp://time.mit.edu:123
+- ntp://ntp1.lsu.edu:123
+- ntp://ntp2.lsu.edu:123
+- ntp://ntp3.lsu.edu:123
+- ntp://ntp1.tamu.edu:123
+- ntp://ntp2.tamu.edu:123
+- ntp://ntp3.tamu.edu:123
+- ntp://ntp1.cs.princeton.edu:123
+- ntp://ntp2.cs.princeton.edu:123
+- ntp://ntppub.tamu.edu:123
+- ntp://ntp.illinois.edu:123
+- ntp://ntp1.tohoku.ac.jp:123
+- ntp://ntp2.tohoku.ac.jp:123
+- ntp://ntp1.noc.titech.ac.jp:123
+- ntp://gpsntp.miz.nao.ac.jp:123
+- ntp://ntp.nc.u-tokyo.ac.jp:123
+- ntp://clock.cit.nihon-u.ac.jp:123
+- ntp://ntp.osakafu-u.ac.jp:123
+- ntp://ntp.kuins.kyoto-u.ac.jp:123
+- ntp://ntp.tut.ac.jp:123
+- ntp://ntp.netlab.is.tsukuba.ac.jp:123
+- ntp://ntp.nagaokaut.ac.jp:123
+- ntp://ntp.hiroshima-u.ac.jp:123
+- ntp://ntp.kj.yamagata-u.ac.jp:123
+- ntp://ntp0.cam.ac.uk:123
+- ntp://ntp1.cam.ac.uk:123
+- ntp://ntp2.cam.ac.uk:123
+- ntp://ntp3.cam.ac.uk:123
+- ntp://ntp1.uni-ulm.de:123
+- ntp://ntp2.uni-ulm.de:123
+- ntp://ntp3.uni-ulm.de:123
+- ntp://ntp.ntu.edu.tw:123
+- ntp://ntp2.ntu.edu.tw:123
+- ntp://time.upd.edu.ph:123
+
+**National Time Authority Providers**
+
+- ntp://ntp-a2.nict.go.jp:123
+- ntp://ntp-a3.nict.go.jp:123
+- ntp://ntp-b2.nict.go.jp:123
+- ntp://ntp-b3.nict.go.jp:123
+- ntp://ntp-k1.nict.jp:123
+- ntp://ptbtime1.ptb.de:123
+- ntp://ptbtime2.ptb.de:123
+- ntp://ptbtime3.ptb.de:123
+- ntp://stdtime.gov.hk:123
+- ntp://time1.chu.nrc.ca:123
+- ntp://time2.chu.nrc.ca:123
+- ntp://ntp.metas.ch:123
+- ntp://hora.roa.es:123
+- ntp://minuto.roa.es:123
 
 #### NTP Server Port
 

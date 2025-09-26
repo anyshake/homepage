@@ -31,7 +31,7 @@ Unless otherwise specified, all specifications below refer to the **Full Kit** v
 | ---------------------- | ------------------------------------------------------- |
 | Geophones              | 3 × 4.5 Hz open-loop velocity sensors                   |
 | Frequency Response     | ~0.5 Hz – 27 Hz (with gain & filtering)                 |
-| Accelerometer          | 3-axis, 16-bit (±2g), STMicroelectronics LSM6DS3        |
+| Accelerometer          | 3-axis, 16-bit (±2g), STMicroelectronics LSM6DSR        |
 | ADC                    | 32-bit delta-sigma ADC, differential input              |
 | Measurement Range      | ±2.5 V                                                  |
 | Sampling Modes         | Geophone-only / Accelerometer-only / Combined 6-channel |

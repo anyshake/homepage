@@ -38,7 +38,7 @@ Currently, the AnyShake Explorer comes in three models:
 - E-C121G
 - E-D001
 
-**E-C111G is the officially released version**. E-C121G was used during the closed testing phase and remains compatible with the E-C111G. The main difference lies in the accelerometer model: the E-C111G uses the **LSM6DS3**, while the E-C121G uses the **ICM-42688-P**.
+**E-C111G is the officially released version**. E-C121G was used during the closed testing phase and remains compatible with the E-C111G. The main difference lies in the accelerometer model: the E-C111G uses the **LSM6DSR**, while the E-C121G uses the **ICM-42688-P**.
 
 **E-D001** is the early version of the AnyShake Explorer hardware, found on the **[v1 branch](https://github.com/anyshake/explorer/tree/v1)**. It is based on the **ESP8266** platform, some early adopters of the AnyShake Project built their own units and continue to use them.
 
