@@ -5,7 +5,7 @@
 <meta name="generator" content="Docusaurus v3.7.0">
 <title data-rh="true">Configuration Tool | AnyShake Project</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://anyshake.org/img/social-card.png"><meta data-rh="true" name="twitter:image" content="https://anyshake.org/img/social-card.png"><meta data-rh="true" property="og:url" content="https://anyshake.org/docs/anyshake-observer/configuration-tool"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Configuration Tool | AnyShake Project"><meta data-rh="true" name="description" content="AnyShake Observer requires a minimal configuration to initiate its core services. This configuration is defined in a JSON file, which includes essential parameters such as site coordinates, connection details for AnyShake Explorer, web server settings, database configuration, logging preferences, and more."><meta data-rh="true" property="og:description" content="AnyShake Observer requires a minimal configuration to initiate its core services. This configuration is defined in a JSON file, which includes essential parameters such as site coordinates, connection details for AnyShake Explorer, web server settings, database configuration, logging preferences, and more."><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://anyshake.org/docs/anyshake-observer/configuration-tool"><link data-rh="true" rel="alternate" href="https://anyshake.org/docs/anyshake-observer/configuration-tool" hreflang="en"><link data-rh="true" rel="alternate" href="https://anyshake.org/docs/anyshake-observer/configuration-tool" hreflang="x-default"><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="AnyShake Project RSS Feed">
 <link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="AnyShake Project Atom Feed"><link rel="stylesheet" href="/assets/css/styles.0d756604.css">
-<script src="/assets/js/runtime~main.45dfc344.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.689507ea.js" defer="defer"></script>
 <script src="/assets/js/main.3dfdde5d.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -101,18 +101,70 @@
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="ntp-client">NTP Client<a href="#ntp-client" class="hash-link" aria-label="Direct link to NTP Client" title="Direct link to NTP Client">​</a></h3>
 <p>Regardless of whether GNSS mode is enabled on the AnyShake Explorer, AnyShake Observer will connect to an NTP server to synchronize time upon startup. After synchronization, the software maintains an independent time source separate from the system clock. However, during data streaming, if GNSS is enabled, timestamps will prioritize the GNSS time source.</p>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="ntp-server-hostname">NTP Server Hostname<a href="#ntp-server-hostname" class="hash-link" aria-label="Direct link to NTP Server Hostname" title="Direct link to NTP Server Hostname">​</a></h4>
-<p>This field specifies the hostname of the NTP server, such as the public server <code>pool.ntp.org</code>.</p>
+<p>This field specifies the hostnames of the NTP server, such as the public server <code>ntp.nict.jp</code>.</p>
 <p>To minimize jitter caused by network instability, it is recommended to choose NTP servers with the lowest possible latency. You can assess latency using the ping command:</p>
-<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">$ ping pool.ntp.org</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">PING pool.ntp.org (119.28.206.193) 56(84) bytes of data.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">64 bytes from 119.28.206.193: icmp_seq=1 ttl=50 time=32.8 ms</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">64 bytes from 119.28.206.193: icmp_seq=2 ttl=50 time=59.5 ms</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">64 bytes from 119.28.206.193: icmp_seq=3 ttl=50 time=26.0 ms</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">64 bytes from 119.28.206.193: icmp_seq=4 ttl=50 time=61.2 ms</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">^C</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">--- pool.ntp.org ping statistics ---</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">4 packets transmitted, 4 received, 0% packet loss, time 3020ms</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">rtt min/avg/max/mdev = 25.963/44.873/61.236/15.708 ms</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
-<p>Recommended NTP servers include:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">$ ping ntp.nict.jp</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">PING ntp.nict.jp (61.205.120.130) 56(84) bytes of data.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">64 bytes from ntp-k1.nict.jp (61.205.120.130): icmp_seq=1 ttl=51 time=73.0 ms</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">64 bytes from ntp-k1.nict.jp (61.205.120.130): icmp_seq=2 ttl=51 time=63.7 ms</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">64 bytes from ntp-k1.nict.jp (61.205.120.130): icmp_seq=3 ttl=51 time=67.4 ms</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">64 bytes from ntp-k1.nict.jp (61.205.120.130): icmp_seq=4 ttl=51 time=80.3 ms</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">64 bytes from ntp-k1.nict.jp (61.205.120.130): icmp_seq=5 ttl=51 time=70.0 ms</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">64 bytes from ntp-k1.nict.jp (61.205.120.130): icmp_seq=6 ttl=51 time=64.9 ms</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">^C</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">--- ntp.nict.jp ping statistics ---</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">6 packets transmitted, 6 received, 0% packet loss, time 5386ms</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">rtt min/avg/max/mdev = 63.666/69.867/80.306/5.606 ms</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>Here are some tips for selecting the best NTP servers to ensure precise time synchronization:</p>
 <ul>
-<li><code>pool.ntp.org</code></li>
-<li><code>time.google.com</code></li>
-<li><code>time.cloudflare.com</code></li>
-<li><code>time.apple.com</code></li>
-<li><code>time.nist.gov</code></li>
-<li><code>ntp.nict.jp</code></li>
-<li><code>ntp.jst.mfeed.ad.jp</code></li>
+<li>Always choose NTP servers provided by <strong>universities, government agencies, major network providers, or research institutions</strong>.</li>
+<li>Make sure your configuration includes <strong>at least five</strong> NTP servers for better reliability and redundancy.</li>
+<li><strong>Prioritize servers with a stratum level of 2 or lower</strong>, as they offer more accurate time.</li>
+<li><strong>Avoid using servers from <code>pool.ntp.org</code></strong>, as most of them are maintained by volunteers and may not be consistently reliable.</li>
+</ul>
+<p>The following lists summarizes the recommended NTP servers:</p>
+<p><strong>University / Research Institutions Providers</strong></p>
+<ul>
+<li>ntp://time.mit.edu:123</li>
+<li>ntp://ntp1.lsu.edu:123</li>
+<li>ntp://ntp2.lsu.edu:123</li>
+<li>ntp://ntp3.lsu.edu:123</li>
+<li>ntp://ntp1.tamu.edu:123</li>
+<li>ntp://ntp2.tamu.edu:123</li>
+<li>ntp://ntp3.tamu.edu:123</li>
+<li>ntp://ntp1.cs.princeton.edu:123</li>
+<li>ntp://ntp2.cs.princeton.edu:123</li>
+<li>ntp://ntppub.tamu.edu:123</li>
+<li>ntp://ntp.illinois.edu:123</li>
+<li>ntp://ntp1.tohoku.ac.jp:123</li>
+<li>ntp://ntp2.tohoku.ac.jp:123</li>
+<li>ntp://ntp1.noc.titech.ac.jp:123</li>
+<li>ntp://gpsntp.miz.nao.ac.jp:123</li>
+<li>ntp://ntp.nc.u-tokyo.ac.jp:123</li>
+<li>ntp://clock.cit.nihon-u.ac.jp:123</li>
+<li>ntp://ntp.osakafu-u.ac.jp:123</li>
+<li>ntp://ntp.kuins.kyoto-u.ac.jp:123</li>
+<li>ntp://ntp.tut.ac.jp:123</li>
+<li>ntp://ntp.netlab.is.tsukuba.ac.jp:123</li>
+<li>ntp://ntp.nagaokaut.ac.jp:123</li>
+<li>ntp://ntp.hiroshima-u.ac.jp:123</li>
+<li>ntp://ntp.kj.yamagata-u.ac.jp:123</li>
+<li>ntp://ntp0.cam.ac.uk:123</li>
+<li>ntp://ntp1.cam.ac.uk:123</li>
+<li>ntp://ntp2.cam.ac.uk:123</li>
+<li>ntp://ntp3.cam.ac.uk:123</li>
+<li>ntp://ntp1.uni-ulm.de:123</li>
+<li>ntp://ntp2.uni-ulm.de:123</li>
+<li>ntp://ntp3.uni-ulm.de:123</li>
+<li>ntp://ntp.ntu.edu.tw:123</li>
+<li>ntp://ntp2.ntu.edu.tw:123</li>
+<li>ntp://time.upd.edu.ph:123</li>
+</ul>
+<p><strong>National Time Authority Providers</strong></p>
+<ul>
+<li>ntp://ntp-a2.nict.go.jp:123</li>
+<li>ntp://ntp-a3.nict.go.jp:123</li>
+<li>ntp://ntp-b2.nict.go.jp:123</li>
+<li>ntp://ntp-b3.nict.go.jp:123</li>
+<li>ntp://ntp-k1.nict.jp:123</li>
+<li>ntp://ptbtime1.ptb.de:123</li>
+<li>ntp://ptbtime2.ptb.de:123</li>
+<li>ntp://ptbtime3.ptb.de:123</li>
+<li>ntp://stdtime.gov.hk:123</li>
+<li>ntp://time1.chu.nrc.ca:123</li>
+<li>ntp://time2.chu.nrc.ca:123</li>
+<li>ntp://ntp.metas.ch:123</li>
+<li>ntp://hora.roa.es:123</li>
+<li>ntp://minuto.roa.es:123</li>
 </ul>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="ntp-server-port">NTP Server Port<a href="#ntp-server-port" class="hash-link" aria-label="Direct link to NTP Server Port" title="Direct link to NTP Server Port">​</a></h4>
 <p>The default port for most NTP servers is 123. Unless you have specific reasons, do not modify this setting.</p>
