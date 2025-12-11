@@ -11,7 +11,7 @@ Compared with local earthquakes, teleseismic waves exhibit **much lower frequenc
 
 On the other hand, traditional seismic instruments such as **force-balance accelerometers (FBA)** and **very-broadband (VBB)** seismometers offer excellent low-frequency response and high SNR, but their cost is prohibitive for individuals, schools, or small research groups.
 
-![1](img/2025-12-12-teleseismic-monitoring/teleseismic-event.png)
+![1](img/2025-12-12-teleseismic-on-a-limited-budget/teleseismic-event.png)
 
 With the rise of low-cost sensors, open-source hardware, and inexpensive microcontrollers, **low-cost teleseismic monitoring has become feasible**. This application note discusses how to implement a teleseismic monitoring system under budget constraints, including sensor selection, data acquisition architecture, cost-performance trade-offs, and deployment considerations.
 
