@@ -40,11 +40,11 @@ const Hero = () => {
 
                     <div className="mt-4 flex flex-wrap justify-center gap-4 md:justify-start">
                         <Link
-                            to={links.crowdFunding}
+                            to={links.purchase}
                             target="_blank"
                             className="flex items-center rounded-lg bg-purple-500 px-4 py-1.5 font-bold !text-white !no-underline !transition-all hover:bg-purple-600"
                         >
-                            <span>Join the crowdfunding</span>
+                            <span>Get one</span>
                             <Icon path={mdiChevronDoubleRight} size={1} />
                         </Link>
                         <Link
@@ -56,12 +56,12 @@ const Hero = () => {
                         </Link>
                     </div>
 
-                    {/* <Link
+                    <Link
                         to={links.liveDemo}
                         className="mt-4 text-sm !text-purple-500 hover:!underline"
                     >
                         Checkout Live Demo
-                    </Link> */}
+                    </Link>
                     <Link
                         to={links.discord}
                         target="_blank"

@@ -10,7 +10,7 @@ export const links = {
     getStarted: '/docs/project-overview',
     liveDemo: '/docs/live-demo',
     configurationTool: 'https://anyshake.github.io/prisma/',
-    crowdFunding: 'https://www.crowdsupply.com/senseplex/anyshake-explorer',
+    purchase: 'https://www.crowdsupply.com/senseplex/anyshake-explorer',
     discord: 'https://discord.gg/PuK4Sb4Nr6'
 };
 
@@ -46,7 +46,7 @@ export const linksConfig: ILinkConfig = {
         {
             label: 'CrowdFunding',
             position: 'right',
-            href: links.crowdFunding
+            href: links.purchase
         },
         {
             label: 'Discord',
