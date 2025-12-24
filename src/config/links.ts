@@ -33,18 +33,18 @@ export const linksConfig: ILinkConfig = {
             label: 'Blog',
             position: 'left'
         },
-        // {
-        //     label: 'Live Demo',
-        //     position: 'right',
-        //     href: links.liveDemo
-        // },
+        {
+            label: 'Live Demo',
+            position: 'right',
+            href: links.liveDemo
+        },
         {
             label: 'Configuration Tool',
             position: 'right',
             href: links.configurationTool
         },
         {
-            label: 'CrowdFunding',
+            label: 'Purchase',
             position: 'right',
             href: links.purchase
         },
