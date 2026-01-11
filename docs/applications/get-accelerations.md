@@ -9,14 +9,7 @@ At present, **AnyShake Explorer outputs raw sample values (counts)** directly ac
 Therefore, engineering metrics such as **PGA** (Peak Ground Acceleration) and **PGV** (Peak Ground Velocity) must be derived during post-processing, where unit conversion, instrument response removal, and appropriate filtering can be applied in a controlled and reproducible manner.
 
 :::info Why not output pre-scaled physical units directly
-AnyShake Explorer intentionally outputs **raw sensor counts** rather than pre-scaled physical units for the following reasons:
-
-- **Preserve data fidelity**: Raw counts retain the complete information produced by the ADC and sensor, without irreversible scaling or rounding.
-- **Ensure reproducibility**: Physical units depend on gain, response models, filters, and assumptions. Performing these steps offline makes the entire processing chain explicit and repeatable.
-- **Separation of concerns**: AnyShake Explorer focuses strictly on _data acquisition_. Signal interpretation, unit conversion, and engineering metrics are handled at the software layer.
-- **Auditability and flexibility**: Users can independently verify, modify, or replace processing parameters (e.g., response models, filters, integration methods) without firmware changes.
-
-This design follows common practice in professional seismology and strong-motion instrumentation workflows.
+AnyShake Explorer is designed to output raw sensor and ADC sample counts rather than pre-scaled physical units. This is because deriving physical quantities inherently depends on a chain of assumptions and processing steps, including gain settings, instrument response models, filtering, and integration methods. Once these are fixed in firmware, critical information becomes irreversible. By preserving raw counts, the system maintains maximum data integrity and traceability, allowing unit conversion, response correction, and engineering metric calculations to be performed explicitly in software. This makes the processing workflow reproducible, verifiable, and adaptable to different use cases.
 :::
 
 ## Obtaining Station Metadata
@@ -25,9 +18,9 @@ Key parameters such as system gain, sensor response (poles and zeros), channel d
 
 The station metadata is provided as an XML file and can be downloaded from the **Settings** page in AnyShake Explorer:
 
-[Download Metadata](img/get-accelerations/download-metadata.webp)
+![Download Metadata](img/get-accelerations/download-metadata.webp)
 
-Two formats are supported:
+There are 2 formats are supported in AnyShake Observer:
 
 - **SeisComP XML**: The native metadata format used by the SeisComP system, which is widely deployed in professional seismic networks.
 - **FDSN StationXML**: An international standard defined by the International Federation of Digital Seismograph Networks (FDSN). It is the most widely supported metadata exchange format in the seismological community.
