@@ -125,13 +125,34 @@ Below is a reference table listing common GNSS module models and their correspon
 | Quectel      | LC260Z       | `115200`        |
 | u-blox       | MAX-M10S-00B | `38400`         |
 
-### USE_ICM42688
+### GNSS_MODEL
 
-The `USE_ICM42688` macro to enable the ICM-42688-P as built-in accelerometer. It is a compatibility option for AnyShake Explorer E-C121G.
+The `GNSS_MODEL` macro controls the GNSS module that is used in the firmware. It can be set to one of the following values:
 
-:::danger
-Enabling this macro in a non-E-C121G device may cause unexpected behavior.
-:::
+- `GENERIC`: Generic GNSS module (for example, U-blox MAX-M10S-00B)
+- `QUECTEL_LC260Z`: Quectel LC260Z GNSS module
+- `QUECTEL_LC261Z`: Quectel LC261Z GNSS module
+- `QUECTEL_LC760Z`: Quectel LC760Z GNSS module
+- `QUECTEL_LC761Z`: Quectel LC761Z GNSS module
+- `ZHONGKEWEI_ATGM332D`: Zhongkewei ATGM332D GNSS module
+- `ZHONGKEWEI_ATGM336H`: Zhongkewei ATGM336H GNSS module
+- `QUECTEL_L26K`: Quectel L26K GNSS module
+- `QUECTEL_L76K`: Quectel L76K GNSS module
+- `ALLYSTAR_TAU812S`: Allystar TAU812S GNSS module
+- `ALLYSTAR_TAU1113`: Allystar TAU1113 GNSS module
+- `ALYSTAR_TAU1114`: Allystar TAU1114 GNSS module
+
+### DEVICE_MODEL
+
+The `DEVICE_MODEL` macro specifies the target device model used by the firmware. Valid values are:
+
+- `E-C111G`
+- `E-C121G`
+
+### HARDWARE_REV
+
+The `HARDWARE_REV` macro specifies the hardware revision of the device.
+It is represented as a date code corresponding to the current hardware revision and can be found printed on the front side of the PCB.
 
 ## Build and Upload
 
