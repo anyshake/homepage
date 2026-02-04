@@ -57,26 +57,32 @@ const Partners = () => {
                     viewport={{ once: true, amount: 0.2 }}
                     className="grid w-full max-w-5xl grid-cols-1 gap-8 md:grid-cols-2"
                 >
-                    {PARTNERS.map(({ id, logo, name, subtitle, description }) => (
-                        <div
-                            key={id}
-                            className="group flex flex-col items-center gap-6 rounded-2xl px-8 py-10 shadow-md transition-all duration-300 hover:shadow-lg md:items-start"
-                        >
-                            <div className="flex h-18 w-full items-center justify-center md:justify-start">
-                                <img
-                                    src={logo}
-                                    alt={name}
-                                    className="size-auto max-h-full rounded-lg object-contain"
-                                />
-                            </div>
+                    {PARTNERS.map(({ id, logo, name, subtitle, description }, index) => {
+                        const isLastOdd = PARTNERS.length % 2 === 1 && index === PARTNERS.length - 1;
+                        return (
+                            <div
+                                key={id}
+                                className={[
+                                    'group flex flex-col items-center gap-6 rounded-2xl px-8 py-10 shadow-md transition-all duration-300 hover:shadow-lg md:items-start',
+                                    isLastOdd ? 'md:col-span-2 md:max-w-2xl md:mx-auto' : ''
+                                ].join(' ')}
+                            >
+                                <div className="flex h-18 w-full items-center justify-center md:justify-start">
+                                    <img
+                                        src={logo}
+                                        alt={name}
+                                        className="size-auto max-h-full rounded-lg object-contain"
+                                    />
+                                </div>
 
-                            <div className="text-center md:text-left">
-                                <h3 className="text-xl font-bold text-gray-800">{name}</h3>
-                                <p className="mb-3 text-sm font-medium text-gray-500">{subtitle}</p>
-                                <p className="leading-relaxed text-gray-600">{description}</p>
+                                <div className="text-center md:text-left">
+                                    <h3 className="text-xl font-bold text-gray-800">{name}</h3>
+                                    <p className="mb-3 text-sm font-medium text-gray-500">{subtitle}</p>
+                                    <p className="leading-relaxed text-gray-600">{description}</p>
+                                </div>
                             </div>
-                        </div>
-                    ))}
+                        );
+                    })}
                 </motion.div>
             </div>
         </div>
