@@ -11,7 +11,8 @@ export const links = {
     liveDemo: '/docs/live-demo',
     configurationTool: 'https://anyshake.github.io/prisma/',
     purchase: 'https://www.crowdsupply.com/senseplex/anyshake-explorer',
-    discord: 'https://discord.gg/PuK4Sb4Nr6'
+    discord: 'https://discord.gg/PuK4Sb4Nr6',
+    twitter_x: 'https://x.com/anyshake_org'
 };
 
 export const linksConfig: ILinkConfig = {
@@ -52,6 +53,11 @@ export const linksConfig: ILinkConfig = {
             label: 'Discord',
             position: 'right',
             href: links.discord
+        },
+        {
+            label: 'X (Twitter)',
+            position: 'right',
+            href: links.twitter_x
         },
         {
             label: 'GitHub',

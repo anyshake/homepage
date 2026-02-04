@@ -1,8 +1,7 @@
 ---
 title: 地震計メーカーが教えてくれない、限られた予算で実現する効率的な遠地地震観測実践ガイド
 slug: teleseismic-on-a-limited-budget-ja
-sidebar_label: ''
-sidebar_position: null
+unlisted: true
 ---
 
 > For original English version, see _[What Seismograph Manufacturers Won’t Tell You - A Practical Guide to Efficient Teleseismic Monitoring on a Limited Budget](/blog/teleseismic-on-a-limited-budget)_
@@ -19,7 +18,7 @@ sidebar_position: null
 
 低コストのセンサー、オープンソースハードウェア、そして安価なマイクロコントローラの登場により、**低コストの遠隔地震モニタリングが実現可能になりました**。このアプリケーションノートでは、センサーの選定、データ収集アーキテクチャ、コストパフォーマンスのトレードオフ、導入時の考慮事項など、予算の制約下で遠隔地震モニタリングシステムを実装する方法について説明します。
 
-<!-- 切り捨て -->
+<!-- truncate -->
 
 ## センサーの選択
 
