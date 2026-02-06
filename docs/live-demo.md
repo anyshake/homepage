@@ -19,7 +19,7 @@ This station is sponsored and maintained by [ExpTech Studio](https://github.com/
 
 ![Station setup](img/live-demo/tainan-setup.webp)
 
-<!-- ## Mandalay, Myanmar
+## Mandalay, Myanmar
 
 :::info
 This station is sponsored and maintained by [Aung Pyae](https://x.com/AungPyaeMce).
@@ -30,4 +30,4 @@ This station is sponsored and maintained by [Aung Pyae](https://x.com/AungPyaeMc
 - Username: `guest`
 - Password: `Guest@anyshake.org`
 
-![Station setup](img/live-demo/mandalay-setup.webp) -->
+![Station setup](img/live-demo/mandalay-setup.webp)
