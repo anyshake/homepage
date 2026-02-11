@@ -15,7 +15,7 @@ const PARTNERS = [
     },
     {
         id: 'exptech-tw',
-        name: 'ExpTech Taiwan',
+        name: 'ExpTech Studio',
         subtitle: 'Taiwan open-source disaster monitoring & EEW ecosystem',
         logo: partnerExptechTW,
         description:
