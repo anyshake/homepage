@@ -146,7 +146,7 @@ Be careful not to reverse the polarity of the power supply. Always use the inclu
 
 ### 4. Switch to Leveling Mode and Power on
 
-To help with alignment, toggle the BOOT jumper to **leveling mode** (`BOOT0=0, BOOT1=1`). This mode activates the onboard accelerometer to measure tilt in real time.
+To help with alignment, toggle the BOOT and OPTIONS jumper to **leveling mode** (`BOOT0=0, BOOT1=1, OPTIONS=000`). This mode activates the onboard accelerometer to measure tilt in real time.
 
 ![Leveling Mode Jumper Settings](img/user-setup-guide/leveling-mode-jumper.webp)
 
