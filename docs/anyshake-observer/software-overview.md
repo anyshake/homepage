@@ -8,7 +8,9 @@ slug: software-overview
 
 AnyShake Observer is written in **Go** and **TypeScript**, supporting a wide range of OS and CPU architectures, including embedded Linux. It offers real-time waveform display, event analysis, and database archiving, with a strong focus on professional usability and extensibility.
 
-It works seamlessly with **AnyShake Explorer** over a serial connection and supports exporting data in standard seismic formats such as **SAC** and **MiniSEED**, as well as **SeedLink** streaming for networked data systems.
+It connects to **AnyShake Explorer** over serial or a TCP bridge and exports **SAC** and **MiniSEED**, with **SeedLink**, **Winston**, and authenticated **FDSN Web Services** for networked clients.
+
+This documentation follows **Observer 4.9.0**. See the [source changelog](https://github.com/anyshake/observer/blob/master/CHANGELOG.md) for release details. Screenshots may show earlier interface layouts.
 
 ## Features
 
@@ -26,6 +28,13 @@ It works seamlessly with **AnyShake Explorer** over a serial connection and supp
 - **Streaming & forwarding** – supports **SeedLink** and **TCP** protocols
 - **Flexible storage** – compatible with PostgreSQL, MariaDB/MySQL, SQL Server, and SQLite
 - **Seamless SeisComP integration** – easily connect to professional seismic networks
+- **FDSN Station and DataSelect** – query metadata and archived waveforms with managed access keys
+- **Private remote access** – embedded Tailscale/Headscale with TCP and UDP forwarding
+- **Local discovery** – mDNS advertisements for HTTP and running waveform services
+- **Software maintenance** – manual official upgrades, optional automatic upgrades, and executable backup management
+- **Display preferences** – light, dark, and system themes with remembered browser preferences
+
+Start with [Installing Observer](installing-observer.md), configure the [base JSON settings](configuration-tool.md), then follow [Run Observer](run-observer.md). The [Service Modules overview](service-modules/service-overview.md) lists defaults and dependencies.
 
 ## Preview
 
@@ -51,7 +60,7 @@ The AnyShake team independently developed a SeedLink protocol implementation in 
 
 ### Historical Data Query
 
-The historical query feature lets users retrieve waveforms from the database by specifying a time range (up to 1 hour). It also integrates global seismic agency data for reverse earthquake lookup. Retrieved waveform parts can be exported in multiple formats, including MiniSEED, SAC, TXT, and WAV audio.
+Historical queries retrieve database waveforms for up to one hour, subject to resource limits, and require retained Archiver records. Global seismic agency data helps select arrival windows and requires network access. Export formats include MiniSEED, SAC, TXT, and WAV audio. WAV playback uses 30× speed for listening; use seismic formats for analysis.
 
 ![Historical Data Query](img/software-overview/history.webp)
 
@@ -63,7 +72,7 @@ The Data Download page allows users to access and download daily archived MiniSE
 
 ### Station Metadata
 
-Station metadata files for AnyShake Explorer devices — including instrument response (poles and zeros) are available in both SeisComP XML and FDSNWS StationXML formats. Users can easily copy the content to the clipboard or download it as a file.
+Station metadata, including instrument response, is available as SeisComP XML and FDSN StationXML. Built-in models include E-D001, E-C111G, E-C121G, and E-C131G; custom directories are supported. Metadata reflects current configuration and sample rate. Users can copy or download it, and authenticated clients can query [FDSN Web Services](fdsn-web-services.md).
 
 ![Station Metadata](img/software-overview/metadata.webp)
 

@@ -4,142 +4,90 @@ title: Run Observer
 slug: run-observer
 ---
 
-AnyShake Observer is a single-binary deployment, which means you can run it directly from the command line without additional dependencies.
+Observer needs a readable JSON configuration, a writable database, and a working hardware connection before the web interface becomes available. See [Installing Observer](installing-observer.md) and [Configuration Tool](configuration-tool.md) first. For upgrade methods and backup procedures, see [Upgrade and Backup](upgrade-and-backup.md).
 
-After obtaining the `observer` binary and the `config.json` configuration file, you're ready to launch the application. This tutorial uses Debian Linux as an example. We assume that the `observer` binary has been installed to `/usr/local/bin`, and the configuration file is located at `/usr/local/etc/observer/config.json`.
+## Command-line Arguments
 
-For Windows users, you typically need to open Command Prompt or PowerShell from the installation directory. In this example, we assume `config.json` is located at `C:\Program Files\AnyShake Observer\config.json`.
+| Argument | Purpose | Default |
+| --- | --- | --- |
+| `-version` | Print version and build information, then exit. | `false` |
+| `-config PATH` | Read the base JSON configuration. | `./config.json` |
 
-To quickly open a command prompt in the desired folder on Windows, hold down Shift, right-click in the blank space of the folder, and select **“Open command window here”** (or **“Open PowerShell here”** on Windows 10 and later).
-
-![Open Command Window](img/run-observer/windows-open-terminal.webp)
-
-:::tip
-On Windows, the executable is named `observer.exe`, while on Linux and macOS it is simply `observer`. The examples below use Linux/macOS syntax — Windows users should adjust accordingly.
-:::
-
-## Arguments
-
-The `observer` binary accepts the following command-line arguments:
-
-- `-version` – Display version information
-- `-config` – Path to the configuration file
-
-## Get Software Version
-
-To display the version of the application, run:
+Both single and double hyphens are accepted. Relative paths resolve from the **process working directory**, independently of configuration file and executable locations.
 
 ```bash
-$ /usr/local/bin/observer -version
+observer -version
+observer -config /usr/local/etc/observer/config.json
 ```
 
-This will output a banner along with version details, commit hash, build timestamp, Go toolchain version, and target architecture, similar to the following:
+Version output includes the version, commit, build time, build channel, and target information. This documentation follows **4.9.0**.
 
-```
-     _                      ____    _               _
-    / \     _ __    _   _  / ___|  | |__     __ _  | | __   ___
-   / _ \   | '_ \  | | | | \___ \  | '_ \   / _` | | |/ /  / _ \
-  / ___ \  | | | | | |_| |  ___) | | | | | | (_| | |   <  |  __/
- /_/   \_\ |_| |_|  \__, | |____/  |_| |_|  \__,_| |_|\_\  \___|
-                    |___/
-   ___    _
-  / _ \  | |__    ___    ___   _ __  __   __   ___   _ __
- | | | | | '_ \  / __|  / _ \ | '__| \ \ / /  / _ \ | '__|
- | |_| | | |_) | \__ \ |  __/ | |     \ V /  |  __/ | |
-  \___/  |_.__/  |___/  \___| |_|      \_/    \___| |_|
-
-© SensePlex Limited 2025. All Rights Reserved.
-
-AnyShake Observer v4.0.3 (Listen to the whispering earth.)
-Release: v4.0.3-dc746e0b-1751173006 go1.24.4 linux/amd64
-```
-
-## Run the Application
-
-Before launching the application, make sure your AnyShake Explorer device is connected to the host. Then run the following command:
-
-```bash
-$ /usr/local/bin/observer -config /usr/local/etc/observer/config.json
-```
-
-If you are using Windows, you may need to adjust the path to the configuration file.
+On Windows, open PowerShell in the application directory:
 
 ```powershell
-C:\Program Files\AnyShake Observer>"C:\Program Files\AnyShake Observer\observer.exe" -config "C:\Program Files\AnyShake Observer\config.json"
+Set-Location 'C:\AnyShake Observer'
+.\observer.exe -config .\config.json
 ```
 
-![Run Observer](img/run-observer/start-observer.webp)
+For foreground operation, stop with **Ctrl+C** and wait for shutdown. Observer also handles SIGTERM on Unix-like systems. A second interrupt forces termination; avoid this while data is being written.
 
-On the first launch, the application may take some time to initialize the database — please be patient. Once the database is ready, the default administrator account will be created, and the initial login credentials will be printed to the console.
+## First Login
 
-![Default Account](img/run-observer/default-account.webp)
+Startup connects to the database, initializes its schema and settings, and opens the hardware transport. Time synchronization may take additional time. If hardware initialization fails, resolve the console or journal error before opening the web interface.
 
-By default, the default administrator username is `anyshake_admin`, and the default password is `Anyshake@12#$`.
+On a new database, Observer creates an administrator and prints its credentials:
+
+| Field | Initial value |
+| --- | --- |
+| Username | `anyshake_admin` |
+| Password | `Anyshake@12#$` |
+
+Open `http://127.0.0.1:8073` on the Observer host, or use the host address if `server.listen` permits remote access. `0.0.0.0` specifies a binding, not a browser destination.
 
 :::danger
-Be sure to change the default administrator password after logging in for the first time!
+Change default credentials immediately in **Settings → User Management** before allowing other users to connect.
 :::
 
-Once the application is running, the console will display the web access URL. By default, this is usually `http://127.0.0.1:8073`.
+Passwords require 8–32 characters, at least one uppercase letter, and at least one special character. You can also rename the account. An administrator cannot remove their own administrator status through account editing.
 
-![Access URL](img/run-observer/webui-access-url.webp)
+![User Management](img/run-observer/change-password.webp)
 
-Open the web interface in your browser and log in using the default administrator credentials.
+## Station Settings
 
-![Web Interface](img/run-observer/login-form.webp)
+Configure station name, description, country, place, affiliation, station code, network code, location code, and channel codes in **Settings**. These identify waveforms and generated metadata. Network and location codes each require two characters; station codes accept one to five. Keep them consistent with downstream clients.
 
-:::info
-AnyShake Observer uses modern web technologies. Some older browsers may not be fully compatible, it may cause unexpected behavior (e.g. style issues).
-:::
+Default channel order: `EHZ`, `EHE`, `EHN`, `ENZ`, `ENE`, `ENN`, `CH7`, `CH8`; only channels supplied by the device are available. Restart Observer after changing channel codes, and restart affected services after changing station identifiers to refresh their cached settings. Re-export metadata when its inputs change.
 
-### Change the Default Administrator Password
+The **FDSN Web Service** switch takes effect immediately. See [FDSN Web Services](fdsn-web-services.md) for access keys and examples.
 
-After logging in for the first time, it's important to **change the default administrator password** to ensure system security.
+![Station Settings](img/run-observer/edit-station-settings.webp)
 
-1. Click the gear icon (⚙️ **System Settings**) in the left sidebar
-2. Navigate to **User Management**
-3. Click the **Edit** button next to the default administrator account
+Base settings in `config.json` require an application restart. Station and service settings are stored in the database; do not add service fields to `config.json`. See [Service Modules](service-modules/service-overview.md).
 
-![Change Password](img/run-observer/change-password.webp)
+## Manage the systemd Service
 
-It's recommended to change the default username as well. This can be done in the same way as changing the password. The new password must meet the following requirements:
+For installations created by `get-observer.sh`:
 
-- Must be **8–32 characters** in length
-- Include **at least one uppercase letter**
-- Include **at least one special character**
+```bash
+sudo systemctl status observer.service
+sudo journalctl -u observer.service -f
+sudo systemctl restart observer.service
+sudo systemctl stop observer.service
+sudo systemctl enable observer.service
+```
 
-![New Password Set](img/run-observer/new-password-set.webp)
+The service runs as `observer`, reads `/usr/local/etc/observer/config.json`, and works in `/var/lib/observer`. Relative MiniSEED and helicorder output therefore lives under `/var/lib/observer/service_data`. Console output goes to the journal. The generated unit grants existing `dialout`/`uucp` groups and the capability to bind UDP port 123.
 
-:::tip
-When editing the default administrator, the administrator itself cannot be downgraded.
-:::
+For paths outside the installation's writable directories, update filesystem permissions and the unit's `ReadWritePaths`. After editing the unit, run `sudo systemctl daemon-reload` and restart it.
 
-### Edit Station Settings
+## Remove a Linux Installation
 
-The station settings are global configuration that includes the following fields:
+Stop and disable the service before removing its generated unit:
 
-- Station Name
-- Station Description
-- Station Country
-- Station Place
-- Station Affiliation
-- Station Code
-- Network Code
-- Location Code
-- Channel Codes
+```bash
+sudo systemctl disable --now observer.service
+sudo rm /etc/systemd/system/observer.service
+sudo systemctl daemon-reload
+```
 
-These settings are used to identify your station, generate station metadata, filenames of MiniSEED archives, helicorder images. It can be edited at any time to meet your needs.
-
-![Edit Station Configuration](img/run-observer/edit-station-settings.webp)
-
-After editing, the settings will be fully applied after the next startup.
-
-## Stop the Application
-
-To safely stop the application, press Ctrl+C in the terminal. This will gracefully shut down the process, release hardware resources, and properly close the database. The shutdown procedure may take a few seconds — please wait until it completes.
-
-![Stop Observer](img/run-observer/stop-observer.webp)
-
-:::info
-Unless absolutely necessary, avoid using `kill -9 <PID>` to terminate the process, as this may prevent resources from being released properly and could result in data loss.
-:::
+The executable directory, configuration, `/var/lib/observer`, and service account remain for backup or reinstallation. Remove those separately after deciding which recordings and settings to retain.

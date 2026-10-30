@@ -70,7 +70,7 @@ However, for diagnostic and maintenance purposes, **telemetry data** are periodi
 - Platform information
 - Software version
 
-These data helps us monitor system stability, detect bugs, and plan future updates.
+These data help us monitor system stability, detect bugs, and plan future updates. Reporting is enabled by default at ten-minute intervals. See [Metrics Service](anyshake-observer/service-modules/metrics.md) for the reported attributes and how to stop reporting.
 
 :::tip
 You can permanently turn off telemetry at any time by disabling "Metrics Service" in AnyShake Observer web interface.

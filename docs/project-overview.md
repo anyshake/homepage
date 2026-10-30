@@ -55,11 +55,11 @@ Unlike traditional seismographs, which are often proprietary and expensive, AnyS
 
 | Feature              | **AnyShake Explorer** | Raspberry Shake 1D | Raspberry Shake 4D | Raspberry Shake 3D |
 | -------------------- | --------------------- | ------------------ | ------------------ | ------------------ |
-| Open-Source Hardware | ✅                    | ❌                 | ❌                 | ❌                 |
-| Open-Source Software | ✅                    | Partial            | Partial            | Partial            |
+| Open-Source Hardware | Yes                   | No                 | No                 | No                 |
+| Open-Source Software | Yes                   | Partial            | Partial            | Partial            |
 | Geophone Channels    | 3                     | 1                  | 1                  | 3                  |
-| Accelerometer        | 3-axis                | ❌                 | 3-axis             | ❌                 |
+| Accelerometer        | 3-axis                | No                 | 3-axis             | No                 |
 | ADC Resolution       | 32-bit                | 24-bit             | 24-bit             | 24-bit             |
 | Sampling Rate        | 50–250 SPS            | 100 SPS            | 100 SPS            | 100 SPS            |
 | Power Usage          | ~0.6W                 | ~2.2W              | ~2.2W              | ~2.2W              |
-| Customizability      | ✅                    | ❌                 | ❌                 | ❌                 |
+| Customizability      | Yes                   | No                 | No                 | No                 |

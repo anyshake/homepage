@@ -16,16 +16,18 @@ AnyShake Explorer is designed to output raw sensor and ADC sample counts rather 
 
 Key parameters such as system gain, sensor response (poles and zeros), channel definitions, and sampling rate are fully defined in the **station metadata**. By loading and parsing this metadata during post-processing, raw sample counts can be accurately converted into physical quantities such as acceleration, velocity, or displacement.
 
-The station metadata is provided as an XML file and can be downloaded from the **Settings** page in AnyShake Explorer:
+The station metadata is provided as an XML file and can be downloaded from the **Settings** page in AnyShake Observer:
 
 ![Download Metadata](img/get-accelerations/download-metadata.webp)
 
-There are 2 formats are supported in AnyShake Observer:
+Two metadata formats are supported in AnyShake Observer:
 
 - **SeisComP XML**: The native metadata format used by the SeisComP system, which is widely deployed in professional seismic networks.
 - **FDSN StationXML**: An international standard defined by the International Federation of Digital Seismograph Networks (FDSN). It is the most widely supported metadata exchange format in the seismological community.
 
 By default, the format is **SeisComP XML**. After downloading, place the metadata file in the **same directory** as the waveform data files to be processed.
+
+Metadata and waveforms can also be queried through authenticated [FDSN Web Services](../anyshake-observer/fdsn-web-services.md).
 
 ## Obtaining Waveform Data
 

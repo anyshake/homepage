@@ -4,7 +4,9 @@ title: Access Services Using Tailscale
 slug: access-using-tailscale
 ---
 
-This section will guide you through the installation process of **Tailscale** and using it to access AnyShake Services.
+Observer includes an embedded [Tailscale Service](../anyshake-observer/service-modules/tailscale.md) with Tailscale/Headscale enrollment and selected TCP/UDP forwarding. For Observer-only access, authorize that module's node and connect to its tailnet address at the configured web port (normally 8073). No separate host daemon is needed; the remote device still needs a Tailscale client.
+
+The steps below describe the alternative **host-level Tailscale installation**, useful when other host applications also need private access. Embedded Observer nodes and host daemons have separate identities and addresses; use the address belonging to your chosen setup.
 
 ## Overview
 
@@ -19,7 +21,7 @@ While this guide uses **Tailscale** as an example, similar results can be achiev
 - **Headscale** – Self-hosted Tailscale control server
 - **WireGuard (manual setup)** – Direct peer-to-peer VPN configuration
 
-The choice of solution depends on your preferences and infrastructure. The steps below focus on **Tailscale** due to its ease of setup and broad platform support.
+Check the current [Tailscale download requirements](https://tailscale.com/download) for your platform. Observer release targets and Tailscale client targets are separate.
 
 ---
 
@@ -28,7 +30,7 @@ The choice of solution depends on your preferences and infrastructure. The steps
 * **Android** (arm64)
 * **iOS / iPadOS / tvOS** (arm64)
 * **macOS** (amd64 / arm64)
-* **Windows 7 and later** (x86 / amd64 / arm64)
+* **Windows** (supported versions depend on the Tailscale release)
 * **Linux** (x86 / amd64 / arm / arm64 / ppc64le / riscv64 / s390x / mips / mips64 / mips64le / mipsle / loong64)
 * **FreeBSD** (amd64 / arm64)
 * **OpenWrt** (mips / mips64 / arm / arm64 / x86 / amd64)

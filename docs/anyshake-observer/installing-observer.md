@@ -4,168 +4,142 @@ title: Installing Observer
 slug: installing-observer
 ---
 
-This section will guide you through the installation process for **AnyShake Observer**.
+Observer is distributed as a single executable with its web interface embedded. These instructions follow the **4.9.0** source and release workflow.
 
 ## Supported Platforms
 
-AnyShake Observer runs on a wide range of platforms. Some architectures also support Docker images (highlighted in **bold**):
+| Platform | Release targets |
+| --- | --- |
+| Linux | 386, amd64, ARM v5/v6/v7, arm64, loong64, MIPS variants, ppc64le, riscv64, s390x |
+| Windows | 386, amd64, arm64; separate Windows 7 builds for 386 and amd64 |
+| macOS | amd64, arm64 |
+| FreeBSD / OpenBSD | 386, amd64, ARM v5/v6/v7, arm64 |
+| Android | arm64 |
 
-- **Android** (arm64)
-- **macOS** (amd64 / arm64)
-- **FreeBSD** (x86 / amd64 / arm / arm64)
-- **Windows** 7 and later (x86 / amd64 / arm / arm64)
-- **Linux** (**x86** / **amd64** / **arm** / **arm64** / **ppc64le** / **riscv64** / **s390x** / mips / mips64 / mips64le / mipsle / loong64)
+The Docker workflow publishes Linux images for 386, amd64, ARM v6/v7, arm64, ppc64le, riscv64, and s390x. Optional services and database drivers can vary by target. We recommend at least 1 GB RAM and a dual-core CPU; helicorder plotting and long waveform queries need additional memory.
 
-In fact, AnyShake Observer can even run on a Raspberry Pi 1 Model B+ (overclocked to 950 MHz, with 100 MB of swap) with all core services enabled!
+## One-command Installation on Linux
 
-:::info
-Although AnyShake Observer has very modest hardware requirements, we recommend using a system with **at least 1 GB of RAM** and a **dual-core CPU** for a smoother experience.
-:::
-
-## Installation Options
-
-Depending on your platform and preferences, there are several ways to install AnyShake Observer. This section covers the most common and recommended method.
-
-### Pre-Built Packages
-
-This is the recommended installation method for most users. Pre-built packages are stable, easy to install, and require minimal configuration.
-
-#### Download the Binary
-
-Pre-built binaries are available on the GitHub Releases page of the AnyShake Observer repository:
-
-Check out [github.com/anyshake/observer/releases](https://github.com/anyshake/observer/releases)
-
-Each release includes assets named like:
-
-- `windows_amd64.zip` – Windows 64-bit
-- `linux_arm32_v7a.zip` – Linux ARM 32-bit
-- `macos_arm64.zip` – macOS Apple Silicon
-
-All pre-built packages are provided in `.zip` format. Download the one that matches your system, then unzip it to any directory.
-
-You will also find `.dgst` files such as `linux_amd64.zip.dgst` – these contain MD5, SHA1, SHA2-256, and SHA2-512 digests for verifying file integrity.
-
-#### Determine Your System Architecture
-
-To find the correct binary, determine your system’s architecture:
-
-**For Windows users:**
-
-Open `cmd` and type:
-
-```cmd
-> echo %PROCESSOR_ARCHITECTURE%
-```
-
-- If you see `x86`, you’re on 32-bit Windows, use a package with `_386` suffix.
-- If you see `AMD64`, you’re on 64-bit Windows, use a package with `_amd64` suffix.
-- For Windows 7 users, use the package with `windows7_` prefix.
-
-**For Linux users:**
-
-Use this command:
+The [Observer installer](https://anyshake.org/get-observer.sh) supports Linux hosts running **systemd 240 or newer**. It requires root privileges, `curl`, `unzip`, `jq`, `sha256sum`, and the `getent`, `useradd`, and `groupadd` account tools. On Debian/Ubuntu, install prerequisites with:
 
 ```bash
-$ uname -m
+sudo apt-get update
+sudo apt-get install ca-certificates curl unzip jq coreutils passwd libc-bin
 ```
 
-- If it returns `x86_64`, use the `_amd64` package.
-- If it returns `i686`, use the `_386` package.
-- For ARM devices like Raspberry Pi, it may return `armv7l`, `aarch64`, etc. Remember to choose the appropriate `linux_arm*` package accordingly.
-
-#### Verify the Downloaded File
-
-Each `.zip` file has a corresponding `.dgst` digest file. You can verify the integrity of the downloaded binary using:
+Generate `config.json` using [Configuration Tool](configuration-tool.md), then install:
 
 ```bash
-$ cat linux_amd64.zip.dgst
-MD5 = dd3a79d4baf00bcf09ad3b325d5d516b
-...
-$ echo "dd3a79d4baf00bcf09ad3b325d5d516b linux_amd64.zip" | md5sum -c
-linux_amd64.zip: OK
+curl -fsSL https://anyshake.org/get-observer.sh -o get-observer.sh
+sudo sh get-observer.sh --config ./config.json
 ```
 
-Replace `linux_amd64.zip` and the hash with the appropriate filenames and values for your system.
+With an imported configuration, a new installation enables and starts `observer.service`. Use absolute paths for external database files and output directories. The service runs as `observer`, with `/var/lib/observer` as its working directory; that account must be able to access configured paths and the serial device.
 
-#### Install the Binary
-
-After extracting the ZIP package, you’ll find the following files:
-
-- `observer.exe` – Windows executable
-- `observer` – Linux/macOS executable
-- `config.json` – Default configuration file
-- `observer.service` – Linux systemd service file (optional)
-
-:::tip
-The default `config.json` may not be suitable for your system, so you need to edit it or generate a new one to override the default values before copying. We recommend using the **AnyShake Prisma** to generate a new configuration, see [Configuration Tool](configuration-tool) to learn more.
-:::
-
-**For Windows users:**
-
-1. Create a directory, for example, `C:\Program Files\AnyShake Observer`.
-   ![Installation Directory](img/installing-observer/windows-directory.webp)
-2. Place `observer.exe` and `config.json` in the newly created directory.
-   ![Installation Files](img/installing-observer/windows-observer-files.webp)
-
-**For Linux users:**
-
-1. Add your user to the `dialout` group (for serial port access):
+To install first and configure later:
 
 ```bash
-$ sudo usermod -a -G dialout $USER
+curl -fsSL https://anyshake.org/get-observer.sh | sudo sh
+sudoedit /usr/local/etc/observer/config.json
+sudo systemctl enable --now observer.service
 ```
 
-2. Create the configuration directory and copy `config.json`:
+Without `--config`, a new installation writes a starter configuration and leaves the service stopped. Set hardware endpoint, protocol, model, and coordinates before starting. This starter uses SQLite at `/var/lib/observer/observer.db`, logs to the journal, and listens on `127.0.0.1:8073`. Set `server.listen` to `0.0.0.0:8073` if LAN access is required.
+
+| Option | Purpose |
+| --- | --- |
+| `--version v4.9.0` | Install a specific release; default: latest stable GitHub release. |
+| `--arch linux_arm32_v7a` | Override detection with an exact Linux release target. Useful for MIPS or mixed kernel/userspace architectures. |
+| `--config ./config.json` | Import configuration on first installation. Existing configuration is preserved; edit it directly for subsequent changes. |
+| `--no-start` | Leave the service stopped after installation. |
+| `--dry-run` | Print the plan without downloads or system changes. |
+| `--help` | Show usage. |
+
+The installer verifies the extracted executable's SHA-256 against the release `.dgst` before replacement. Existing installations retain configuration, database, and service output. A running managed service is stopped after verification, then restarted unless `--no-start` is set. The previous executable remains as a timestamped backup. If restarting fails during installation, the installer attempts to restore that executable. This does not reverse database migrations or guarantee continued process health; inspect the journal.
+
+| Installed item | Path |
+| --- | --- |
+| Executable | `/usr/local/observer/bin/observer` |
+| Configuration | `/usr/local/etc/observer/config.json` |
+| Working directory and default data | `/var/lib/observer` |
+| systemd unit | `/etc/systemd/system/observer.service` |
+
+The service account can write to the executable directory to support built-in upgrades. The installer refuses to overwrite an unmanaged unit or executable installation. For existing manual installations, follow [Manual Upgrade and Recovery](upgrade-and-backup.md#manual-upgrade-and-recovery).
+
+## Manual Installation
+
+Download from [GitHub Releases](https://github.com/anyshake/observer/releases). Actual filenames include `windows_amd64.zip`, `windows7_amd64.zip`, `linux_arm32_v7a.zip`, and **`darwin_arm64_v8a.zip`** for Apple Silicon.
+
+On Unix-like hosts, inspect `uname -m`: `x86_64` → `amd64`, `i686` → `386`, `armv6l` → `arm32_v6`, `armv7l` → `arm32_v7a`, and `aarch64` → `arm64_v8a`. Match both the CPU and operating system userspace. On Windows, inspect **Settings → System → About → System type**; Windows 7 needs the separate `windows7_` package.
+
+### Verify the Executable
+
+For `linux_amd64.zip`, download **`linux_amd64.dgst`** from the same release. The digest describes the executable inside the archive, not the ZIP:
 
 ```bash
-$ sudo mkdir -p /usr/local/etc/observer
-$ sudo cp config.json /usr/local/etc/observer/
+unzip linux_amd64.zip -d observer-release
+cat linux_amd64.dgst
+sha256sum observer-release/observer
 ```
 
-3. Copy the binary to a system path:
+Compare against `SHA2-256=` in the digest. On macOS, use `shasum -a 256`; on Windows, use `Get-FileHash .\observer.exe -Algorithm SHA256` in PowerShell.
+
+### Configuration and Paths
+
+The archive contains `observer` (or `observer.exe`) and **`assets/`**, containing `config.json` and `observer.service`. Copy `assets/config.json` to a working configuration and edit it. The release example uses `/tmp/observer.db`; change this to persistent writable storage.
+
+On Windows, place the executable and edited configuration in a writable application directory. One possible manual Linux layout is:
 
 ```bash
-$ sudo cp observer /usr/local/bin/
+sudo install -m 0755 observer-release/observer /usr/local/bin/observer
+sudo install -d /usr/local/etc/observer
+sudo install -m 0600 config.json /usr/local/etc/observer/config.json
 ```
 
-4. To verify the installation:
+The running user must be able to read the configuration and write the database and output directories. Serial access commonly needs membership in `dialout` on Debian/Ubuntu or `uucp` on other distributions; inspect the device's group and log in again after adding membership.
+
+The packaged unit is an example: its `ExecStart` points to `/usr/local/observer/bin/observer`. Adapt its paths, account, working directory, and writable directories before enabling it. The installer generates a matching unit automatically.
+
+## Docker
+
+Use a Linux Docker host for straightforward serial-device mapping. Configure these paths inside `config.json` first:
+
+- `database.database`: `/data/observer.db`
+- `hardware.endpoint`: `serial:///dev/ttyUSB0?baudrate=57600`, or your TCP endpoint
+- `server.listen`: `0.0.0.0:8073`
+- `logger.path`: `""` for container logs
 
 ```bash
-$ which observer
-/usr/local/bin/observer
-```
-
-### Docker Image
-
-If you prefer containers, an official Docker image is available.
-
-:::info
-The Docker installation method is **not recommended for Windows users**, as it is difficult to map serial devices properly.
-:::
-
-#### Pull the Image
-
-```bash
-$ docker pull ghcr.io/anyshake/observer:latest
-```
-
-#### Run the Container
-
-Mount the config file and, if applicable, the serial port:
-
-```
-$ docker run -d \
+mkdir -p observer-data
+docker run -d \
     --name observer \
     --network host \
-    --restart always \
+    --restart unless-stopped \
+    --workdir /data \
     --device /dev/ttyUSB0:/dev/ttyUSB0 \
-    --volume /path/to/config.json:/config.json \
+    --mount type=bind,src="$(pwd)/config.json",dst=/config.json,readonly \
+    --mount type=bind,src="$(pwd)/observer-data",dst=/data \
     ghcr.io/anyshake/observer:latest \
     --config /config.json
 ```
 
-- Replace `/path/to/config.json` with the actual path on your host
-- Replace `/dev/ttyUSB0` with your actual serial port if applicable
+The config file must exist before starting. Omit `--device` with TCP hardware transport. Relative service output paths resolve under `/data`, persisting with the database. Host networking exposes enabled listening ports on the host, including optional UDP services.
 
-If you don’t use a hardware serial connection, the `--device` flag is not needed.
+Upgrade by pulling the desired image tag and recreating the container with the same mounts. Back up data first. Manage container upgrades through Docker; Dockerfile builds do not expose the official binary updater.
+
+## Build from Source
+
+For source code and project information, start with the [Observer README on GitHub](https://github.com/anyshake/observer#readme). The steps below follow the 4.9.0 build workflow; check the repository for the requirements of the version you are building.
+
+Use the Go version specified in `go.mod` (currently **1.27.1**), Node.js **24** as used by CI, npm, Git, and Make:
+
+```bash
+git clone https://github.com/anyshake/observer.git
+cd observer/web/src
+npm ci
+npm run build
+cd ../..
+make build
+```
+
+The executable is written to `build/dist/observer`, with examples in `build/dist/assets/`. Build the web interface before Go because web assets are embedded. Self-built binaries do not expose the official updater. Continue with [Run Observer](run-observer.md).

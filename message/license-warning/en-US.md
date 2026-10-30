@@ -9,16 +9,16 @@ We detected that the device you are currently connected to might not be a genuin
 
 Without long-term funding, we face significant challenges. To ensure the project's sustainability, we sincerely invite you to support us by purchasing a genuine AnyShake Explorer.
 
-💡 Why Choose AnyShake Explorer?
+Why Choose AnyShake Explorer?
 
-- ✅ Performance comparable to closed-source competitors, but at a more reasonable price.
-- ✅ Fully open-source design – every line of code and every circuit board is public and transparent.
-- ✅ Purchase includes dedicated technical support. We respond promptly if you encounter issues.
-- ✅ Your support is our greatest motivation to keep moving forward.
+- Performance comparable to closed-source competitors, but at a more reasonable price.
+- Fully open-source design – every line of code and every circuit board is public and transparent.
+- Purchase includes dedicated technical support. We respond promptly if you encounter issues.
+- Your support is our greatest motivation to keep moving forward.
 
 If you're willing to help us go further, please consider purchasing the genuine product. This is the greatest encouragement and recognition for us.
 
-👉 [Purchase AnyShake Explorer Now](https://anyshake.org/docs/purchase-anyshake)
+[Purchase AnyShake Explorer Now](https://anyshake.org/docs/purchase-anyshake)
 
 Thank you for your understanding and support!
 

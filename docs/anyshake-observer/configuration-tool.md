@@ -4,363 +4,154 @@ title: Configuration Tool
 slug: configuration-tool
 ---
 
-**AnyShake Observer** requires a minimal configuration to initiate its core services. This configuration is defined in a JSON file, which includes essential parameters such as site coordinates, connection details for AnyShake Explorer, web server settings, database configuration, logging preferences, and more.
+Observer reads its base configuration from JSON. **[AnyShake Prisma](https://anyshake.github.io/prisma)** provides a visual editor, live JSON preview, and download button. This reference describes fields read by Observer **4.9.0**; check generated output against it when using another Prisma version.
 
-For general users, we highly recommend using **AnyShake Prisma** — a visual configuration tool developed by the AnyShake Team — to automatically generate the necessary configuration file. Simply complete the form provided by the tool, and it will generate a valid configuration file for you. No prior technical knowledge is required.
+![AnyShake Prisma](img/configuration-tool/anyshake-prisma-ui.webp)
 
-This guide will walk you through the process of using AnyShake Prisma to quickly configure AnyShake Observer and establish a connection with your deployed AnyShake Explorer device.
+Download `config.json` and pass it with `observer -config /path/to/config.json`. File changes require restarting Observer. Station and optional service settings are stored in the database and managed through the web interface.
 
-## Accessing the Configuration Tool
+## Complete Example
 
-Open the AnyShake Prisma website at [anyshake.github.io/prisma](https://anyshake.github.io/prisma). Upon loading, you will be presented with the following interface:
+This example uses an E-C111G over serial and persistent SQLite storage. Replace coordinates, connection, and paths for your station. Create the database's parent directory and make it writable by the running account.
 
-![UI of AnyShake Prisma](img/configuration-tool/anyshake-prisma-ui.webp)
-
-On the left side of the screen is a configuration form for user input, while the right side displays the corresponding JSON configuration file, generated in real time. Any changes made in the form will be immediately reflected in the configuration preview.
-
-:::tip
-The AnyShake Prisma website uses a technology called Service Worker to cache resources locally. Once accessed, the site remains available even when you are offline.
-:::
-
-## Filling in the Form
-
-### Location
-
-This field specifies the fallback coordinates of your station, including **latitude**, **longitude**, and **elevation**. These values will be used only if GNSS data is unavailable — once GNSS becomes available, this field will be automatically overridden.
-
-In AnyShake Observer, precise location data is shown only to users with administrator privileges. For regular users, coordinates are intentionally obfuscated to protect privacy. Therefore, you can confidently enter accurate site information.
-
-Alternatively, you can select your site location by interacting with the map component embedded in the form. Clicking on the map will automatically update the coordinate fields. The map is based on OpenStreetMap (OSM) layers, and the available zoom level depends on the tile provider.
-
-:::info
-It is essential to provide accurate coordinates, as they directly impact key system functionalities. For example, the event backtracking feature uses these coordinates to calculate the estimated arrival time of seismic waves.
-:::
-
-### Hardware
-
-This field specifies the connection settings for the AnyShake Explorer. Incorrect values will prevent the system from establishing a connection with your device.
-
-#### Data Protocol
-
-Since its inception, the AnyShake Project has undergone three iterations of its data protocol:
-
-- **v1**: The original version, supported by all AnyShake Observer releases. Currently, no AnyShake Explorer devices use this protocol.
-- **v2**: Supported by AnyShake Observer v3.x.x and later. Currently used by the E-D001 model.
-- **v3**: Supported by AnyShake Observer v4.x.x and later. Currently used by models E-C111G and E-C121G.
-
-#### Product Model
-
-Select or manually specify your device model, such as E-C111G or E-D001.
-
-AnyShake Observer uses this information to associate built-in metadata, which will be displayed on the settings page.
-
-:::info
-For models other than E-C111G and E-C121G (e.g., custom instruments), metadata will not be available.
-:::
-
-#### Transport Type
-
-AnyShake Observer currently supports device connections via serial port or TCP/IP. The serial port is typically the default option for AnyShake Explorer devices, while TCP/IP is useful when using a serial-to-Ethernet converter. If you are unsure which method applies, please select serial port.
-
-:::danger
-If you access AnyShake Observer via TCP/IP, we strongly recommend enabling GNSS mode on the AnyShake Explorer. This is because Ethernet latency is typically unpredictable, and significant fluctuations in network delay may cause AnyShake Observer to actively discard received data packets.
-:::
-
-#### Serial Port / TCP Hostname
-
-**For serial port**, enter the serial port identifier here, such as `COM5` on Windows or `/dev/ttyACM0` on Linux.
-
-To find your serial port name on Windows, open Device Manager and locate the port under the device list. The example below shows the serial port named `COM3`:
-
-![Windows Serial Port](img/configuration-tool/windows-serial-port.webp)
-
-:::tip
-If you find that the device does not show a serial port but appears as an unknown device, try installing the appropriate driver and then reconnect.
-:::
-
-On Linux systems, serial port names typically begin with `tty` followed by an identifier, such as `ttyUSB0` or `ttyACM0`. You can identify the device by running commands like `sudo dmesg | grep tty` or `ls /dev/tty*`. The example below shows output indicating the serial port as `/dev/ttyUSB0`:
-
-```bash
-$ sudo dmesg | grep tty
-...
-[   94.805749] ch341-uart ttyUSB0: break control not supported, using simulated break
-[   94.806063] usb 1-6: ch341-uart converter now attached to ttyUSB0
-...
-$ ls /dev/tty*
-/dev/tty    /dev/tty20  /dev/tty33  /dev/tty46  /dev/tty59   /dev/ttyS13  /dev/ttyS26
-/dev/tty0   /dev/tty21  /dev/tty34  /dev/tty47  /dev/tty6    /dev/ttyS14  /dev/ttyS27
-/dev/tty1   /dev/tty22  /dev/tty35  /dev/tty48  /dev/tty60   /dev/ttyS15  /dev/ttyS28
-/dev/tty10  /dev/tty23  /dev/tty36  /dev/tty49  /dev/tty61   /dev/ttyS16  /dev/ttyS29
-/dev/tty11  /dev/tty24  /dev/tty37  /dev/tty5   /dev/tty62   /dev/ttyS17  /dev/ttyS3
-/dev/tty12  /dev/tty25  /dev/tty38  /dev/tty50  /dev/tty63   /dev/ttyS18  /dev/ttyS30
-/dev/tty13  /dev/tty26  /dev/tty39  /dev/tty51  /dev/tty7    /dev/ttyS19  /dev/ttyS31
-/dev/tty14  /dev/tty27  /dev/tty4   /dev/tty52  /dev/tty8    /dev/ttyS2   /dev/ttyS4
-/dev/tty15  /dev/tty28  /dev/tty40  /dev/tty53  /dev/tty9    /dev/ttyS20  /dev/ttyS5
-/dev/tty16  /dev/tty29  /dev/tty41  /dev/tty54  /dev/ttyS0   /dev/ttyS21  /dev/ttyS6
-/dev/tty17  /dev/tty3   /dev/tty42  /dev/tty55  /dev/ttyS1   /dev/ttyS22  /dev/ttyS7
-/dev/tty18  /dev/tty30  /dev/tty43  /dev/tty56  /dev/ttyS10  /dev/ttyS23  /dev/ttyS8
-/dev/tty19  /dev/tty31  /dev/tty44  /dev/tty57  /dev/ttyS11  /dev/ttyS24  /dev/ttyS9
-/dev/tty2   /dev/tty32  /dev/tty45  /dev/tty58  /dev/ttyS12  /dev/ttyS25  /dev/ttyUSB0
+```json
+{
+    "location": {
+        "latitude": 25.033,
+        "longitude": 121.5654,
+        "elevation": 10
+    },
+    "hardware": {
+        "endpoint": "serial:///dev/ttyUSB0?baudrate=57600",
+        "protocol": "v3",
+        "model": "E-C111G",
+        "timeout": 5
+    },
+    "ntpclient": {
+        "pool": [
+            "ntp://time.mit.edu:123",
+            "ntp://ntp1.lsu.edu:123",
+            "ntp://ntp1.tamu.edu:123",
+            "ntp://ntp1.cs.princeton.edu:123",
+            "ntp://ntp.illinois.edu:123"
+        ],
+        "timeout": 5,
+        "retry": 5
+    },
+    "database": {
+        "endpoint": "sqlite://",
+        "username": "",
+        "password": "",
+        "database": "/var/lib/observer/observer.db",
+        "prefix": "as_",
+        "timeout": 5
+    },
+    "server": {
+        "listen": "127.0.0.1:8073",
+        "debug": false,
+        "cors": false
+    },
+    "logger": {
+        "level": "info",
+        "rotation": 5,
+        "lifecycle": 3,
+        "size": 0,
+        "path": ""
+    }
+}
 ```
 
-**For TCP/IP**, enter the hostname or IP address of your AnyShake Explorer. For example, if your device’s address is `10.0.0.21:12345`, enter `10.0.0.21` in this field.
+These are example values, not defaults applied to omitted fields. Provide all sections and required values explicitly. Relative database, log, custom metadata, and service paths resolve from the **working directory**, not the location of `config.json` or the executable.
 
-#### Serial Baudrate / TCP Port
+## Location
 
-**For serial port**, enter the baud rate. You can verify the baud rate your AnyShake Explorer is using by checking the OLED screen on the device.
+| Field | Meaning |
+| --- | --- |
+| `location.latitude` | Fallback latitude in degrees, -90 to 90. |
+| `location.longitude` | Fallback longitude in degrees, -180 to 180. |
+| `location.elevation` | Fallback elevation in metres. |
 
-![OLED Screen](img/configuration-tool/anyshake-explorer-screen.webp)
+GNSS position replaces fallback coordinates when available. Coordinates affect metadata and estimated seismic arrival times. General dashboard views round coordinates for non-administrators; exported metadata and integrations may include the actual location, so review them before sharing.
 
-**For TCP/IP**, enter the TCP port number.
+## Hardware
 
-#### Connection Timeout (s)
+| Field | Meaning |
+| --- | --- |
+| `hardware.endpoint` | Required transport URL: `serial://` or `tcp://`. |
+| `hardware.protocol` | `v1`, `v2`, or `v3`; `legacy` aliases `v1`. Match the firmware protocol. |
+| `hardware.model` | Built-in metadata model or path to a custom metadata directory. |
+| `hardware.timeout` | Read timeout in seconds; zero uses the transport's five-second default. |
 
-This field specifies the connection timeout for the AnyShake Explorer. If a connection is not established within the defined time, the software will terminate with an error. The default value is typically 5 seconds.
+Typical endpoints:
 
-### Database
-
-The database in AnyShake Observer is responsible for archiving waveform data, storing user settings, and managing service modules. The software requires a properly configured database to function correctly. This section defines the database connection settings.
-
-#### Database Engine
-
-AnyShake Observer supports the following four database engines; you may select one according to your requirements:
-
-- SQLite
-- MySQL / MariaDB
-- PostgreSQL
-- SQL Server
-
-:::tip
-For users with little to no database experience, we recommend using SQLite as the database engine since it does not require installing any additional runtime environment and operates using a local file. However, please note that SQLite’s stability may not be guaranteed for all use cases.
-:::
-
-#### Database Path (SQLite only)
-
-This field applies only to SQLite and specifies the database file path. You may provide either an absolute or relative path, for example:
-
-- `./database.db`: Relative to the location of the Observer binary
-- `/path/to/database.db`: Absolute path on Unix-like systems
-- `C:/path/to/database.db`: Typical absolute path on Windows systems (C drive)
-
-Note that if the database file does not exist, it will be created automatically. Ensure that the specified path is writable.
-
-#### Database Host (MySQL / MariaDB / PostgreSQL / SQL Server)
-
-This field applies only to MySQL, MariaDB, PostgreSQL, and SQL Server, specifying the database server’s hostname or IP address.
-
-#### Database Port (MySQL / MariaDB / PostgreSQL / SQL Server)
-
-This field applies only to MySQL, MariaDB, PostgreSQL, and SQL Server, specifying the port number for connecting to the database server.
-
-Common default ports include:
-
-- MySQL: 3306
-- MariaDB: 3306
-- PostgreSQL: 5432
-- SQL Server: 1433
-
-#### Username (MySQL / MariaDB / PostgreSQL / SQL Server)
-
-This field applies only to MySQL, MariaDB, PostgreSQL, and SQL Server, specifying the username for database authentication.
-
-For instance, when using MySQL, the default username is often `root`.
-
-:::tip
-We **do not** recommend using the root user account, as it may pose security risks.
-:::
-
-#### Password (MySQL / MariaDB / PostgreSQL / SQL Server)
-
-This field applies only to MySQL, MariaDB, PostgreSQL, and SQL Server, specifying the password for the database user.
-
-#### Database Name (MySQL / MariaDB / PostgreSQL / SQL Server)
-
-This field applies only to MySQL, MariaDB, PostgreSQL, and SQL Server, specifying the name of the database to connect to.
-
-Before setting this field, ensure the database has been created. For example, in MySQL, you can create the database by executing:
-
-```sql
-CREATE DATABASE anyshake_observer_db;
+```text
+serial:///dev/ttyUSB0?baudrate=57600
+serial:///dev/serial/by-id/your-device?baudrate=57600
+serial://COM3?baudrate=57600
+tcp://192.168.1.50:30000
 ```
 
-You can then set this field to `anyshake_observer_db`.
+The serial baud rate is required and must match the device. Inspect `/dev/serial/by-id/` or kernel messages on Linux, or Device Manager on Windows. Only one application should open a serial device at a time. TCP transport connects through a serial-to-network bridge. GNSS is recommended for TCP because network latency affects software-derived timestamps.
 
-#### Table Prefix
+Protocol v1 is the legacy three-channel format, v2 is used by E-D001, and v3 supports newer devices and up to eight channel slots. Check firmware rather than choosing solely by Observer version.
 
-If you plan to share the database with other applications, you can define a unique prefix for table names. For example, setting the prefix to `test_` will create tables such as `test_sys_users` and `test_user_settings`. The default prefix is `as_`.
+Built-in metadata currently includes **E-D001, E-C111G, E-C121G, and E-C131G**. Custom directories require `attributes.yaml`, `stationxml.tpl`, and `seiscomp.tpl`; follow the source [metadata library reference](https://github.com/anyshake/observer/blob/master/pkg/metadata/library/README.md). Use an instrument response matching your hardware.
 
-#### Connection Timeout (s)
+## NTP Client
 
-This field specifies the database connection timeout. If a connection is not established within the specified time, the software will terminate with an error. The default is typically set to 5 seconds.
+| Field | Meaning |
+| --- | --- |
+| `ntpclient.pool` | Array of NTP URLs, such as `ntp://ntp.nict.jp:123`. |
+| `ntpclient.timeout` | Request timeout in seconds. |
+| `ntpclient.retry` | Bounds additional batches using other endpoints after failures or disagreement. |
 
-### NTP Client
+`ntpclient.endpoint` is deprecated since 4.2.0. Observer migrates it in memory only if `pool` is empty; update the file to use an array.
 
-Regardless of whether GNSS mode is enabled on the AnyShake Explorer, AnyShake Observer will connect to an NTP server to synchronize time upon startup. After synchronization, the software maintains an independent time source separate from the system clock. However, during data streaming, if GNSS is enabled, timestamps will prioritize the GNSS time source.
+Observer maintains an internal time source without setting the host clock. GNSS-derived timestamps take priority when available. NTP synchronization validates replies, compares agreeing sources, and periodically refreshes source selection. Configure several independent reachable servers; three or more help reject an incorrect clock. Five healthy sources meet the routine preferred-source target. Proximity, network asymmetry, and server quality affect accuracy; ping latency alone is insufficient.
 
-#### NTP Server Hostname
+NTP needs outbound UDP, usually port 123. An initial required synchronization failure can prevent startup. One usable source is accepted for availability but cannot be cross-checked. Failed later measurements leave the existing clock correction in place. See the source [NTP client reference](https://github.com/anyshake/observer/blob/master/pkg/ntpclient/README.md) for polling and retries.
 
-This field specifies the hostnames of the NTP server, such as the public server `ntp.nict.jp`.
+## Database
 
-To minimize jitter caused by network instability, it is recommended to choose NTP servers with the lowest possible latency. You can assess latency using the ping command:
+| Field | Meaning |
+| --- | --- |
+| `database.endpoint` | Engine URL; include host and port for remote engines. |
+| `database.username` / `password` | Remote database credentials. |
+| `database.database` | SQLite file path or remote database name. Required. |
+| `database.prefix` | Table prefix; release example: `as_`. Keep stable after initialization. |
+| `database.timeout` | Connection timeout in seconds. |
 
-```bash
-$ ping ntp.nict.jp
-PING ntp.nict.jp (61.205.120.130) 56(84) bytes of data.
-64 bytes from ntp-k1.nict.jp (61.205.120.130): icmp_seq=1 ttl=51 time=73.0 ms
-64 bytes from ntp-k1.nict.jp (61.205.120.130): icmp_seq=2 ttl=51 time=63.7 ms
-64 bytes from ntp-k1.nict.jp (61.205.120.130): icmp_seq=3 ttl=51 time=67.4 ms
-64 bytes from ntp-k1.nict.jp (61.205.120.130): icmp_seq=4 ttl=51 time=80.3 ms
-64 bytes from ntp-k1.nict.jp (61.205.120.130): icmp_seq=5 ttl=51 time=70.0 ms
-64 bytes from ntp-k1.nict.jp (61.205.120.130): icmp_seq=6 ttl=51 time=64.9 ms
-^C
---- ntp.nict.jp ping statistics ---
-6 packets transmitted, 6 received, 0% packet loss, time 5386ms
-rtt min/avg/max/mdev = 63.666/69.867/80.306/5.606 ms
-```
+| Engine | Endpoint example | `database.database` example |
+| --- | --- | --- |
+| SQLite | `sqlite://` or `sqlite3://` | `/var/lib/observer/observer.db` |
+| MySQL / MariaDB | `mysql://127.0.0.1:3306` or `mariadb://127.0.0.1:3306` | `observer` |
+| PostgreSQL | `postgres://127.0.0.1:5432` or `postgresql://127.0.0.1:5432` | `observer` |
+| SQL Server | `sqlserver://127.0.0.1:1433` or `mssql://127.0.0.1:1433` | `observer` |
 
-Here are some tips for selecting the best NTP servers to ensure precise time synchronization:
+Driver availability varies by build target. An unsupported engine error lists available engines. SQLite needs a writable file and parent directory for journal/WAL files. Remote databases must already exist, with permissions to create and migrate tables. Use a dedicated database account.
 
-- Always choose NTP servers provided by **universities, government agencies, major network providers, or research institutions**.
-- Make sure your configuration includes **at least five** NTP servers for better reliability and redundancy.
-- **Prioritize servers with a stratum level of 2 or lower**, as they offer more accurate time.
-- **Avoid using servers from `pool.ntp.org`**, as most of them are maintained by volunteers and may not be consistently reliable.
+The release example's `/tmp/observer.db` is temporary; change it before deployment. Changing the database path, name, or table prefix can select an empty database and appear to reset users, settings, and history. Retention is configured in [Archiver Service](service-modules/archiver.md), independently of MiniSEED retention.
 
-The following lists summarizes the recommended NTP servers:
+## Web Server
 
-**University / Research Institutions Providers**
+| Field | Meaning |
+| --- | --- |
+| `server.listen` | Required `host:port`, e.g. `127.0.0.1:8073`, `0.0.0.0:8073`, or `[::]:8073`. |
+| `server.debug` | Enables GraphQL Playground at `/api/graphql` and pprof on `localhost:6060`. Keep disabled for normal operation. |
+| `server.cors` | Allows cross-origin API requests when true. Authentication remains required. |
 
-- ntp://time.mit.edu:123
-- ntp://ntp1.lsu.edu:123
-- ntp://ntp2.lsu.edu:123
-- ntp://ntp3.lsu.edu:123
-- ntp://ntp1.tamu.edu:123
-- ntp://ntp2.tamu.edu:123
-- ntp://ntp3.tamu.edu:123
-- ntp://ntp1.cs.princeton.edu:123
-- ntp://ntp2.cs.princeton.edu:123
-- ntp://ntppub.tamu.edu:123
-- ntp://ntp.illinois.edu:123
-- ntp://ntp1.tohoku.ac.jp:123
-- ntp://ntp2.tohoku.ac.jp:123
-- ntp://ntp1.noc.titech.ac.jp:123
-- ntp://gpsntp.miz.nao.ac.jp:123
-- ntp://ntp.nc.u-tokyo.ac.jp:123
-- ntp://clock.cit.nihon-u.ac.jp:123
-- ntp://ntp.osakafu-u.ac.jp:123
-- ntp://ntp.kuins.kyoto-u.ac.jp:123
-- ntp://ntp.tut.ac.jp:123
-- ntp://ntp.netlab.is.tsukuba.ac.jp:123
-- ntp://ntp.nagaokaut.ac.jp:123
-- ntp://ntp.hiroshima-u.ac.jp:123
-- ntp://ntp.kj.yamagata-u.ac.jp:123
-- ntp://ntp0.cam.ac.uk:123
-- ntp://ntp1.cam.ac.uk:123
-- ntp://ntp2.cam.ac.uk:123
-- ntp://ntp3.cam.ac.uk:123
-- ntp://ntp1.uni-ulm.de:123
-- ntp://ntp2.uni-ulm.de:123
-- ntp://ntp3.uni-ulm.de:123
-- ntp://ntp.ntu.edu.tw:123
-- ntp://ntp2.ntu.edu.tw:123
-- ntp://time.upd.edu.ph:123
+The executable serves HTTP. Use an HTTPS reverse proxy for public access or [Tailscale](service-modules/tailscale.md) for private remote access. A proxy must forward WebSocket upgrades for live waveforms and permit streaming notification responses. Bind to loopback if only a local proxy or embedded Tailscale needs access.
 
-**National Time Authority Providers**
+## Logger
 
-- ntp://ntp-a2.nict.go.jp:123
-- ntp://ntp-a3.nict.go.jp:123
-- ntp://ntp-b2.nict.go.jp:123
-- ntp://ntp-b3.nict.go.jp:123
-- ntp://ntp-k1.nict.jp:123
-- ntp://ptbtime1.ptb.de:123
-- ntp://ptbtime2.ptb.de:123
-- ntp://ptbtime3.ptb.de:123
-- ntp://stdtime.gov.hk:123
-- ntp://time1.chu.nrc.ca:123
-- ntp://time2.chu.nrc.ca:123
-- ntp://ntp.metas.ch:123
-- ntp://hora.roa.es:123
-- ntp://minuto.roa.es:123
+| Field | Meaning |
+| --- | --- |
+| `logger.level` | `info`, `warn`, or `error`. Required. |
+| `logger.rotation` | Maximum old files retained; zero removes the count limit. |
+| `logger.lifecycle` | Maximum age of old files in **days**; zero removes the age limit. |
+| `logger.size` | Maximum file size in **megabytes**; zero uses the logging library's 100 MB default. |
+| `logger.path` | Output **file** path; empty disables file logging. Console output remains. |
 
-#### NTP Server Port
+Old logs are compressed. Count and age limits are independent; zero does not disable size-based rotation. For systemd/Docker, use `"path": ""` and read journal/container logs. For file logging in this version, create the parent directory and an empty writable regular log file first: current startup code attempts to create a directory at a nonexistent configured log path.
 
-The default port for most NTP servers is 123. Unless you have specific reasons, do not modify this setting.
-
-#### NTP Server Timeout (s)
-
-This field sets the timeout for connecting to the NTP server. If the connection is not established within this time, the software will exit with an error. The default is typically 5 seconds.
-
-#### Connection Retry
-
-If a connection attempt times out, the software will retry connecting to the NTP server the number of times specified here.
-
-The default retry count is 5. After 5 unsuccessful attempts, the software will terminate with an error.
-
-### Server
-
-The software will launch a web server listening on the configured hostname and port.
-
-#### Server Hostname
-
-This field specifies the hostname or IP address that the web server will bind to. By default, it is set to `0.0.0.0`, meaning the server listens on all available network interfaces.
-
-For local-only access, you can set this to `127.0.0.1` or `localhost` to restrict listening to the loopback interface.
-
-#### Server Port
-
-This field defines the port on which the web server will listen. The default port is 8073.
-
-#### Debug Mode
-
-This field controls whether debug mode is enabled. When enabled, the GraphQL debugger playground is accessible at `/api/graphql`.
-
-:::tip
-Debug mode should be **disabled** in production environments and is recommended only for debugging purposes.
-:::
-
-#### Allow Cross-Origin Requests
-
-This field specifies whether to enable Cross-Origin Resource Sharing (CORS). When enabled, web pages can access the GraphQL endpoint from any origin.
-
-This setting is useful if you intend to use AnyShake Observer solely as a backend API for another application.
-
-### Logger
-
-This section configures the logging behavior.
-
-#### Log Level
-
-Specifies the verbosity of log output. Available levels include:
-
-- `info`: Informational messages such as API requests and responses.
-- `warn`: Warning messages like service start and stop notifications.
-- `error`: Error messages including database connection failures.
-
-#### Log Rotation
-
-Defines the maximum number of log files to retain. Setting this to 0 disables log rotation. The default is 3.
-
-#### Log Lifecycle
-
-Also defines the maximum number of log files to keep. Setting to 0 disables log rotation. The default is 3.
-
-#### Archive Size
-
-Specifies the maximum size (in bytes) for log archives. Setting this to 0 uses the default limit of 100 MB. The default value is 0.
-
-#### Log Path
-
-Specifies the file path for log output. Defaults to `./logs/observer.log`, relative to the location of the Observer executable.
-
-To disable file logging, set this field to an empty string.
-
-## Get the Configuration
-
-After completing the form, click the download icon to obtain the auto-generated configuration file.
-
-![Download](img/configuration-tool/download-icon.webp)
-
-You will receive a file named `config.json`, which can be used to start AnyShake Observer.
-
-## Resources
-
-- [Source code of AnyShake Prisma](https://github.com/anyshake/prisma)
+Restrict `config.json` access to the process account and administrators because it may contain database credentials.

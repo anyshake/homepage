@@ -1,75 +1,68 @@
 ---
-sidebar_position: 5
+sidebar_position: 6
 title: Troubleshooting
 slug: troubleshooting
 ---
 
-We summarized the common issues and solutions in the use of AnyShake Observer.
+Start with the console output or `sudo journalctl -u observer.service -n 100 --no-pager`. Record the Observer version, platform, hardware model/protocol, and first relevant error. Separate configuration and operating-system permissions from hardware, network, and source-level failures before changing settings.
 
-## I got error "A device attached to the system is not functioning" when starting
+## Hardware Cannot Be Opened
 
-![Device Not Functioning](img/troubleshooting/device-not-functioning.webp)
+Check the configured transport URL, device path, baud rate, firmware protocol, and power/cabling. On Linux, inspect `/dev/serial/by-id/` and `ls -l /dev/ttyUSB0` to identify the actual port and owning group. Only one process may open the serial device at a time.
 
-This is a common issue that only occurs on **Windows**, especially when using USB-to-Serial adapters based on the **CH340** chipset.
+For the Linux installer, the process account is `observer`. Its unit includes existing `dialout` and `uucp` groups. If a different device group is required, add it to the unit's `SupplementaryGroups`, reload systemd, and restart. Avoid changing serial permissions to world-writable.
 
-The problem is typically caused by **incompatible or unstable CH340 drivers** installed via Windows Update. To resolve this issue:
+On Windows, “A device attached to the system is not functioning” can indicate a USB-to-serial driver problem. Check Device Manager and the adapter manufacturer's driver compatibility. If the failure started after an update, roll back to a compatible driver; the appropriate version depends on the adapter and Windows release.
 
-### Step 1: Roll back the CH340 driver
+![Device Error](img/troubleshooting/device-not-functioning.webp)
 
-- Visit the Microsoft Update Catalog: [www.catalog.update.microsoft.com/Search.aspx?q=CH340](https://www.catalog.update.microsoft.com/Search.aspx?q=CH340)
-- Download and install a driver dated **before 2014** (for example, **version 3.3.2011.11 from 2011** has proven to be stable in most cases).
-- Extract the `*.cab` file to a folder, you can use [7-Zip](https://www.7-zip.org/).
-- In the folder, right click the `CH341SER.INF` file, click **Install**.
-  ![Install Driver](img/troubleshooting//install-driver.webp)
-- After installation completes, **please restart your computer**.
+For TCP bridges, check reachability of the bridge address and port separately from Observer. A reachable port does not establish that the stream uses the expected Explorer protocol. Prefer GNSS timestamps when a network bridge adds variable latency.
 
-### Step 2: Block Windows from updating the driver again
+## SQLite Is Read-only
 
-To prevent Windows from overwriting the working driver:
+SQLite needs write access to **both the database and its parent directory** for WAL/journal files. Check the account actually running Observer and any systemd or container restrictions.
 
-1. Press `Win + R` to open the Run dialog, type `systempropertiesadvanced` to open the System Properties dialog.
-2. Click the **Hardware** tab.
-3. Click the **Device Installation Settings** button.
-4. Choose **No, let me choose what to do** and click **Save Settings**.
-5. Click **OK** to close the dialog.
-
-## I got error "attempt to write a readonly database (8)" when starting
-
-![Database Readonly error](img/troubleshooting/database-readonly.webp)
-
-This error always occurs when insufficient permissions were granted to the database file.
-
-To resolve this issue, on Linux systems, open the terminal and run the following command:
+For the installer layout, after stopping Observer, correct ownership only for the intended database files and directory. For example, if the main file is `/var/lib/observer/observer.db`:
 
 ```bash
-$ sudo chmod 666 /path/to/your/observer.db
-$ sudo chown -R user:user /path/to/your/observer.db
+sudo systemctl stop observer.service
+sudo chown observer:observer /var/lib/observer /var/lib/observer/observer.db
+sudo chmod 0750 /var/lib/observer
+sudo chmod 0640 /var/lib/observer/observer.db
 ```
 
-Replace `user` with the username of the user who owns the database file.
+Also inspect any existing `observer.db-wal` and `observer.db-shm` files and correct their ownership if necessary. Do not remove an active WAL. Custom paths must be permitted by `ReadWritePaths` in the unit. On Windows, check directory ACLs and the database's Read-only attribute.
 
-On Windows systems, open the **Properties** dialog of the database file and remove the **Read-only** attribute.
+## Users or History Seem to Have Disappeared
 
-![Keep Read-only Unchecked](img/troubleshooting//uncheck-readonly.webp)
+Confirm the effective database path, table prefix, and process working directory. A relative path can point at a new empty database after switching to systemd or Docker. The release example's `/tmp/observer.db` is not persistent storage. Find and back up the original database before changing or replacing files.
 
-## I can open the web interface, but cannot log in, and the captcha fails to load
+History and FDSN DataSelect need database Archiver records. Enabling the MiniSEED writer alone does not provide database history. Allow for Archiver's ten-packet batch delay, check retention, and verify UTC query ranges and station codes.
 
-![Cannot Login](img/troubleshooting/cannot-login.webp)
+## Web Page Opens but Login or Live Data Fails
 
-When accessing from localhost (127.0.0.1), or through an HTTPS reverse proxy, AnyShake Observer will use a **Service Worker** to cache the web interface locally upon your first visit. This is an optimization designed to improve load speed on subsequent visits.
+Confirm the backend is running and listening on the configured interface and port. A cached page or reverse proxy response does not establish backend health. Check the browser's network panel and Observer logs for failed authentication, API, WebSocket, or notification requests.
 
-However, if the backend service (`observer` executable) is not running, the web interface may still appear to load correctly from the cache, potentially causing confusion — such as failed login attempts or missing captcha — since the frontend cannot actually communicate with the backend.
+If using a reverse proxy, preserve `/api` paths, WebSocket upgrades, and streaming responses. Use the correct protocol and port. Login requires a backend challenge and CAPTCHA; failed challenge or image requests can indicate an unavailable backend, proxy path errors, or rate limits. If cached assets mismatch after upgrading, reload the page and clear the site's stored data if necessary.
 
-So, please make sure that the AnyShake Observer service is running before accessing the web interface. To check if the service is running on Linux, open a terminal and run the command:
+## A Service Cannot Start or a Remote Client Cannot Connect
 
-```bash
-$ ps aux | grep observer
-```
+Check that the module is enabled, save settings, and restart it. Inspect its logs for a bind failure or unavailable dependency. SeedLink, TCP Forwarder, and Winston listen on localhost by default. Discovery announcements do not override that binding. Check firewalls and network reachability separately.
 
-If the backend service is running, you should see the `observer` process and its PID.
+UDP 123 may already belong to another NTP daemon or require a bind capability. QuakeSense needs its MQTT broker even when web notifications are the intended output. Helicorder needs database history and writable image/cache paths.
 
-![Backend Running on Linux](img/troubleshooting/process-check-linux.webp)
+## NTP or Upgrade Requests Fail
 
-On Windows systems, you can find the process by searching for `observer.exe` in the **Task Manager**.
+NTP uses UDP and can be blocked even when HTTPS works. Check configured pool reachability and synchronization logs. Do not replace time sources or increase retries without first identifying the network or source-quality failure.
 
-![Backend Running on Windows](img/troubleshooting/process-check-windows.webp)
+Built-in upgrades require an official non-prerelease build, eligible version metadata, reachable encrypted DNS and HTTPS endpoints, and a writable executable directory. A check failure differs from “no update available.” On self-built or Dockerfile builds, use external upgrades. See [Updater](service-modules/updater.md).
+
+## File Logging Fails
+
+`logger.path` must name a regular file, and `logger.size` is in megabytes. In this version, startup attempts to create a directory if the configured path does not exist. Pre-create the writable log file and its parent, or use `"path": ""` and collect console output with systemd/Docker.
+
+## Queries Are Rejected for Resource Limits
+
+The web API limits history requests to one hour and applies concurrency, response-size, and execution limits. Reduce the queried interval and avoid overlapping large queries. FDSN DataSelect limits the sum of selection durations to one hour and accepts at most 100 selections per request. Large query failures are not necessarily missing data; inspect the returned error.
+
+For a reproducible source-level failure, report the first error and minimal steps on [GitHub Issues](https://github.com/anyshake/observer/issues). Include sanitized configuration and logs; remove passwords, access keys, and private station information.
