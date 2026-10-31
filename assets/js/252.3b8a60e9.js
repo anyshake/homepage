@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkanyshake_org||=[]).push([[252],{252(e,r,a){a.d(r,{createArchitectureServices:()=>c.S});var c=a(4561);a(508)}}]);
