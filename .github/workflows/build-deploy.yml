@@ -16,20 +16,28 @@ jobs:
             - name: Checkout code
               uses: actions/checkout@v7
 
+            - name: Setup pnpm
+              uses: pnpm/action-setup@v6
+              with:
+                version: 12
+
             - name: Installing Node.js
               uses: actions/setup-node@v7
+              with:
+                node-version: 26
+                cache: pnpm
 
-            - name: Installing NPM packages
-              run: npm ci
+            - name: Installing dependencies
+              run: pnpm install --frozen-lockfile
 
             - name: Building project
-              run: npm run build
+              run: pnpm build
 
             - name: Uploading dist
               uses: actions/upload-artifact@v7
               with:
-                  name: production-files
-                  path: ./build
+                name: production-files
+                path: ./build
 
     deploy:
         runs-on: ubuntu-latest
