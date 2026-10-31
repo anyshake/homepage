@@ -23,11 +23,11 @@ const PARTNERS = [
     },
     {
         id: 'wolfx-jp',
-        name: 'Wolfx Public API',
-        subtitle: 'Disaster Prevention APIs & Public Applications',
+        name: 'Wolfx Project',
+        subtitle: 'Open Disaster Information APIs & Applications',
         logo: partnerWolfx,
         description:
-            'Through collaboration with Wolfx, selected AnyShake stations are hosted on the Wolfx platform, where analyzed seismic data is integrated into the Wolfx Public API and distributed to downstream disaster prevention applications.'
+            'AnyShake collaborates with Wolfx Project to advance open-source disaster monitoring technologies and improve access to real-time disaster information. Through open APIs and public applications, this collaboration supports a more accessible and interconnected disaster prevention ecosystem.'
     }
 ];
 
