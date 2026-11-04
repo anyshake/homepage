@@ -248,12 +248,11 @@ This bit is **ignored** when **6-channel mode** is enabled.
 - **Startup Condition**:
 
     - Satellite count > 0
-    - HDOP (Horizontal Dilution of Precision) ≤ 1.0
+    - HDOP (Horizontal Dilution of Precision) ≤ 2.0
 
 - **Behavior**:
 
     - Device waits for valid GNSS fix before beginning acquisition.
-    - Automatically re-synchronizes when the **UTC date changes**, causing a brief (\~5 s) pause.
 
 :::info GNSS Note
 Ensure a compatible GNSS antenna is connected before enabling this mode.
